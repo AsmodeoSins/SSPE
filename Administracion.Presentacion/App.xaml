@@ -1,0 +1,21 @@
+﻿<Application x:Class="Administracion.Presentacion.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             d1p1:Ignorable="d" 
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:util="clr-namespace:Administracion.Presentacion.Utilidades"
+             StartupUri="Vista/BaseVista.xaml"
+             DispatcherUnhandledException="Application_DispatcherUnhandledException">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Temas/Generales.xaml"/>
+                <ResourceDictionary Source="Temas/Tabs.xaml"/>
+                <ResourceDictionary Source="Temas/DataGrids.xaml"/>
+                <ResourceDictionary Source="Temas/Carousel.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <util:Localizador x:Key="Localizador" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

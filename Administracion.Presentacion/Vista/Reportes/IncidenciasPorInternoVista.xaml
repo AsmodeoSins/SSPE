@@ -1,0 +1,160 @@
+﻿<UserControl x:Class="Administracion.Presentacion.Vista.IncidenciaPorInternoVista"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+             xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+             xmlns:local="clr-namespace:Administracion.Presentacion.Utilidades"
+             mc:Ignorable="d" 
+             DataContext="{Binding IncidenciaPorInternoBase, Source={StaticResource Localizador}}">
+    <UserControl.Resources>
+        <ItemsPanelTemplate x:Key="VSP">
+            <VirtualizingStackPanel/>
+        </ItemsPanelTemplate>
+        <local:ConvertidorTrimTexto x:Key="trim" />
+    </UserControl.Resources>
+    <Grid Width="Auto" Height="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="600" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Reportes de Incidencias" Style="{StaticResource Titulo}" Margin="10,0,0,20"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+            <StackPanel  Margin="10,0,0,10">
+                <Label Content="Desde:" />
+                <DatePicker  Width="150" SelectedDate="{Binding Filtro.FechaInicial, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel  Margin="10,0,0,10">
+                <Label Content="Hasta:" />
+                <DatePicker  Width="150" SelectedDate="{Binding Filtro.FechaFinal, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Pase de Lista:" />
+                <ComboBox Name="ComboPasesDeLista" Width="100" ItemsSource="{ Binding PasesDeLista, Mode=TwoWay}" DisplayMemberPath="Nombre" SelectedValuePath="IdPLCatalgo"
+                                  SelectedValue="{ Binding Filtro.IdPLCatalogo, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedIndex="0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <mvvm:EventToCommand  Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, Mode=FindAncestor}, Path=DataContext.BuscarCeldasCommand }"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="SelectionChanged" SourceName="ComboImputados">
+                            <ei:ChangePropertyAction PropertyName="SelectedIndex" Value="0"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+            </StackPanel>
+            <VirtualizingStackPanel  Margin="10,0,0,10">
+                <Label Content="Imputado:" />
+                <ComboBox Name="ComboImputados"  Width="200" ItemsSource="{ Binding Imputados, Mode=TwoWay}" SelectedItem="{ Binding ImputadoSeleccionado, Mode=TwoWay}"
+                                    ItemsPanel="{ StaticResource VSP }" IsEditable="True" StaysOpenOnEdit="True" IsTextSearchEnabled="True" IsTextSearchCaseSensitive="False" TextSearch.TextPath="Folio" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}{0} {1} {2} {3}/{4}">
+                                        <Binding Path="Nombre" Converter="{ StaticResource trim }" />
+                                        <Binding Path="Paterno" Converter="{ StaticResource trim }" />
+                                        <Binding Path="Materno" Converter="{ StaticResource trim }" />
+                                        <Binding Path="IdAnio" Converter="{ StaticResource trim }" />
+                                        <Binding Path="IdImputado" Converter="{ StaticResource trim }" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                    <ComboBox.Resources>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <Setter Property="IsDropDownOpen" Value="False"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="IsDropDownOpen" Value="True"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBox.Resources>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged" SourceName="ComboEdificios">
+                            <ei:ChangePropertyAction PropertyName="SelectedIndex" Value="-1"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="SelectionChanged" SourceName="ComboSectores">
+                            <ei:ChangePropertyAction PropertyName="SelectedIndex" Value="-1"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="SelectionChanged" SourceName="ComboCeldas">
+                            <ei:ChangePropertyAction PropertyName="SelectedIndex" Value="-1"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+            </VirtualizingStackPanel>
+            <StackPanel  Margin="10,0,0,10">
+                <Label Content="Edificio:" />
+                <ComboBox Name="ComboEdificios" Width="100" ItemsSource="{ Binding Edificios, Mode=TwoWay}" DisplayMemberPath="Descripcion" SelectedValuePath="IdEdificio"
+                                  SelectedValue="{ Binding Filtro.IdEdificio, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedIndex="0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <mvvm:EventToCommand  Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, Mode=FindAncestor}, Path=DataContext.BuscarSectoresCommand }"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="SelectionChanged" SourceName="ComboImputados">
+                            <ei:ChangePropertyAction PropertyName="SelectedIndex" Value="0"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="10,0,0,10" >
+                <Label Content="Sector:" />
+                <ComboBox Name="ComboSectores" Width="100" ItemsSource="{ Binding Sectores, Mode=TwoWay}" DisplayMemberPath="Descripcion" SelectedValuePath="IdSector"
+                                    SelectedValue="{ Binding Filtro.IdSector, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedIndex="0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <mvvm:EventToCommand  Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, Mode=FindAncestor}, Path=DataContext.BuscarCeldasCommand }"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="SelectionChanged" SourceName="ComboImputados">
+                            <ei:ChangePropertyAction PropertyName="SelectedIndex" Value="0"/>
+                        </i:EventTrigger>                        
+                    </i:Interaction.Triggers>
+                    <ComboBox.Style>
+                        <Style TargetType="ComboBox">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=ComboImputados, Path=SelectedItem}" Value="{x:Null}">
+                                    <Setter Property="SelectedIndex" Value="-1"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBox.Style>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="10,0,0,10" >
+                <Label Content="Celda:" />
+                <ComboBox Name="ComboCeldas" Width="100" ItemsSource="{ Binding Celdas, Mode=TwoWay}" DisplayMemberPath="IdCelda" SelectedValuePath="IdCelda"
+                                    SelectedValue="{ Binding Filtro.IdCelda, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedIndex="0">
+                    <ComboBox.Style>
+                        <Style TargetType="ComboBox">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=ComboImputados, Path=SelectedItem}" Value="{x:Null}">
+                                    <Setter Property="SelectedIndex" Value="-1"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBox.Style>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged" SourceName="ComboImputados">
+                            <ei:ChangePropertyAction PropertyName="SelectedIndex" Value="0"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel>
+                <Button Style="{StaticResource BotonAceptar}" Margin="20,15,15,0" Command="{Binding EjecutarReporteCommand}">Ejecutar</Button>
+            </StackPanel>
+        </StackPanel>
+
+        <ContentPresenter Grid.Row="2" Grid.Column="0"  Margin="10,10,20,0" Content="{Binding ReporteFormHost, Mode=TwoWay}" />
+        <!-- LABEL DE VALIDACIONES LIGADO A LA PROPIEDAD ERRORES -->
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Error}" Content="{ Binding Errores }" HorizontalContentAlignment="Left" Margin="10,0,0,0" >
+        </Label>
+    </Grid>
+</UserControl>

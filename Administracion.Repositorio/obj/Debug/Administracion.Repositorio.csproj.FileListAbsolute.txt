@@ -1,0 +1,66 @@
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Repositorio.dll.config
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Repositorio.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Repositorio.pdb
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Contratos.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Modelos.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.OTD.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Utilidades.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\EntityFramework.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Enum.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\FluentValidation.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\AutoMapper.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Contratos.pdb
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Modelos.pdb
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.OTD.pdb
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Utilidades.pdb
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\EntityFramework.xml
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Enum.pdb
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\FluentValidation.pdb
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\AutoMapper.xml
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\da\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\de\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\es\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\fi\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\fr\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\it\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\nl\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\pl\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\pt\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\ru\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\bin\Debug\sv\FluentValidation.resources.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\obj\Debug\Administracion.Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\obj\Debug\Administracion.Repositorio.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.Repositorio\obj\Debug\Administracion.Repositorio.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Repositorio.dll.config
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Repositorio.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Repositorio.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Contratos.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Modelos.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.OTD.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Utilidades.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\EntityFramework.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Enum.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\FluentValidation.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\AutoMapper.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Contratos.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Modelos.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.OTD.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Utilidades.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\EntityFramework.xml
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\Administracion.Enum.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\FluentValidation.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\AutoMapper.xml
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\da\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\de\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\es\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\fi\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\fr\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\it\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\nl\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\pl\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\pt\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\ru\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\bin\Debug\sv\FluentValidation.resources.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\obj\Debug\Administracion.Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\obj\Debug\Administracion.Repositorio.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Repositorio\obj\Debug\Administracion.Repositorio.pdb

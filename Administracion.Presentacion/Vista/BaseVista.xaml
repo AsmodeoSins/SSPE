@@ -1,0 +1,41 @@
+﻿<Window x:Class="Administracion.Presentacion.BaseVista"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vista="clr-namespace:Administracion.Presentacion.Vista"
+        xmlns:op="clr-namespace:Administracion.Presentacion.Convertidores"
+        xmlns:a="clr-namespace:UIAuthorization"
+        xmlns:local="clr-namespace:Administracion.Presentacion.Utilidades"
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight"
+        DataContext="{Binding BaseTabs, Source={StaticResource Localizador}}" Title="Administracion">
+
+    <TabControl x:Name="TabPrincipal" Style="{StaticResource TabControlHorizontal}" Margin="10" >
+        <i:Interaction.Triggers>
+            <local:EventTriggerSinPropagacion EventName="SelectionChanged">
+                <mvvm:EventToCommand Command="{Binding CargarTabPadreCommand}" CommandParameter="{Binding Path=SelectedItem, ElementName=TabPrincipal, NotifyOnTargetUpdated=True}"/>
+            </local:EventTriggerSinPropagacion>
+            <!--<i:EventTrigger EventName="SelectionChanged">
+                <mvvm:EventToCommand  Command="{Binding CargarTabPadreCommand}" 
+                                      CommandParameter="{Binding Path=SelectedItem, ElementName=TabPrincipal, NotifyOnTargetUpdated=True}"/>
+            </i:EventTrigger>-->
+        </i:Interaction.Triggers>
+        <TabItem Header="Biometrico" Style="{StaticResource TabHorizontal}"  Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.BIOMETRICO }}">
+            <vista:BiometricoBaseVista Margin="0,10,0,0" />
+        </TabItem>
+        <TabItem Header="Catalogos" Style="{StaticResource TabHorizontal}"  Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.PL_CATALOGO }}">
+            <vista:CatalogoBaseVista Margin="0,10,0,0"/>
+        </TabItem>
+        <TabItem Header="Reportes" Style="{StaticResource TabHorizontal}" Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.REPORTES }}">
+            <vista:ReportesBaseVista Margin="0,10,0,0" />
+        </TabItem>
+        <TabItem Header="Programación" Style="{StaticResource TabHorizontal}" Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.PL_PROGRAMADO_ASIGNACION }}">
+            <vista:ProgramarPaseListaVista HorizontalAlignment="Left" Margin="0,10,0,0" />
+        </TabItem>
+        <TabItem Header="Configuración" Style="{StaticResource TabHorizontal}" Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.CONFIGURACION }}" IsSelected="{ op:AutorizationEnable {x:Static a:Constantes.CONFIGURACION }}">
+            <vista:ConfiguracionVista HorizontalAlignment="Left" Margin="0,10,0,0"  Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.CONFIGURACION }}"/>
+        </TabItem>
+    </TabControl>
+</Window>

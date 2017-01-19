@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9eba45c954c04409b90a8247a730d5ad" Name="Diagram1">
+        <EntityTypeShape EntityType="Modelos.BIOMETRICO_FORMATO" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.BIOMETRICO_TIPO" Width="1.5" PointX="3.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.CELDA" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.CENTRO" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.EDIFICIO" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.EMPLEADO" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.IMPUTADO" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.IMPUTADO_BIOMETRICO" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.INCIDENCIA" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.INCIDENTE_TIPO" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.PARAMETRO" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.PASELISTA_ASIGNADO" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.PASELISTA_CATALOGO" Width="1.5" PointX="0.5" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.PASELISTA_CATALOGO_ESTATUS" Width="1.5" PointX="1.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.PASELISTA_PROGRAMADO" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.PASELISTA_PROGRAMADO_ESTATUS" Width="1.5" PointX="11.375" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.PASELISTA_RESULTADO" Width="1.5" PointX="10.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.PERSONA" Width="1.5" PointX="3.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.PERSONA_BIOMETRICO" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.SECTOR" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelos.TIPO_EMPLEADO" Width="1.5" PointX="1.5" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="Modelos.FORMATO_BIOMETRICO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.TIPO_BIOMETRICO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.CELDA_CENTRO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.CELDA_EDIFICIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.CELDA_SECTOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_RESULT_CELDA" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.CENTRO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_PGR_CENTRO" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.IMPUTADO_CENTRO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.PARAMETRO_CENTRO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.SECTOR_CENTRO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_ASIGN_EDIFICIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.SECTOR_EDIFICIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_EMPLEADO_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_ASIGN_EMPLEADO" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_PGR_EMPLEADO" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_ASIGN_PROGRAMADO" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_ASIGN_SECTOR" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_RESULT_ASIGNADO" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_CATALOGO_ESTATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_PGR_CATALOGO" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.FK_PASELISTA_PGR_ESTATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelos.PERSONA_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

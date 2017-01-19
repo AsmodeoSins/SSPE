@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B10D614-EA60-468A-B4C3-7FB6EB10FD54}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Administracion.Utilidades</RootNamespace>
+    <AssemblyName>Administracion.Utilidades</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=5.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.5.6.2.0\lib\portable-net40+sl50+wp80+win8+wpa81\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Autenticacion\Cache.cs" />
+    <Compile Include="Autenticacion\Sesion.cs" />
+    <Compile Include="ClasesAuxiliares\CodificadorBase64.cs" />
+    <Compile Include="ClasesAuxiliares\ConversorDePredicados.cs" />
+    <Compile Include="ClasesAuxiliares\GeneradorDePredicados.cs" />
+    <Compile Include="ClasesAuxiliares\ManejoDeVentanas.cs" />
+    <Compile Include="ClasesAuxiliares\Mapeador.cs" />
+    <Compile Include="ClasesAuxiliares\Mapeadores.cs" />
+    <Compile Include="ClasesAuxiliares\MetodosExtendidos.cs" />
+    <Compile Include="Constantes\SSPConst.cs" />
+    <Compile Include="Controles\UIColecciones.cs" />
+    <Compile Include="Controles\Convertidor.cs" />
+    <Compile Include="Mapeadores\CentroMapeador.cs" />
+    <Compile Include="Mapeadores\LogFallaServicioMapeador.cs" />
+    <Compile Include="Mapeadores\PLIncidenciaBitacoraMapeador.cs" />
+    <Compile Include="Mapeadores\ReporteMapeador.cs" />
+    <Compile Include="Mapeadores\IngresoMapeador.cs" />
+    <Compile Include="Mapeadores\ParametroClaveMapeador.cs" />
+    <Compile Include="Mapeadores\ParametroMapeador.cs" />
+    <Compile Include="Mapeadores\BiometricoMapeador.cs" />
+    <Compile Include="Mapeadores\PersonaMapeador.cs" />
+    <Compile Include="Mapeadores\PLAsignacionBitacoraMapeador.cs" />
+    <Compile Include="Mapeadores\PLAsignacionResultadoMapeador.cs" />
+    <Compile Include="Mapeadores\PLCatalogoMapeador.cs" />
+    <Compile Include="Mapeadores\PLIncidenciaCatalogoMapeador.cs" />
+    <Compile Include="Mapeadores\PLIncidenciaEstatusMapeador.cs" />
+    <Compile Include="Mapeadores\PLProgramadoAsignacionMapeador.cs" />
+    <Compile Include="Mapeadores\PLProgramadoMapeador.cs" />
+    <Compile Include="Mapeadores\TipoDeCeldaMapeador.cs" />
+    <Compile Include="Mapeadores\TipoDeCentroMapeador.cs" />
+    <Compile Include="Mapeadores\TipoDeEdificionMapeador.cs" />
+    <Compile Include="Mapeadores\TipoDeEmpleadoMapeador.cs" />
+    <Compile Include="Mapeadores\TipoDeIngresoMapeador.cs" />
+    <Compile Include="Mapeadores\TipoDePersonaMapeador.cs" />
+    <Compile Include="Mapeadores\UbicacionMapeador.cs" />
+    <Compile Include="Mapeadores\UsuarioMapeador.cs" />
+    <Compile Include="Mapeos\CeldaMapeos.cs" />
+    <Compile Include="Mapeos\CentroMapeos.cs" />
+    <Compile Include="Mapeos\EdificioMapeos.cs" />
+    <Compile Include="Mapeos\EmpleadoMapeos.cs" />
+    <Compile Include="Mapeos\ImputadoBiometricoMapeos.cs" />
+    <Compile Include="Mapeos\ImputadoMapeos.cs" />
+    <Compile Include="Mapeos\LogFallaServicioMapeos.cs" />
+    <Compile Include="Mapeos\ParametroClaveMapeos.cs" />
+    <Compile Include="Mapeos\PLAsignacionBitacoraMapeos.cs" />
+    <Compile Include="Mapeos\PLAsignacionResultadoMapeos.cs" />
+    <Compile Include="Mapeos\PLIncidenciaBitacoraMapeos.cs" />
+    <Compile Include="Mapeos\PLIncidenciaCatalogoMapeos.cs" />
+    <Compile Include="Mapeos\IngresoMapeos.cs" />
+    <Compile Include="Mapeos\ParametroMapeos.cs" />
+    <Compile Include="Mapeos\PLCatalogoMapeos.cs" />
+    <Compile Include="Mapeos\BiometricoMapeos.cs" />
+    <Compile Include="Mapeos\PersonaMapeos.cs" />
+    <Compile Include="Mapeos\PLIncidenciaEstatusMapeos.cs" />
+    <Compile Include="Mapeos\PLProgramadoAsignacionMapeos.cs" />
+    <Compile Include="Mapeos\PLProgramadoMapeos.cs" />
+    <Compile Include="Mapeos\ReporteMapeos.cs" />
+    <Compile Include="Mapeos\SectorMapeos.cs" />
+    <Compile Include="Mapeos\TipoDeCeldaMapeos.cs" />
+    <Compile Include="Mapeos\TipoDeCentroMapeos.cs" />
+    <Compile Include="Mapeos\TipoDeEdificionMapeos.cs" />
+    <Compile Include="Mapeos\TipoDeEmpleadoMapeso.cs" />
+    <Compile Include="Mapeos\TipoDeIngresoMapeos.cs" />
+    <Compile Include="Mapeos\TipoDePersonaMapeos.cs" />
+    <Compile Include="Mapeos\UbicacionMapeos.cs" />
+    <Compile Include="Mapeos\UsuarioMapeos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validadores\CentroValidador.cs" />
+    <Compile Include="Validadores\ImputadoBiometricoValidador.cs" />
+    <Compile Include="Validadores\ImputadoValidador.cs" />
+    <Compile Include="Validadores\IncidenciaValidador.cs" />
+    <Compile Include="Validadores\IngresoValidador.cs" />
+    <Compile Include="Validadores\ParametroValidador.cs" />
+    <Compile Include="Validadores\PaseDeListaCatalogoValidador.cs" />
+    <Compile Include="Validadores\PaseListaValidador.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Administracion.Enum\Administracion.Enum.csproj">
+      <Project>{bc898c85-2ca8-44c9-9b4e-a898d8e0cc30}</Project>
+      <Name>Administracion.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Administracion.Modelos\Administracion.Modelos.csproj">
+      <Project>{079f7884-c75f-4545-a259-f289c390f879}</Project>
+      <Name>Administracion.Modelos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Administracion.OTD\Administracion.OTD.csproj">
+      <Project>{5d9afc3c-a984-44ca-830f-471f3492f9fa}</Project>
+      <Name>Administracion.OTD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

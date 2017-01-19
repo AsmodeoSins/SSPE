@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="Administracion.Presentacion.Vista.IncidenciasReporteVista"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:reporte="clr-namespace:Administracion.Enum;assembly=Administracion.Enum"
+            xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+             mc:Ignorable="d" 
+             DataContext="{Binding IncidenciaReporte, Source={StaticResource Localizador}}">
+    <UserControl.Resources>
+        <ItemsPanelTemplate x:Key="VSP">
+            <VirtualizingStackPanel/>
+        </ItemsPanelTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="300" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Reportes de Incidencias" Style="{StaticResource Titulo}" Margin="10,0,0,20"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+            <StackPanel  Margin="10,0,0,10">
+                <Label Content="Desde:" />
+                <DatePicker  Width="150" SelectedDate="{Binding Filtro.FechaInicial, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel  Margin="10,0,0,10">
+                <Label Content="Hasta:" />
+                <DatePicker  Width="150" SelectedDate="{Binding Filtro.FechaFinal, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel  Margin="10,0,0,10">
+                <Label Content="Imputado:" />
+                <ComboBox  Width="200" ItemsSource="{ Binding Imputados, Mode=TwoWay}" DisplayMemberPath="Nombre"
+                                    SelectedValue="{ Binding Filtro.Imputado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedIndex="0" ItemsPanel="{ StaticResource VSP}"/>
+            </StackPanel>
+            <StackPanel  Margin="10,0,0,10">
+                <Label Content="Edificio:" />
+                <ComboBox  Width="100" ItemsSource="{ Binding Edificios, Mode=TwoWay}" DisplayMemberPath="Descripcion" SelectedValuePath="IdEdificio"
+                                  SelectedValue="{ Binding Filtro.IdEdificio, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedIndex="0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <mvvm:EventToCommand  Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, Mode=FindAncestor}, Path=DataContext.BuscarSectoresCommand }"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="10,0,0,10" >
+                <Label Content="Sector:" />
+                <ComboBox Width="100" ItemsSource="{ Binding Sectores, Mode=TwoWay}" DisplayMemberPath="Descripcion" SelectedValuePath="IdSector"
+                                    SelectedValue="{ Binding Filtro.IdSector, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedIndex="0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <mvvm:EventToCommand  Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, Mode=FindAncestor}, Path=DataContext.BuscarCeldasCommand }"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+                
+            </StackPanel>
+            <StackPanel Margin="10,0,0,10" >
+                <Label Content="Celda:" />
+                <ComboBox Width="100" ItemsSource="{ Binding Celdas, Mode=TwoWay}" DisplayMemberPath="Descripcion" SelectedValuePath="IdCelda"
+                                    SelectedValue="{ Binding Filtro.IdCelda, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedIndex="0"/>
+            </StackPanel>
+            <StackPanel>
+                <Button Style="{StaticResource BotonAceptar}" Margin="20,15,15,0" Command="{Binding EjecutarReporteCommand}">Ejecutar</Button>
+            </StackPanel>
+        </StackPanel>
+
+        <ContentPresenter Grid.Row="2" Grid.Column="0"  Margin="10,10,10,0" Content="{Binding ReporteFormHost, Mode=TwoWay}" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,9 @@
+﻿<Window x:Class="Administracion.Presentacion.Cliente.VentanaPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Administracion.Control.Cliente;assembly=Administracion.Control.Cliente"
+        Title="VentanaPrincipal" Height="350" Width="525">
+    <Grid>
+        <local:AppContenedor x:Name="appControl" />
+    </Grid>
+</Window>

@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{079F7884-C75F-4545-A259-F289C390F879}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Administracion.Modelos</RootNamespace>
+    <AssemblyName>Administracion.Modelos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\AdministracionEntidades.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\AdministracionEntidades.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministracionEntidades.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\BIOMETRICO_FORMATO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\BIOMETRICO_TIPO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CELDA.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CENTRO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\EDIFICIO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\EMPLEADO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\IMPUTADO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\IMPUTADO_BIOMETRICO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\INGRESO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\INGRESO_BIOMETRICO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\LOGFALLASERVICIO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PARAMETRO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PARAMETRO_CLAVE.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PERSONA.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PERSONA_BIOMETRICO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_ASIGNACION_BITACORA.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_ASIGNACION_RESULTADO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_CATALOGO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_CATALOGO_ESTATUS.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_INCIDENCIA_BITACORA.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_INCIDENCIA_CATALOGO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_INCIDENCIA_ESTATUS.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_PROGRAMADO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_PROGRAMADO_ASIGNACION.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PL_PROGRAMADO_BITACORA.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PROCESO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PROCESO_ROL.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\PROCESO_USUARIO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\SECTOR.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\TIPO_CELDA.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\TIPO_CENTRO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\TIPO_EDIFICIO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\TIPO_EMPLEADO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\TIPO_INGRESO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\TIPO_PERSONA.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\USUARIO.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\USUARIO_MENSAJE.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\USUARIO_ROL.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Entidades\AdministracionEntidades.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdministracionEntidades.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entidades\AdministracionEntidades.edmx.diagram">
+      <DependentUpon>AdministracionEntidades.edmx</DependentUpon>
+    </None>
+    <None Include="Entidades\AdministracionEntidades.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdministracionEntidades.edmx</DependentUpon>
+      <LastGenOutput>AdministracionEntidades.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

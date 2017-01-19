@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="30110014c7584a3fa61a27825d39a1ee" Name="Diagram1">
+        <EntityTypeShape EntityType="AdministracionModelo.BIOMETRICO_FORMATO" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AdministracionModelo.BIOMETRICO_TIPO" Width="1.5" PointX="7.5" PointY="32" />
+        <EntityTypeShape EntityType="AdministracionModelo.CELDA" Width="1.5" PointX="12.75" PointY="14.875" />
+        <EntityTypeShape EntityType="AdministracionModelo.CENTRO" Width="1.5" PointX="3" PointY="13.875" />
+        <EntityTypeShape EntityType="AdministracionModelo.EDIFICIO" Width="1.5" PointX="8.25" PointY="15.25" />
+        <EntityTypeShape EntityType="AdministracionModelo.EMPLEADO" Width="1.5" PointX="5.25" PointY="14.875" />
+        <EntityTypeShape EntityType="AdministracionModelo.IMPUTADO" Width="1.5" PointX="5.25" PointY="21.375" />
+        <EntityTypeShape EntityType="AdministracionModelo.IMPUTADO_BIOMETRICO" Width="1.5" PointX="7.5" PointY="28.375" />
+        <EntityTypeShape EntityType="AdministracionModelo.INGRESO" Width="1.5" PointX="7.5" PointY="20.5" />
+        <EntityTypeShape EntityType="AdministracionModelo.INGRESO_BIOMETRICO" Width="1.5" PointX="9.75" PointY="22.5" />
+        <EntityTypeShape EntityType="AdministracionModelo.PARAMETRO" Width="1.5" PointX="14" PointY="0.875" />
+        <EntityTypeShape EntityType="AdministracionModelo.PARAMETRO_CLAVE" Width="1.5" PointX="11.75" PointY="1.125" />
+        <EntityTypeShape EntityType="AdministracionModelo.PERSONA" Width="1.5" PointX="3" PointY="19.875" />
+        <EntityTypeShape EntityType="AdministracionModelo.PERSONA_BIOMETRICO" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_ASIGNACION_BITACORA" Width="1.5" PointX="7.5" PointY="11.625" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_ASIGNACION_RESULTADO" Width="1.5" PointX="15" PointY="14.875" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_CATALOGO" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_CATALOGO_ESTATUS" Width="1.5" PointX="0.75" PointY="7.375" />
+        <EntityTypeShape EntityType="AdministracionModelo.PROCESO" Width="1.5" PointX="7.375" PointY="1.125" />
+        <EntityTypeShape EntityType="AdministracionModelo.PROCESO_ROL" Width="1.5" PointX="9.75" PointY="1.125" />
+        <EntityTypeShape EntityType="AdministracionModelo.PROCESO_USUARIO" Width="1.5" PointX="9.75" PointY="5.375" />
+        <EntityTypeShape EntityType="AdministracionModelo.SECTOR" Width="1.5" PointX="10.5" PointY="15.25" />
+        <EntityTypeShape EntityType="AdministracionModelo.TIPO_CELDA" Width="1.5" PointX="10.5" PointY="18.625" />
+        <EntityTypeShape EntityType="AdministracionModelo.TIPO_CENTRO" Width="1.5" PointX="0.75" PointY="15.625" />
+        <EntityTypeShape EntityType="AdministracionModelo.TIPO_EDIFICIO" Width="1.5" PointX="5" PointY="0.75" />
+        <EntityTypeShape EntityType="AdministracionModelo.TIPO_EMPLEADO" Width="1.5" PointX="3" PointY="10.5" />
+        <EntityTypeShape EntityType="AdministracionModelo.TIPO_INGRESO" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AdministracionModelo.TIPO_PERSONA" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="AdministracionModelo.USUARIO" Width="1.5" PointX="7.5" PointY="6.625" />
+        <EntityTypeShape EntityType="AdministracionModelo.USUARIO_MENSAJE" Width="1.5" PointX="9.75" PointY="9.25" />
+        <EntityTypeShape EntityType="AdministracionModelo.USUARIO_ROL" Width="1.5" PointX="9.75" PointY="12" />
+        <AssociationConnector Association="AdministracionModelo.FK_IMPUTADO_REFERENCE_TIPO_BIO" />
+        <AssociationConnector Association="AdministracionModelo.FK_INGRESO__TIPOBIO_I_BIOMETRI" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGN_RESULT_CELDA" />
+        <AssociationConnector Association="AdministracionModelo.FK_CELDA_REFERENCE_SECTOR" />
+        <AssociationConnector Association="AdministracionModelo.FK_CELDA_REFERENCE_TIPO_CEL" />
+        <AssociationConnector Association="AdministracionModelo.FK_CENTRO_REFERENCE_TIPO_CEN" />
+        <AssociationConnector Association="AdministracionModelo.FK_EDIFICIO_REFERENCE_CENTRO" />
+        <AssociationConnector Association="AdministracionModelo.FK_EMPLEADO_REFERENCE_CENTRO" />
+        <AssociationConnector Association="AdministracionModelo.FK_IMPUTADO_REFERENCE_CENTRO" />
+        <AssociationConnector Association="AdministracionModelo.FK_INGRESO_REFERENCE_CENTRO" />
+        <AssociationConnector Association="AdministracionModelo.FK_EDIFICIO_REFERENCE_TIPO_EDI" />
+        <AssociationConnector Association="AdministracionModelo.FK_SECTOR_REFERENCE_EDIFICIO" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGN_BIT_EMPLEADO" />
+        <AssociationConnector Association="AdministracionModelo.FK_EMPLEADO_REFERENCE_PERSONA" />
+        <AssociationConnector Association="AdministracionModelo.FK_EMPLEADO_REFERENCE_TIPO_EMP" />
+        <AssociationConnector Association="AdministracionModelo.FK_USUARIO_REFERENCE_EMPLEADO" />
+        <AssociationConnector Association="AdministracionModelo.FK_IMPUTADOBIO_IMPUTADO" />
+        <AssociationConnector Association="AdministracionModelo.FK_INGRESO_REFERENCE_IMPUTADO" />
+        <AssociationConnector Association="AdministracionModelo.FK_INGRESO__REFERENCE_BIO" />
+        <AssociationConnector Association="AdministracionModelo.FK_PARAMETR_REFERENCE_PARAMETR" />
+        <AssociationConnector Association="AdministracionModelo.FK_PERSONA_REFERENCE_TIPO_PER" />
+        <AssociationConnector Association="AdministracionModelo.FK_PL_CATALOGO_ESTATUS" />
+        <AssociationConnector Association="AdministracionModelo.FK_PROCESO__REFERENCE_PROCES2" />
+        <AssociationConnector Association="AdministracionModelo.FK_PROCESO__REFERENCE_PROCESO" />
+        <AssociationConnector Association="AdministracionModelo.FK_PROCESO__REFERENCE_USUARIO" />
+        <AssociationConnector Association="AdministracionModelo.FK_USUARIO__REFERENCE_USU" />
+        <AssociationConnector Association="AdministracionModelo.FK_USUARIO__REFERENCE_USUARIO" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_PROGRAMADO" Width="1.5" PointX="12.5" PointY="10.625" />
+        <AssociationConnector Association="AdministracionModelo.FK_PROGRAMADO_CENTRO" />
+        <AssociationConnector Association="AdministracionModelo.FK_PROGRAMADO_EMPLEADO" />
+        <AssociationConnector Association="AdministracionModelo.FK_PROGRAMADO_CATALOGO" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_INCIDENCIA_ESTATUS" Width="1.5" PointX="12.375" PointY="7.75" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_PROGRAMADO_ASIGNACION" Width="1.5" PointX="14.75" PointY="10.875" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGNACION_EDIFICIO" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGNACION_EMPLEADO" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGN_RESULT_PL_ASIGN" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGNACION_PL_PGR" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGNACION_SECTOR" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_INCIDENCIA_CATALOGO" Width="1.5" PointX="12.75" PointY="4.875" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_INCIDENCIA_BITACORA" Width="1.5" PointX="11.535140722773569" PointY="1.1556596761362905" />
+        <EntityTypeShape EntityType="AdministracionModelo.PL_PROGRAMADO_BITACORA" Width="1.5" PointX="0.016912043102510294" PointY="23.567824031956413" />
+        <AssociationConnector Association="AdministracionModelo.FK_INCIDENCIA_BIT_IMPUTADO" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGN_BIT_PGR_BIT_" />
+        <AssociationConnector Association="AdministracionModelo.FK_INCIDENCIA_BIT_ESTATUS" />
+        <AssociationConnector Association="AdministracionModelo.FK_INCIDENCIA_BIT_INCIDENCIA" />
+        <AssociationConnector Association="AdministracionModelo.FK_INCIDENCIA_BIT_PGR_BIT" />
+        <AssociationConnector Association="AdministracionModelo.FK_PL_PGR_BIT_PROGRA" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGN_RESULT_PL_BITACORA" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGN_RESULT_EDIFICIO" />
+        <AssociationConnector Association="AdministracionModelo.FK_ASIGN_RESULT_SECTOR" />
+        <AssociationConnector Association="AdministracionModelo.PL_INCIDENCIA_BITACORA_FK1" />
+        <EntityTypeShape EntityType="AdministracionModelo.LOGFALLASERVICIO" Width="3.125" PointX="14.75" PointY="3.875" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

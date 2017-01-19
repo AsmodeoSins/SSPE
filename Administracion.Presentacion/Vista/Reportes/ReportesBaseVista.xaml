@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Administracion.Presentacion.Vista.ReportesBaseVista"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+             xmlns:vista="clr-namespace:Administracion.Presentacion.Vista"
+             mc:Ignorable="d" d:DesignHeight="400" d:DesignWidth="600" 
+             DataContext="{Binding BaseTabs, Source={StaticResource Localizador}}">
+
+    <TabControl x:Name="TabControlReportes" Style="{StaticResource TabControlVertical}" TabStripPlacement="Left" >
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="SelectionChanged">
+                <mvvm:EventToCommand  Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, Mode=FindAncestor}, Path=DataContext.CargarTabCommand }"
+                                      CommandParameter="{Binding Path=SelectedItem, ElementName=TabControlReportes}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+
+        <TabItem Header="Pases de Lista"  Style="{StaticResource TabVertical}" HorizontalAlignment="Right" Width="120">
+            <Canvas Width="Auto">
+                <vista:PaseListaReporteVista Style="{StaticResource CustomUserControl}" HorizontalAlignment="Left"/>
+            </Canvas>
+        </TabItem>
+        <TabItem Header="Incidencias"  Style="{StaticResource TabVertical}" >
+            <Canvas Width="Auto">
+                <vista:IncidenciaPorInternoVista Style="{StaticResource CustomUserControl}" HorizontalAlignment="Left"/>
+            </Canvas>
+        </TabItem>
+    </TabControl>
+
+</UserControl>

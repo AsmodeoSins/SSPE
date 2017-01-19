@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Administracion.Presentacion.Vista.CatalogoBaseVista"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+             xmlns:vista="clr-namespace:Administracion.Presentacion.Vista"
+             mc:Ignorable="d" 
+             xmlns:op="clr-namespace:Administracion.Presentacion.Convertidores"
+             xmlns:a="clr-namespace:UIAuthorization"
+             xmlns:local="clr-namespace:Administracion.Presentacion.Utilidades"
+             DataContext="{Binding BaseTabs, Source={StaticResource Localizador}}">
+
+    <TabControl x:Name="TabControlCatalogos" Style="{StaticResource TabControlVertical}" TabStripPlacement="Left">
+        <i:Interaction.Triggers>
+            <local:EventTriggerSinPropagacion EventName="SelectionChanged">
+                <mvvm:EventToCommand Command="{Binding CargarTabHijoCommand}" CommandParameter="{Binding Path=SelectedItem, ElementName=TabControlCatalogos, NotifyOnTargetUpdated=True}"/>
+            </local:EventTriggerSinPropagacion>
+            <!--<i:EventTrigger EventName="SelectionChanged">
+                <mvvm:EventToCommand  Command="{Binding CargarTabHijoCommand}" 
+                                      CommandParameter="{Binding Path=SelectedItem, ElementName=TabControlCatalogos}"/>
+            </i:EventTrigger>-->
+        </i:Interaction.Triggers>
+
+        <TabItem Header="Pase de Lista"  Style="{StaticResource TabVertical}" Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.PL_CATALOGO }}">
+            <vista:PaseListaVista HorizontalAlignment="Left" Margin="15" />
+        </TabItem>
+        <TabItem Header="Tipos de &#10;Incidencias" Style="{StaticResource TabVertical}" Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.PL_CATALOGO }}">
+            <vista:IncidenciasVista HorizontalAlignment="Left" Margin="15"/>
+        </TabItem>
+        <TabItem Header="Tiempo de &#10;Pase de Lista" Style="{StaticResource TabVertical}" Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.PL_CATALOGO }}">
+            <vista:TiempoPaseListaVista HorizontalAlignment="Left" Margin="15" />
+        </TabItem>
+    </TabControl>
+</UserControl>

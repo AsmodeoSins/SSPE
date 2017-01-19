@@ -1,0 +1,75 @@
+﻿<Window x:Class="Administracion.Enrolamiento.PrincipalVista"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:sys="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+        xmlns:ms="clr-namespace:System;assembly=mscorlib"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Administracion.Enrolamiento.Utilidades"
+        xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+        Title="ENROLAMIENTO" Width="600" SizeToContent="Height" WindowStartupLocation="CenterScreen"
+        DataContext="{Binding Principal, Source={StaticResource Localizador}}">
+    <Window.Resources>
+        <sys:BooleanToVisibilityConverter x:Key="VisibleConvertidor" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="210"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="ENROLAMIENTO DE PLANTILLAS DE IRIS" Style="{StaticResource Titulo}" HorizontalAlignment="Center"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Centro Id:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CentroId}" />
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Base de Datos Fuente:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ServidorBD}" />
+        <Label Grid.Row="2" Grid.Column="2" Content="Ej. 192.10.3.69/SSPE"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Usuario:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding UsuarioBD}" />
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Contraseña:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ContrasenaBD}" />
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Servidor Biometrico:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding ServidorBiometrico}" />
+        <Label Grid.Row="5" Grid.Column="2" Content="Ej. 172.20.2.159" />
+
+        <ScrollViewer Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="10" MaxHeight="400" ScrollViewer.VerticalScrollBarVisibility="Auto" local:ScrollViewerExtension.AutoScroll="{Binding LogsCambiaron}" >
+            <ItemsControl ItemsSource="{Binding Mensajes}" >
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <BulletDecorator Width="Auto" Margin="5" VerticalAlignment="Center">
+                            <BulletDecorator.Bullet>
+                                <Ellipse Fill="#8A0808" Stroke="#979898" StrokeThickness="1" Width="8" Height="8"/>
+                            </BulletDecorator.Bullet>
+                            <TextBlock Text="{Binding }" TextWrapping="Wrap" Foreground="#8A0808" Style="{StaticResource Mensaje}" Margin="5,0"/>
+                        </BulletDecorator>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+       
+        <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Height="30" Margin="10" Visibility="{Binding MostrarProgreso, Converter={StaticResource VisibleConvertidor}}"  >
+            <ProgressBar Name="pbEstatus" IsIndeterminate="{Binding EsIndeterminado}"  Value="{Binding ProgresoActual, Mode=OneWay}" />
+            <TextBlock Text="{Binding ProgresoMensaje}" HorizontalAlignment="Center" Foreground="#FF595959" FontWeight="Bold" VerticalAlignment="Center" />
+        </Grid>
+
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15" >
+            <Button Style="{StaticResource BotonVerde}" Command="{Binding EnrolarCommand}" IsEnabled="{Binding BotonEnrolarActivo}">Enrolar</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

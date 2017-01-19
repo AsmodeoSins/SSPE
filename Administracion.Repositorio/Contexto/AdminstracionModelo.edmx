@@ -1,0 +1,1526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Modelos.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ModelosStoreContainer">
+          <EntitySet Name="BIOMETRICO_FORMATO" EntityType="Modelos.Store.BIOMETRICO_FORMATO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="BIOMETRICO_TIPO" EntityType="Modelos.Store.BIOMETRICO_TIPO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="CELDA" EntityType="Modelos.Store.CELDA" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="CENTRO" EntityType="Modelos.Store.CENTRO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="EDIFICIO" EntityType="Modelos.Store.EDIFICIO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="EMPLEADO" EntityType="Modelos.Store.EMPLEADO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="IMPUTADO" EntityType="Modelos.Store.IMPUTADO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="IMPUTADO_BIOMETRICO" EntityType="Modelos.Store.IMPUTADO_BIOMETRICO" store:Type="Tables" store:Schema="HR" store:Name="IMPUTADO_BIOMETRICO">
+            <DefiningQuery>SELECT 
+      "IMPUTADO_BIOMETRICO"."ID_IMPUTADO" AS "ID_IMPUTADO", 
+      "IMPUTADO_BIOMETRICO"."ID_CENTRO" AS "ID_CENTRO", 
+      "IMPUTADO_BIOMETRICO"."ID_TIPO_BIOMETRICO" AS "ID_TIPO_BIOMETRICO", 
+      "IMPUTADO_BIOMETRICO"."ID_FORMATO" AS "ID_FORMATO", 
+      "IMPUTADO_BIOMETRICO"."BIOMETRICO" AS "BIOMETRICO", 
+      "IMPUTADO_BIOMETRICO"."CALIDAD" AS "CALIDAD"
+      FROM "HR"."IMPUTADO_BIOMETRICO" "IMPUTADO_BIOMETRICO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="INCIDENCIA" EntityType="Modelos.Store.INCIDENCIA" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="INCIDENTE_TIPO" EntityType="Modelos.Store.INCIDENTE_TIPO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="PARAMETRO" EntityType="Modelos.Store.PARAMETRO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="PASELISTA_ASIGNADO" EntityType="Modelos.Store.PASELISTA_ASIGNADO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="PASELISTA_CATALOGO" EntityType="Modelos.Store.PASELISTA_CATALOGO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="PASELISTA_CATALOGO_ESTATUS" EntityType="Modelos.Store.PASELISTA_CATALOGO_ESTATUS" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="PASELISTA_PROGRAMADO" EntityType="Modelos.Store.PASELISTA_PROGRAMADO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="PASELISTA_PROGRAMADO_ESTATUS" EntityType="Modelos.Store.PASELISTA_PROGRAMADO_ESTATUS" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="PASELISTA_RESULTADO" EntityType="Modelos.Store.PASELISTA_RESULTADO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="PERSONA" EntityType="Modelos.Store.PERSONA" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="PERSONA_BIOMETRICO" EntityType="Modelos.Store.PERSONA_BIOMETRICO" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="SECTOR" EntityType="Modelos.Store.SECTOR" store:Type="Tables" Schema="HR" />
+          <EntitySet Name="TIPO_EMPLEADO" EntityType="Modelos.Store.TIPO_EMPLEADO" store:Type="Tables" Schema="HR" />
+          <AssociationSet Name="CELDA_CENTRO_FK" Association="Modelos.Store.CELDA_CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="CELDA" EntitySet="CELDA" />
+          </AssociationSet>
+          <AssociationSet Name="CELDA_EDIFICIO_FK" Association="Modelos.Store.CELDA_EDIFICIO_FK">
+            <End Role="EDIFICIO" EntitySet="EDIFICIO" />
+            <End Role="CELDA" EntitySet="CELDA" />
+          </AssociationSet>
+          <AssociationSet Name="CELDA_SECTOR_FK" Association="Modelos.Store.CELDA_SECTOR_FK">
+            <End Role="SECTOR" EntitySet="SECTOR" />
+            <End Role="CELDA" EntitySet="CELDA" />
+          </AssociationSet>
+          <AssociationSet Name="CENTRO_FK" Association="Modelos.Store.CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="EDIFICIO" EntitySet="EDIFICIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLEADO_TIPO" Association="Modelos.Store.FK_EMPLEADO_TIPO">
+            <End Role="TIPO_EMPLEADO" EntitySet="TIPO_EMPLEADO" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_ASIGN_EDIFICIO" Association="Modelos.Store.FK_PASELISTA_ASIGN_EDIFICIO">
+            <End Role="EDIFICIO" EntitySet="EDIFICIO" />
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_ASIGN_EMPLEADO" Association="Modelos.Store.FK_PASELISTA_ASIGN_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_ASIGN_PROGRAMADO" Association="Modelos.Store.FK_PASELISTA_ASIGN_PROGRAMADO">
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_ASIGN_SECTOR" Association="Modelos.Store.FK_PASELISTA_ASIGN_SECTOR">
+            <End Role="SECTOR" EntitySet="SECTOR" />
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_CATALOGO_ESTATUS" Association="Modelos.Store.FK_PASELISTA_CATALOGO_ESTATUS">
+            <End Role="PASELISTA_CATALOGO_ESTATUS" EntitySet="PASELISTA_CATALOGO_ESTATUS" />
+            <End Role="PASELISTA_CATALOGO" EntitySet="PASELISTA_CATALOGO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_PGR_CATALOGO" Association="Modelos.Store.FK_PASELISTA_PGR_CATALOGO">
+            <End Role="PASELISTA_CATALOGO" EntitySet="PASELISTA_CATALOGO" />
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_PGR_CENTRO" Association="Modelos.Store.FK_PASELISTA_PGR_CENTRO">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_PGR_EMPLEADO" Association="Modelos.Store.FK_PASELISTA_PGR_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_PGR_ESTATUS" Association="Modelos.Store.FK_PASELISTA_PGR_ESTATUS">
+            <End Role="PASELISTA_PROGRAMADO_ESTATUS" EntitySet="PASELISTA_PROGRAMADO_ESTATUS" />
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_RESULT_ASIGNADO" Association="Modelos.Store.FK_PASELISTA_RESULT_ASIGNADO">
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+            <End Role="PASELISTA_RESULTADO" EntitySet="PASELISTA_RESULTADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_RESULT_CELDA" Association="Modelos.Store.FK_PASELISTA_RESULT_CELDA">
+            <End Role="CELDA" EntitySet="CELDA" />
+            <End Role="PASELISTA_RESULTADO" EntitySet="PASELISTA_RESULTADO" />
+          </AssociationSet>
+          <AssociationSet Name="FORMATO_BIOMETRICO_FK" Association="Modelos.Store.FORMATO_BIOMETRICO_FK">
+            <End Role="BIOMETRICO_FORMATO" EntitySet="BIOMETRICO_FORMATO" />
+            <End Role="PERSONA_BIOMETRICO" EntitySet="PERSONA_BIOMETRICO" />
+          </AssociationSet>
+          <AssociationSet Name="IMPUTADO_CENTRO_FK" Association="Modelos.Store.IMPUTADO_CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="IMPUTADO" EntitySet="IMPUTADO" />
+          </AssociationSet>
+          <AssociationSet Name="PARAMETRO_CENTRO_FK" Association="Modelos.Store.PARAMETRO_CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="PARAMETRO" EntitySet="PARAMETRO" />
+          </AssociationSet>
+          <AssociationSet Name="PERSONA_FK" Association="Modelos.Store.PERSONA_FK">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="PERSONA_BIOMETRICO" EntitySet="PERSONA_BIOMETRICO" />
+          </AssociationSet>
+          <AssociationSet Name="SECTOR_CENTRO_FK" Association="Modelos.Store.SECTOR_CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="SECTOR" EntitySet="SECTOR" />
+          </AssociationSet>
+          <AssociationSet Name="SECTOR_EDIFICIO_FK" Association="Modelos.Store.SECTOR_EDIFICIO_FK">
+            <End Role="EDIFICIO" EntitySet="EDIFICIO" />
+            <End Role="SECTOR" EntitySet="SECTOR" />
+          </AssociationSet>
+          <AssociationSet Name="TIPO_BIOMETRICO_FK" Association="Modelos.Store.TIPO_BIOMETRICO_FK">
+            <End Role="BIOMETRICO_TIPO" EntitySet="BIOMETRICO_TIPO" />
+            <End Role="PERSONA_BIOMETRICO" EntitySet="PERSONA_BIOMETRICO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BIOMETRICO_FORMATO">
+          <Key>
+            <PropertyRef Name="ID_FORMATO" />
+          </Key>
+          <Property Name="ID_FORMATO" Type="number" Nullable="false" Precision="4" />
+          <Property Name="DESCR" Type="varchar2" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="BIOMETRICO_TIPO">
+          <Key>
+            <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+          </Key>
+          <Property Name="ID_TIPO_BIOMETRICO" Type="number" Nullable="false" Precision="4" />
+          <Property Name="TIPO_BIOMETRICO" Type="varchar2" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="CELDA">
+          <Key>
+            <PropertyRef Name="ID_CELDA" />
+          </Key>
+          <Property Name="ID_CELDA" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="ID_CENTRO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_EDIFICIO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_SECTOR" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_TIPO_SEGURIDA" Type="char" MaxLength="1" />
+          <Property Name="ID_TIPO_CELDA" Type="char" MaxLength="1" />
+          <Property Name="NIVEL_EDIFICIO" Type="number" Precision="2" />
+        </EntityType>
+        <EntityType Name="CENTRO">
+          <Key>
+            <PropertyRef Name="ID_CENTRO" />
+          </Key>
+          <Property Name="ID_CENTRO" Type="number" Nullable="false" Precision="3" />
+          <Property Name="ID_TIPO_CENTRO" Type="number" Precision="2" />
+          <Property Name="ID_ENTIDAD" Type="varchar2" MaxLength="4" />
+          <Property Name="ID_MUNICIPIO" Type="varchar2" MaxLength="4" />
+          <Property Name="DESCR" Type="char" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EDIFICIO">
+          <Key>
+            <PropertyRef Name="ID_EDIFICIO" />
+          </Key>
+          <Property Name="ID_EDIFICIO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_CENTRO" Type="number" Nullable="false" Precision="3" />
+          <Property Name="ID_TIPO_EDIFICIO" Type="number" Precision="2" />
+          <Property Name="DESCR" Type="char" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="ID_EMPLEADO" />
+          </Key>
+          <Property Name="ID_EMPLEADO" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ID_TIPO_EMPLEADO" Type="number" Precision="2" />
+          <Property Name="ID_AREA_EMP" Type="number" Precision="3" />
+          <Property Name="ID_CENTRO" Type="number" Precision="2" />
+          <Property Name="NUMERO_EMPLEADO" Type="varchar2" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="IMPUTADO">
+          <Key>
+            <PropertyRef Name="ID_IMPUTADO" />
+          </Key>
+          <Property Name="ID_CENTRO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_IMPUTADO" Type="number" Nullable="false" Precision="6" />
+          <Property Name="PATERNO" Type="char" MaxLength="30" />
+          <Property Name="MATERNO" Type="char" MaxLength="30" />
+          <Property Name="NOMBRE" Type="char" MaxLength="40" />
+          <Property Name="SEXO" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'HR.IMPUTADO_BIOMETRICO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="IMPUTADO_BIOMETRICO">
+          <Key>
+            <PropertyRef Name="ID_IMPUTADO" />
+            <PropertyRef Name="ID_CENTRO" />
+            <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+            <PropertyRef Name="ID_FORMATO" />
+          </Key>
+          <Property Name="ID_IMPUTADO" Type="number" Nullable="false" Precision="6" />
+          <Property Name="ID_CENTRO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_TIPO_BIOMETRICO" Type="number" Nullable="false" Precision="4" />
+          <Property Name="ID_FORMATO" Type="number" Nullable="false" Precision="4" />
+          <Property Name="BIOMETRICO" Type="blob" />
+          <Property Name="CALIDAD" Type="number" Precision="1" />
+        </EntityType>
+        <EntityType Name="INCIDENCIA">
+          <Key>
+            <PropertyRef Name="INCIDENCIA" />
+          </Key>
+          <Property Name="INCIDENCIA" Type="number" Nullable="false" Precision="2" />
+          <Property Name="DESCR" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="LOGIN_MODIF" Type="char" MaxLength="40" />
+          <Property Name="FECHA_MODIF" Type="date" />
+          <Property Name="EVENTO" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="INCIDENTE_TIPO">
+          <Key>
+            <PropertyRef Name="ID_INCIDENTE_TIPO" />
+          </Key>
+          <Property Name="ID_INCIDENTE_TIPO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="DESCR" Type="varchar2" MaxLength="20" />
+          <Property Name="ID_APLICACION" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PARAMETRO">
+          <Key>
+            <PropertyRef Name="ID_CLAVE" />
+            <PropertyRef Name="ID_CENTRO" />
+          </Key>
+          <Property Name="ID_CLAVE" Type="char" Nullable="false" MaxLength="30" />
+          <Property Name="ID_CENTRO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="VALOR" Type="varchar2" MaxLength="100" />
+          <Property Name="VALOR_NUM" Type="number" Precision="10" />
+          <Property Name="CONTENIDO" Type="blob" />
+        </EntityType>
+        <EntityType Name="PASELISTA_ASIGNADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ID_PASELISTA_PROGRAMADO" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ID_EDIFICIO" Type="number" Nullable="false" Precision="3" />
+          <Property Name="ID_SECTOR" Type="number" Nullable="false" Precision="2" />
+          <Property Name="NIVEL_EDIFICIO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="EMPLEADO_ASIGNADO" Type="number" Nullable="false" Precision="10" />
+          <Property Name="POBLACION" Type="number" Precision="5" />
+          <Property Name="HORA_INICIAL" Type="timestamp" />
+          <Property Name="HORA_FINAL" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="PASELISTA_CATALOGO">
+          <Key>
+            <PropertyRef Name="ID_PASELISTA" />
+          </Key>
+          <Property Name="ID_PASELISTA" Type="number" Nullable="false" Precision="4" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="DESCR" Type="varchar2" MaxLength="20" />
+          <Property Name="HORA" Type="timestamp" Nullable="false" />
+          <Property Name="ID_STATUS" Type="number" Nullable="false" Precision="1" />
+        </EntityType>
+        <EntityType Name="PASELISTA_CATALOGO_ESTATUS">
+          <Key>
+            <PropertyRef Name="ID_ESTATUS" />
+          </Key>
+          <Property Name="ID_ESTATUS" Type="number" Nullable="false" Precision="1" />
+          <Property Name="STATUS" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="DESCR" Type="varchar2" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="PASELISTA_PROGRAMADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ID_PASELISTA" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_CENTRO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_ESTATUS" Type="number" Precision="2" />
+          <Property Name="FECH_MODIF" Type="date" />
+          <Property Name="ID_EMPLEADO_MODIF" Type="number" Precision="10" />
+        </EntityType>
+        <EntityType Name="PASELISTA_PROGRAMADO_ESTATUS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="2" />
+          <Property Name="NOMBRE" Type="char" MaxLength="20" />
+          <Property Name="DESCR" Type="char" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="PASELISTA_RESULTADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ID_PASELISTA_ASIGN" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ID_CELDA" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="HORA_INICIAL" Type="timestamp" />
+          <Property Name="HORA_FINAL" Type="timestamp" />
+          <Property Name="ASISTENCIAS" Type="number" Precision="5" />
+          <Property Name="INASISTENCIAS" Type="number" Precision="5" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="number" Nullable="false" Precision="10" />
+          <Property Name="PATERNO" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERNO" Type="varchar2" MaxLength="20" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="PERSONA_BIOMETRICO">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+            <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+            <PropertyRef Name="ID_FORMATO" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ID_TIPO_BIOMETRICO" Type="number" Nullable="false" Precision="4" />
+          <Property Name="ID_FORMATO" Type="number" Nullable="false" Precision="4" />
+          <Property Name="BIOMETRICO" Type="blob" />
+          <Property Name="NORIGINAL" Type="number" Precision="10" />
+        </EntityType>
+        <EntityType Name="SECTOR">
+          <Key>
+            <PropertyRef Name="ID_SECTOR" />
+          </Key>
+          <Property Name="ID_SECTOR" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_CENTRO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="ID_EDIFICIO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="DESCR" Type="char" MaxLength="20" />
+          <Property Name="PLANO" Type="blob" />
+        </EntityType>
+        <EntityType Name="TIPO_EMPLEADO">
+          <Key>
+            <PropertyRef Name="ID_TIPO_EMPLEADO" />
+          </Key>
+          <Property Name="ID_TIPO_EMPLEADO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="DESCR" Type="char" MaxLength="30" />
+        </EntityType>
+        <Association Name="CELDA_CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.Store.CENTRO" Multiplicity="1" />
+          <End Role="CELDA" Type="Modelos.Store.CELDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="CELDA">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CELDA_EDIFICIO_FK">
+          <End Role="EDIFICIO" Type="Modelos.Store.EDIFICIO" Multiplicity="1" />
+          <End Role="CELDA" Type="Modelos.Store.CELDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EDIFICIO">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Principal>
+            <Dependent Role="CELDA">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CELDA_SECTOR_FK">
+          <End Role="SECTOR" Type="Modelos.Store.SECTOR" Multiplicity="1" />
+          <End Role="CELDA" Type="Modelos.Store.CELDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTOR">
+              <PropertyRef Name="ID_SECTOR" />
+            </Principal>
+            <Dependent Role="CELDA">
+              <PropertyRef Name="ID_SECTOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.Store.CENTRO" Multiplicity="1" />
+          <End Role="EDIFICIO" Type="Modelos.Store.EDIFICIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="EDIFICIO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLEADO_TIPO">
+          <End Role="TIPO_EMPLEADO" Type="Modelos.Store.TIPO_EMPLEADO" Multiplicity="0..1" />
+          <End Role="EMPLEADO" Type="Modelos.Store.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_EMPLEADO">
+              <PropertyRef Name="ID_TIPO_EMPLEADO" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="ID_TIPO_EMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_ASIGN_EDIFICIO">
+          <End Role="EDIFICIO" Type="Modelos.Store.EDIFICIO" Multiplicity="1" />
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.Store.PASELISTA_ASIGNADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EDIFICIO">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Principal>
+            <Dependent Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_ASIGN_EMPLEADO">
+          <End Role="EMPLEADO" Type="Modelos.Store.EMPLEADO" Multiplicity="1" />
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.Store.PASELISTA_ASIGNADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="ID_EMPLEADO" />
+            </Principal>
+            <Dependent Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="EMPLEADO_ASIGNADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_ASIGN_PROGRAMADO">
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.Store.PASELISTA_PROGRAMADO" Multiplicity="1" />
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.Store.PASELISTA_ASIGNADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="ID_PASELISTA_PROGRAMADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_ASIGN_SECTOR">
+          <End Role="SECTOR" Type="Modelos.Store.SECTOR" Multiplicity="1" />
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.Store.PASELISTA_ASIGNADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTOR">
+              <PropertyRef Name="ID_SECTOR" />
+            </Principal>
+            <Dependent Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="ID_SECTOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_CATALOGO_ESTATUS">
+          <End Role="PASELISTA_CATALOGO_ESTATUS" Type="Modelos.Store.PASELISTA_CATALOGO_ESTATUS" Multiplicity="1" />
+          <End Role="PASELISTA_CATALOGO" Type="Modelos.Store.PASELISTA_CATALOGO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_CATALOGO_ESTATUS">
+              <PropertyRef Name="ID_ESTATUS" />
+            </Principal>
+            <Dependent Role="PASELISTA_CATALOGO">
+              <PropertyRef Name="ID_STATUS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_PGR_CATALOGO">
+          <End Role="PASELISTA_CATALOGO" Type="Modelos.Store.PASELISTA_CATALOGO" Multiplicity="1" />
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.Store.PASELISTA_PROGRAMADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_CATALOGO">
+              <PropertyRef Name="ID_PASELISTA" />
+            </Principal>
+            <Dependent Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID_PASELISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_PGR_CENTRO">
+          <End Role="CENTRO" Type="Modelos.Store.CENTRO" Multiplicity="1" />
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.Store.PASELISTA_PROGRAMADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_PGR_EMPLEADO">
+          <End Role="EMPLEADO" Type="Modelos.Store.EMPLEADO" Multiplicity="0..1" />
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.Store.PASELISTA_PROGRAMADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="ID_EMPLEADO" />
+            </Principal>
+            <Dependent Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID_EMPLEADO_MODIF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_PGR_ESTATUS">
+          <End Role="PASELISTA_PROGRAMADO_ESTATUS" Type="Modelos.Store.PASELISTA_PROGRAMADO_ESTATUS" Multiplicity="0..1" />
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.Store.PASELISTA_PROGRAMADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_PROGRAMADO_ESTATUS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID_ESTATUS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_RESULT_ASIGNADO">
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.Store.PASELISTA_ASIGNADO" Multiplicity="1" />
+          <End Role="PASELISTA_RESULTADO" Type="Modelos.Store.PASELISTA_RESULTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PASELISTA_RESULTADO">
+              <PropertyRef Name="ID_PASELISTA_ASIGN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_RESULT_CELDA">
+          <End Role="CELDA" Type="Modelos.Store.CELDA" Multiplicity="1" />
+          <End Role="PASELISTA_RESULTADO" Type="Modelos.Store.PASELISTA_RESULTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CELDA">
+              <PropertyRef Name="ID_CELDA" />
+            </Principal>
+            <Dependent Role="PASELISTA_RESULTADO">
+              <PropertyRef Name="ID_CELDA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FORMATO_BIOMETRICO_FK">
+          <End Role="BIOMETRICO_FORMATO" Type="Modelos.Store.BIOMETRICO_FORMATO" Multiplicity="1" />
+          <End Role="PERSONA_BIOMETRICO" Type="Modelos.Store.PERSONA_BIOMETRICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIOMETRICO_FORMATO">
+              <PropertyRef Name="ID_FORMATO" />
+            </Principal>
+            <Dependent Role="PERSONA_BIOMETRICO">
+              <PropertyRef Name="ID_FORMATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMPUTADO_CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.Store.CENTRO" Multiplicity="1" />
+          <End Role="IMPUTADO" Type="Modelos.Store.IMPUTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="IMPUTADO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PARAMETRO_CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.Store.CENTRO" Multiplicity="1" />
+          <End Role="PARAMETRO" Type="Modelos.Store.PARAMETRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="PARAMETRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PERSONA_FK">
+          <End Role="PERSONA" Type="Modelos.Store.PERSONA" Multiplicity="1" />
+          <End Role="PERSONA_BIOMETRICO" Type="Modelos.Store.PERSONA_BIOMETRICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="PERSONA_BIOMETRICO">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SECTOR_CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.Store.CENTRO" Multiplicity="1" />
+          <End Role="SECTOR" Type="Modelos.Store.SECTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="SECTOR">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SECTOR_EDIFICIO_FK">
+          <End Role="EDIFICIO" Type="Modelos.Store.EDIFICIO" Multiplicity="1" />
+          <End Role="SECTOR" Type="Modelos.Store.SECTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EDIFICIO">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Principal>
+            <Dependent Role="SECTOR">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TIPO_BIOMETRICO_FK">
+          <End Role="BIOMETRICO_TIPO" Type="Modelos.Store.BIOMETRICO_TIPO" Multiplicity="1" />
+          <End Role="PERSONA_BIOMETRICO" Type="Modelos.Store.PERSONA_BIOMETRICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIOMETRICO_TIPO">
+              <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+            </Principal>
+            <Dependent Role="PERSONA_BIOMETRICO">
+              <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Modelos" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AdministracionContexto" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BIOMETRICO_FORMATO" EntityType="Modelos.BIOMETRICO_FORMATO" />
+          <EntitySet Name="BIOMETRICO_TIPO" EntityType="Modelos.BIOMETRICO_TIPO" />
+          <EntitySet Name="CELDA" EntityType="Modelos.CELDA" />
+          <EntitySet Name="CENTRO" EntityType="Modelos.CENTRO" />
+          <EntitySet Name="EDIFICIO" EntityType="Modelos.EDIFICIO" />
+          <EntitySet Name="EMPLEADO" EntityType="Modelos.EMPLEADO" />
+          <EntitySet Name="IMPUTADO" EntityType="Modelos.IMPUTADO" />
+          <EntitySet Name="IMPUTADO_BIOMETRICO" EntityType="Modelos.IMPUTADO_BIOMETRICO" />
+          <EntitySet Name="INCIDENCIA" EntityType="Modelos.INCIDENCIA" />
+          <EntitySet Name="INCIDENTE_TIPO" EntityType="Modelos.INCIDENTE_TIPO" />
+          <EntitySet Name="PARAMETRO" EntityType="Modelos.PARAMETRO" />
+          <EntitySet Name="PASELISTA_ASIGNADO" EntityType="Modelos.PASELISTA_ASIGNADO" />
+          <EntitySet Name="PASELISTA_CATALOGO" EntityType="Modelos.PASELISTA_CATALOGO" />
+          <EntitySet Name="PASELISTA_CATALOGO_ESTATUS" EntityType="Modelos.PASELISTA_CATALOGO_ESTATUS" />
+          <EntitySet Name="PASELISTA_PROGRAMADO" EntityType="Modelos.PASELISTA_PROGRAMADO" />
+          <EntitySet Name="PASELISTA_PROGRAMADO_ESTATUS" EntityType="Modelos.PASELISTA_PROGRAMADO_ESTATUS" />
+          <EntitySet Name="PASELISTA_RESULTADO" EntityType="Modelos.PASELISTA_RESULTADO" />
+          <EntitySet Name="PERSONA" EntityType="Modelos.PERSONA" />
+          <EntitySet Name="PERSONA_BIOMETRICO" EntityType="Modelos.PERSONA_BIOMETRICO" />
+          <EntitySet Name="SECTOR" EntityType="Modelos.SECTOR" />
+          <EntitySet Name="TIPO_EMPLEADO" EntityType="Modelos.TIPO_EMPLEADO" />
+          <AssociationSet Name="FORMATO_BIOMETRICO_FK" Association="Modelos.FORMATO_BIOMETRICO_FK">
+            <End Role="BIOMETRICO_FORMATO" EntitySet="BIOMETRICO_FORMATO" />
+            <End Role="PERSONA_BIOMETRICO" EntitySet="PERSONA_BIOMETRICO" />
+          </AssociationSet>
+          <AssociationSet Name="TIPO_BIOMETRICO_FK" Association="Modelos.TIPO_BIOMETRICO_FK">
+            <End Role="BIOMETRICO_TIPO" EntitySet="BIOMETRICO_TIPO" />
+            <End Role="PERSONA_BIOMETRICO" EntitySet="PERSONA_BIOMETRICO" />
+          </AssociationSet>
+          <AssociationSet Name="CELDA_CENTRO_FK" Association="Modelos.CELDA_CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="CELDA" EntitySet="CELDA" />
+          </AssociationSet>
+          <AssociationSet Name="CELDA_EDIFICIO_FK" Association="Modelos.CELDA_EDIFICIO_FK">
+            <End Role="EDIFICIO" EntitySet="EDIFICIO" />
+            <End Role="CELDA" EntitySet="CELDA" />
+          </AssociationSet>
+          <AssociationSet Name="CELDA_SECTOR_FK" Association="Modelos.CELDA_SECTOR_FK">
+            <End Role="SECTOR" EntitySet="SECTOR" />
+            <End Role="CELDA" EntitySet="CELDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_RESULT_CELDA" Association="Modelos.FK_PASELISTA_RESULT_CELDA">
+            <End Role="CELDA" EntitySet="CELDA" />
+            <End Role="PASELISTA_RESULTADO" EntitySet="PASELISTA_RESULTADO" />
+          </AssociationSet>
+          <AssociationSet Name="CENTRO_FK" Association="Modelos.CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="EDIFICIO" EntitySet="EDIFICIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_PGR_CENTRO" Association="Modelos.FK_PASELISTA_PGR_CENTRO">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+          </AssociationSet>
+          <AssociationSet Name="IMPUTADO_CENTRO_FK" Association="Modelos.IMPUTADO_CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="IMPUTADO" EntitySet="IMPUTADO" />
+          </AssociationSet>
+          <AssociationSet Name="PARAMETRO_CENTRO_FK" Association="Modelos.PARAMETRO_CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="PARAMETRO" EntitySet="PARAMETRO" />
+          </AssociationSet>
+          <AssociationSet Name="SECTOR_CENTRO_FK" Association="Modelos.SECTOR_CENTRO_FK">
+            <End Role="CENTRO" EntitySet="CENTRO" />
+            <End Role="SECTOR" EntitySet="SECTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_ASIGN_EDIFICIO" Association="Modelos.FK_PASELISTA_ASIGN_EDIFICIO">
+            <End Role="EDIFICIO" EntitySet="EDIFICIO" />
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+          </AssociationSet>
+          <AssociationSet Name="SECTOR_EDIFICIO_FK" Association="Modelos.SECTOR_EDIFICIO_FK">
+            <End Role="EDIFICIO" EntitySet="EDIFICIO" />
+            <End Role="SECTOR" EntitySet="SECTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLEADO_TIPO" Association="Modelos.FK_EMPLEADO_TIPO">
+            <End Role="TIPO_EMPLEADO" EntitySet="TIPO_EMPLEADO" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_ASIGN_EMPLEADO" Association="Modelos.FK_PASELISTA_ASIGN_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_PGR_EMPLEADO" Association="Modelos.FK_PASELISTA_PGR_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_ASIGN_PROGRAMADO" Association="Modelos.FK_PASELISTA_ASIGN_PROGRAMADO">
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_ASIGN_SECTOR" Association="Modelos.FK_PASELISTA_ASIGN_SECTOR">
+            <End Role="SECTOR" EntitySet="SECTOR" />
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_RESULT_ASIGNADO" Association="Modelos.FK_PASELISTA_RESULT_ASIGNADO">
+            <End Role="PASELISTA_ASIGNADO" EntitySet="PASELISTA_ASIGNADO" />
+            <End Role="PASELISTA_RESULTADO" EntitySet="PASELISTA_RESULTADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_CATALOGO_ESTATUS" Association="Modelos.FK_PASELISTA_CATALOGO_ESTATUS">
+            <End Role="PASELISTA_CATALOGO_ESTATUS" EntitySet="PASELISTA_CATALOGO_ESTATUS" />
+            <End Role="PASELISTA_CATALOGO" EntitySet="PASELISTA_CATALOGO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_PGR_CATALOGO" Association="Modelos.FK_PASELISTA_PGR_CATALOGO">
+            <End Role="PASELISTA_CATALOGO" EntitySet="PASELISTA_CATALOGO" />
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PASELISTA_PGR_ESTATUS" Association="Modelos.FK_PASELISTA_PGR_ESTATUS">
+            <End Role="PASELISTA_PROGRAMADO_ESTATUS" EntitySet="PASELISTA_PROGRAMADO_ESTATUS" />
+            <End Role="PASELISTA_PROGRAMADO" EntitySet="PASELISTA_PROGRAMADO" />
+          </AssociationSet>
+          <AssociationSet Name="PERSONA_FK" Association="Modelos.PERSONA_FK">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="PERSONA_BIOMETRICO" EntitySet="PERSONA_BIOMETRICO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BIOMETRICO_FORMATO">
+          <Key>
+            <PropertyRef Name="ID_FORMATO" />
+          </Key>
+          <Property Name="ID_FORMATO" Type="Int16" Nullable="false" />
+          <Property Name="DESCR" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PERSONA_BIOMETRICO" Relationship="Modelos.FORMATO_BIOMETRICO_FK" FromRole="BIOMETRICO_FORMATO" ToRole="PERSONA_BIOMETRICO" />
+        </EntityType>
+        <EntityType Name="BIOMETRICO_TIPO">
+          <Key>
+            <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+          </Key>
+          <Property Name="ID_TIPO_BIOMETRICO" Type="Int16" Nullable="false" />
+          <Property Name="TIPO_BIOMETRICO" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PERSONA_BIOMETRICO" Relationship="Modelos.TIPO_BIOMETRICO_FK" FromRole="BIOMETRICO_TIPO" ToRole="PERSONA_BIOMETRICO" />
+        </EntityType>
+        <EntityType Name="CELDA">
+          <Key>
+            <PropertyRef Name="ID_CELDA" />
+          </Key>
+          <Property Name="ID_CELDA" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="ID_CENTRO" Type="Int16" Nullable="false" />
+          <Property Name="ID_EDIFICIO" Type="Int16" Nullable="false" />
+          <Property Name="ID_SECTOR" Type="Int16" Nullable="false" />
+          <Property Name="ID_TIPO_SEGURIDA" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ID_TIPO_CELDA" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="NIVEL_EDIFICIO" Type="Int16" />
+          <NavigationProperty Name="CENTRO" Relationship="Modelos.CELDA_CENTRO_FK" FromRole="CELDA" ToRole="CENTRO" />
+          <NavigationProperty Name="EDIFICIO" Relationship="Modelos.CELDA_EDIFICIO_FK" FromRole="CELDA" ToRole="EDIFICIO" />
+          <NavigationProperty Name="SECTOR" Relationship="Modelos.CELDA_SECTOR_FK" FromRole="CELDA" ToRole="SECTOR" />
+          <NavigationProperty Name="PASELISTA_RESULTADO" Relationship="Modelos.FK_PASELISTA_RESULT_CELDA" FromRole="CELDA" ToRole="PASELISTA_RESULTADO" />
+        </EntityType>
+        <EntityType Name="CENTRO">
+          <Key>
+            <PropertyRef Name="ID_CENTRO" />
+          </Key>
+          <Property Name="ID_CENTRO" Type="Int16" Nullable="false" />
+          <Property Name="ID_TIPO_CENTRO" Type="Int16" />
+          <Property Name="ID_ENTIDAD" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="ID_MUNICIPIO" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="DESCR" Type="String" MaxLength="50" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="CELDA" Relationship="Modelos.CELDA_CENTRO_FK" FromRole="CENTRO" ToRole="CELDA" />
+          <NavigationProperty Name="EDIFICIO" Relationship="Modelos.CENTRO_FK" FromRole="CENTRO" ToRole="EDIFICIO" />
+          <NavigationProperty Name="PASELISTA_PROGRAMADO" Relationship="Modelos.FK_PASELISTA_PGR_CENTRO" FromRole="CENTRO" ToRole="PASELISTA_PROGRAMADO" />
+          <NavigationProperty Name="IMPUTADO" Relationship="Modelos.IMPUTADO_CENTRO_FK" FromRole="CENTRO" ToRole="IMPUTADO" />
+          <NavigationProperty Name="PARAMETRO" Relationship="Modelos.PARAMETRO_CENTRO_FK" FromRole="CENTRO" ToRole="PARAMETRO" />
+          <NavigationProperty Name="SECTOR" Relationship="Modelos.SECTOR_CENTRO_FK" FromRole="CENTRO" ToRole="SECTOR" />
+        </EntityType>
+        <EntityType Name="EDIFICIO">
+          <Key>
+            <PropertyRef Name="ID_EDIFICIO" />
+          </Key>
+          <Property Name="ID_EDIFICIO" Type="Int16" Nullable="false" />
+          <Property Name="ID_CENTRO" Type="Int16" Nullable="false" />
+          <Property Name="ID_TIPO_EDIFICIO" Type="Int16" />
+          <Property Name="DESCR" Type="String" MaxLength="20" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="CELDA" Relationship="Modelos.CELDA_EDIFICIO_FK" FromRole="EDIFICIO" ToRole="CELDA" />
+          <NavigationProperty Name="CENTRO" Relationship="Modelos.CENTRO_FK" FromRole="EDIFICIO" ToRole="CENTRO" />
+          <NavigationProperty Name="PASELISTA_ASIGNADO" Relationship="Modelos.FK_PASELISTA_ASIGN_EDIFICIO" FromRole="EDIFICIO" ToRole="PASELISTA_ASIGNADO" />
+          <NavigationProperty Name="SECTOR" Relationship="Modelos.SECTOR_EDIFICIO_FK" FromRole="EDIFICIO" ToRole="SECTOR" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="ID_EMPLEADO" />
+          </Key>
+          <Property Name="ID_EMPLEADO" Type="Int32" Nullable="false" />
+          <Property Name="ID_TIPO_EMPLEADO" Type="Int16" />
+          <Property Name="ID_AREA_EMP" Type="Int16" />
+          <Property Name="ID_CENTRO" Type="Int16" />
+          <Property Name="NUMERO_EMPLEADO" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TIPO_EMPLEADO" Relationship="Modelos.FK_EMPLEADO_TIPO" FromRole="EMPLEADO" ToRole="TIPO_EMPLEADO" />
+          <NavigationProperty Name="PASELISTA_ASIGNADO" Relationship="Modelos.FK_PASELISTA_ASIGN_EMPLEADO" FromRole="EMPLEADO" ToRole="PASELISTA_ASIGNADO" />
+          <NavigationProperty Name="PASELISTA_PROGRAMADO" Relationship="Modelos.FK_PASELISTA_PGR_EMPLEADO" FromRole="EMPLEADO" ToRole="PASELISTA_PROGRAMADO" />
+        </EntityType>
+        <EntityType Name="IMPUTADO">
+          <Key>
+            <PropertyRef Name="ID_IMPUTADO" />
+          </Key>
+          <Property Name="ID_CENTRO" Type="Int16" Nullable="false" />
+          <Property Name="ID_IMPUTADO" Type="Int32" Nullable="false" />
+          <Property Name="PATERNO" Type="String" MaxLength="30" Unicode="false" FixedLength="true" />
+          <Property Name="MATERNO" Type="String" MaxLength="30" Unicode="false" FixedLength="true" />
+          <Property Name="NOMBRE" Type="String" MaxLength="40" Unicode="false" FixedLength="true" />
+          <Property Name="SEXO" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="CENTRO" Relationship="Modelos.IMPUTADO_CENTRO_FK" FromRole="IMPUTADO" ToRole="CENTRO" />
+        </EntityType>
+        <EntityType Name="IMPUTADO_BIOMETRICO">
+          <Key>
+            <PropertyRef Name="ID_IMPUTADO" />
+            <PropertyRef Name="ID_CENTRO" />
+            <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+            <PropertyRef Name="ID_FORMATO" />
+          </Key>
+          <Property Name="ID_IMPUTADO" Type="Int32" Nullable="false" />
+          <Property Name="ID_CENTRO" Type="Int16" Nullable="false" />
+          <Property Name="ID_TIPO_BIOMETRICO" Type="Int16" Nullable="false" />
+          <Property Name="ID_FORMATO" Type="Int16" Nullable="false" />
+          <Property Name="BIOMETRICO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CALIDAD" Type="Int16" />
+        </EntityType>
+        <EntityType Name="INCIDENCIA">
+          <Key>
+            <PropertyRef Name="INCIDENCIA1" />
+          </Key>
+          <Property Name="INCIDENCIA1" Type="Int16" Nullable="false" />
+          <Property Name="DESCR" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="LOGIN_MODIF" Type="String" MaxLength="40" Unicode="false" FixedLength="true" />
+          <Property Name="FECHA_MODIF" Type="DateTime" />
+          <Property Name="EVENTO" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="INCIDENTE_TIPO">
+          <Key>
+            <PropertyRef Name="ID_INCIDENTE_TIPO" />
+          </Key>
+          <Property Name="ID_INCIDENTE_TIPO" Type="Int16" Nullable="false" />
+          <Property Name="DESCR" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ID_APLICACION" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PARAMETRO">
+          <Key>
+            <PropertyRef Name="ID_CLAVE" />
+            <PropertyRef Name="ID_CENTRO" />
+          </Key>
+          <Property Name="ID_CLAVE" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="true" />
+          <Property Name="ID_CENTRO" Type="Int16" Nullable="false" />
+          <Property Name="VALOR" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VALOR_NUM" Type="Int32" />
+          <Property Name="CONTENIDO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="CENTRO" Relationship="Modelos.PARAMETRO_CENTRO_FK" FromRole="PARAMETRO" ToRole="CENTRO" />
+        </EntityType>
+        <EntityType Name="PASELISTA_ASIGNADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_PASELISTA_PROGRAMADO" Type="Int32" Nullable="false" />
+          <Property Name="ID_EDIFICIO" Type="Int16" Nullable="false" />
+          <Property Name="ID_SECTOR" Type="Int16" Nullable="false" />
+          <Property Name="NIVEL_EDIFICIO" Type="Int16" Nullable="false" />
+          <Property Name="EMPLEADO_ASIGNADO" Type="Int32" Nullable="false" />
+          <Property Name="POBLACION" Type="Int16" />
+          <Property Name="HORA_INICIAL" Type="DateTime" Precision="6" />
+          <Property Name="HORA_FINAL" Type="DateTime" Precision="6" />
+          <NavigationProperty Name="EDIFICIO" Relationship="Modelos.FK_PASELISTA_ASIGN_EDIFICIO" FromRole="PASELISTA_ASIGNADO" ToRole="EDIFICIO" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Modelos.FK_PASELISTA_ASIGN_EMPLEADO" FromRole="PASELISTA_ASIGNADO" ToRole="EMPLEADO" />
+          <NavigationProperty Name="PASELISTA_PROGRAMADO" Relationship="Modelos.FK_PASELISTA_ASIGN_PROGRAMADO" FromRole="PASELISTA_ASIGNADO" ToRole="PASELISTA_PROGRAMADO" />
+          <NavigationProperty Name="SECTOR" Relationship="Modelos.FK_PASELISTA_ASIGN_SECTOR" FromRole="PASELISTA_ASIGNADO" ToRole="SECTOR" />
+          <NavigationProperty Name="PASELISTA_RESULTADO" Relationship="Modelos.FK_PASELISTA_RESULT_ASIGNADO" FromRole="PASELISTA_ASIGNADO" ToRole="PASELISTA_RESULTADO" />
+        </EntityType>
+        <EntityType Name="PASELISTA_CATALOGO">
+          <Key>
+            <PropertyRef Name="ID_PASELISTA" />
+          </Key>
+          <Property Name="ID_PASELISTA" Type="Int16" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DESCR" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="HORA" Type="DateTime" Nullable="false" Precision="6" />
+          <Property Name="ID_STATUS" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="PASELISTA_CATALOGO_ESTATUS" Relationship="Modelos.FK_PASELISTA_CATALOGO_ESTATUS" FromRole="PASELISTA_CATALOGO" ToRole="PASELISTA_CATALOGO_ESTATUS" />
+          <NavigationProperty Name="PASELISTA_PROGRAMADO" Relationship="Modelos.FK_PASELISTA_PGR_CATALOGO" FromRole="PASELISTA_CATALOGO" ToRole="PASELISTA_PROGRAMADO" />
+        </EntityType>
+        <EntityType Name="PASELISTA_CATALOGO_ESTATUS">
+          <Key>
+            <PropertyRef Name="ID_ESTATUS" />
+          </Key>
+          <Property Name="ID_ESTATUS" Type="Int16" Nullable="false" />
+          <Property Name="STATUS" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DESCR" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PASELISTA_CATALOGO" Relationship="Modelos.FK_PASELISTA_CATALOGO_ESTATUS" FromRole="PASELISTA_CATALOGO_ESTATUS" ToRole="PASELISTA_CATALOGO" />
+        </EntityType>
+        <EntityType Name="PASELISTA_PROGRAMADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_PASELISTA" Type="Int16" Nullable="false" />
+          <Property Name="ID_CENTRO" Type="Int16" Nullable="false" />
+          <Property Name="ID_ESTATUS" Type="Int16" />
+          <Property Name="FECH_MODIF" Type="DateTime" />
+          <Property Name="ID_EMPLEADO_MODIF" Type="Int32" />
+          <NavigationProperty Name="CENTRO" Relationship="Modelos.FK_PASELISTA_PGR_CENTRO" FromRole="PASELISTA_PROGRAMADO" ToRole="CENTRO" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Modelos.FK_PASELISTA_PGR_EMPLEADO" FromRole="PASELISTA_PROGRAMADO" ToRole="EMPLEADO" />
+          <NavigationProperty Name="PASELISTA_ASIGNADO" Relationship="Modelos.FK_PASELISTA_ASIGN_PROGRAMADO" FromRole="PASELISTA_PROGRAMADO" ToRole="PASELISTA_ASIGNADO" />
+          <NavigationProperty Name="PASELISTA_CATALOGO" Relationship="Modelos.FK_PASELISTA_PGR_CATALOGO" FromRole="PASELISTA_PROGRAMADO" ToRole="PASELISTA_CATALOGO" />
+          <NavigationProperty Name="PASELISTA_PROGRAMADO_ESTATUS" Relationship="Modelos.FK_PASELISTA_PGR_ESTATUS" FromRole="PASELISTA_PROGRAMADO" ToRole="PASELISTA_PROGRAMADO_ESTATUS" />
+        </EntityType>
+        <EntityType Name="PASELISTA_PROGRAMADO_ESTATUS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="DESCR" Type="String" MaxLength="30" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="PASELISTA_PROGRAMADO" Relationship="Modelos.FK_PASELISTA_PGR_ESTATUS" FromRole="PASELISTA_PROGRAMADO_ESTATUS" ToRole="PASELISTA_PROGRAMADO" />
+        </EntityType>
+        <EntityType Name="PASELISTA_RESULTADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_PASELISTA_ASIGN" Type="Int32" Nullable="false" />
+          <Property Name="ID_CELDA" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="HORA_INICIAL" Type="DateTime" Precision="6" />
+          <Property Name="HORA_FINAL" Type="DateTime" Precision="6" />
+          <Property Name="ASISTENCIAS" Type="Int16" />
+          <Property Name="INASISTENCIAS" Type="Int16" />
+          <NavigationProperty Name="CELDA" Relationship="Modelos.FK_PASELISTA_RESULT_CELDA" FromRole="PASELISTA_RESULTADO" ToRole="CELDA" />
+          <NavigationProperty Name="PASELISTA_ASIGNADO" Relationship="Modelos.FK_PASELISTA_RESULT_ASIGNADO" FromRole="PASELISTA_RESULTADO" ToRole="PASELISTA_ASIGNADO" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+          <Property Name="PATERNO" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MATERNO" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PERSONA_BIOMETRICO" Relationship="Modelos.PERSONA_FK" FromRole="PERSONA" ToRole="PERSONA_BIOMETRICO" />
+        </EntityType>
+        <EntityType Name="PERSONA_BIOMETRICO">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+            <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+            <PropertyRef Name="ID_FORMATO" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+          <Property Name="ID_TIPO_BIOMETRICO" Type="Int16" Nullable="false" />
+          <Property Name="ID_FORMATO" Type="Int16" Nullable="false" />
+          <Property Name="BIOMETRICO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="NORIGINAL" Type="Int32" />
+          <NavigationProperty Name="BIOMETRICO_FORMATO" Relationship="Modelos.FORMATO_BIOMETRICO_FK" FromRole="PERSONA_BIOMETRICO" ToRole="BIOMETRICO_FORMATO" />
+          <NavigationProperty Name="BIOMETRICO_TIPO" Relationship="Modelos.TIPO_BIOMETRICO_FK" FromRole="PERSONA_BIOMETRICO" ToRole="BIOMETRICO_TIPO" />
+          <NavigationProperty Name="PERSONA" Relationship="Modelos.PERSONA_FK" FromRole="PERSONA_BIOMETRICO" ToRole="PERSONA" />
+        </EntityType>
+        <EntityType Name="SECTOR">
+          <Key>
+            <PropertyRef Name="ID_SECTOR" />
+          </Key>
+          <Property Name="ID_SECTOR" Type="Int16" Nullable="false" />
+          <Property Name="ID_CENTRO" Type="Int16" Nullable="false" />
+          <Property Name="ID_EDIFICIO" Type="Int16" Nullable="false" />
+          <Property Name="DESCR" Type="String" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="PLANO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="CELDA" Relationship="Modelos.CELDA_SECTOR_FK" FromRole="SECTOR" ToRole="CELDA" />
+          <NavigationProperty Name="CENTRO" Relationship="Modelos.SECTOR_CENTRO_FK" FromRole="SECTOR" ToRole="CENTRO" />
+          <NavigationProperty Name="EDIFICIO" Relationship="Modelos.SECTOR_EDIFICIO_FK" FromRole="SECTOR" ToRole="EDIFICIO" />
+          <NavigationProperty Name="PASELISTA_ASIGNADO" Relationship="Modelos.FK_PASELISTA_ASIGN_SECTOR" FromRole="SECTOR" ToRole="PASELISTA_ASIGNADO" />
+        </EntityType>
+        <EntityType Name="TIPO_EMPLEADO">
+          <Key>
+            <PropertyRef Name="ID_TIPO_EMPLEADO" />
+          </Key>
+          <Property Name="ID_TIPO_EMPLEADO" Type="Int16" Nullable="false" />
+          <Property Name="DESCR" Type="String" MaxLength="30" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Modelos.FK_EMPLEADO_TIPO" FromRole="TIPO_EMPLEADO" ToRole="EMPLEADO" />
+        </EntityType>
+        <Association Name="FORMATO_BIOMETRICO_FK">
+          <End Role="BIOMETRICO_FORMATO" Type="Modelos.BIOMETRICO_FORMATO" Multiplicity="1" />
+          <End Role="PERSONA_BIOMETRICO" Type="Modelos.PERSONA_BIOMETRICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIOMETRICO_FORMATO">
+              <PropertyRef Name="ID_FORMATO" />
+            </Principal>
+            <Dependent Role="PERSONA_BIOMETRICO">
+              <PropertyRef Name="ID_FORMATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TIPO_BIOMETRICO_FK">
+          <End Role="BIOMETRICO_TIPO" Type="Modelos.BIOMETRICO_TIPO" Multiplicity="1" />
+          <End Role="PERSONA_BIOMETRICO" Type="Modelos.PERSONA_BIOMETRICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIOMETRICO_TIPO">
+              <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+            </Principal>
+            <Dependent Role="PERSONA_BIOMETRICO">
+              <PropertyRef Name="ID_TIPO_BIOMETRICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CELDA_CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.CENTRO" Multiplicity="1" />
+          <End Role="CELDA" Type="Modelos.CELDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="CELDA">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CELDA_EDIFICIO_FK">
+          <End Role="EDIFICIO" Type="Modelos.EDIFICIO" Multiplicity="1" />
+          <End Role="CELDA" Type="Modelos.CELDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EDIFICIO">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Principal>
+            <Dependent Role="CELDA">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CELDA_SECTOR_FK">
+          <End Role="SECTOR" Type="Modelos.SECTOR" Multiplicity="1" />
+          <End Role="CELDA" Type="Modelos.CELDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTOR">
+              <PropertyRef Name="ID_SECTOR" />
+            </Principal>
+            <Dependent Role="CELDA">
+              <PropertyRef Name="ID_SECTOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_RESULT_CELDA">
+          <End Role="CELDA" Type="Modelos.CELDA" Multiplicity="1" />
+          <End Role="PASELISTA_RESULTADO" Type="Modelos.PASELISTA_RESULTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CELDA">
+              <PropertyRef Name="ID_CELDA" />
+            </Principal>
+            <Dependent Role="PASELISTA_RESULTADO">
+              <PropertyRef Name="ID_CELDA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.CENTRO" Multiplicity="1" />
+          <End Role="EDIFICIO" Type="Modelos.EDIFICIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="EDIFICIO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_PGR_CENTRO">
+          <End Role="CENTRO" Type="Modelos.CENTRO" Multiplicity="1" />
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.PASELISTA_PROGRAMADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMPUTADO_CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.CENTRO" Multiplicity="1" />
+          <End Role="IMPUTADO" Type="Modelos.IMPUTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="IMPUTADO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PARAMETRO_CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.CENTRO" Multiplicity="1" />
+          <End Role="PARAMETRO" Type="Modelos.PARAMETRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="PARAMETRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SECTOR_CENTRO_FK">
+          <End Role="CENTRO" Type="Modelos.CENTRO" Multiplicity="1" />
+          <End Role="SECTOR" Type="Modelos.SECTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO">
+              <PropertyRef Name="ID_CENTRO" />
+            </Principal>
+            <Dependent Role="SECTOR">
+              <PropertyRef Name="ID_CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_ASIGN_EDIFICIO">
+          <End Role="EDIFICIO" Type="Modelos.EDIFICIO" Multiplicity="1" />
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.PASELISTA_ASIGNADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EDIFICIO">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Principal>
+            <Dependent Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SECTOR_EDIFICIO_FK">
+          <End Role="EDIFICIO" Type="Modelos.EDIFICIO" Multiplicity="1" />
+          <End Role="SECTOR" Type="Modelos.SECTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EDIFICIO">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Principal>
+            <Dependent Role="SECTOR">
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLEADO_TIPO">
+          <End Role="TIPO_EMPLEADO" Type="Modelos.TIPO_EMPLEADO" Multiplicity="0..1" />
+          <End Role="EMPLEADO" Type="Modelos.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_EMPLEADO">
+              <PropertyRef Name="ID_TIPO_EMPLEADO" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="ID_TIPO_EMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_ASIGN_EMPLEADO">
+          <End Role="EMPLEADO" Type="Modelos.EMPLEADO" Multiplicity="1" />
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.PASELISTA_ASIGNADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="ID_EMPLEADO" />
+            </Principal>
+            <Dependent Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="EMPLEADO_ASIGNADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_PGR_EMPLEADO">
+          <End Role="EMPLEADO" Type="Modelos.EMPLEADO" Multiplicity="0..1" />
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.PASELISTA_PROGRAMADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="ID_EMPLEADO" />
+            </Principal>
+            <Dependent Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID_EMPLEADO_MODIF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_ASIGN_PROGRAMADO">
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.PASELISTA_PROGRAMADO" Multiplicity="1" />
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.PASELISTA_ASIGNADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="ID_PASELISTA_PROGRAMADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_ASIGN_SECTOR">
+          <End Role="SECTOR" Type="Modelos.SECTOR" Multiplicity="1" />
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.PASELISTA_ASIGNADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTOR">
+              <PropertyRef Name="ID_SECTOR" />
+            </Principal>
+            <Dependent Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="ID_SECTOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_RESULT_ASIGNADO">
+          <End Role="PASELISTA_ASIGNADO" Type="Modelos.PASELISTA_ASIGNADO" Multiplicity="1" />
+          <End Role="PASELISTA_RESULTADO" Type="Modelos.PASELISTA_RESULTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_ASIGNADO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PASELISTA_RESULTADO">
+              <PropertyRef Name="ID_PASELISTA_ASIGN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_CATALOGO_ESTATUS">
+          <End Role="PASELISTA_CATALOGO_ESTATUS" Type="Modelos.PASELISTA_CATALOGO_ESTATUS" Multiplicity="1" />
+          <End Role="PASELISTA_CATALOGO" Type="Modelos.PASELISTA_CATALOGO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_CATALOGO_ESTATUS">
+              <PropertyRef Name="ID_ESTATUS" />
+            </Principal>
+            <Dependent Role="PASELISTA_CATALOGO">
+              <PropertyRef Name="ID_STATUS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_PGR_CATALOGO">
+          <End Role="PASELISTA_CATALOGO" Type="Modelos.PASELISTA_CATALOGO" Multiplicity="1" />
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.PASELISTA_PROGRAMADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_CATALOGO">
+              <PropertyRef Name="ID_PASELISTA" />
+            </Principal>
+            <Dependent Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID_PASELISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PASELISTA_PGR_ESTATUS">
+          <End Role="PASELISTA_PROGRAMADO_ESTATUS" Type="Modelos.PASELISTA_PROGRAMADO_ESTATUS" Multiplicity="0..1" />
+          <End Role="PASELISTA_PROGRAMADO" Type="Modelos.PASELISTA_PROGRAMADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASELISTA_PROGRAMADO_ESTATUS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PASELISTA_PROGRAMADO">
+              <PropertyRef Name="ID_ESTATUS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PERSONA_FK">
+          <End Role="PERSONA" Type="Modelos.PERSONA" Multiplicity="1" />
+          <End Role="PERSONA_BIOMETRICO" Type="Modelos.PERSONA_BIOMETRICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="PERSONA_BIOMETRICO">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelosStoreContainer" CdmEntityContainer="AdministracionContexto">
+          <EntitySetMapping Name="BIOMETRICO_FORMATO">
+            <EntityTypeMapping TypeName="Modelos.BIOMETRICO_FORMATO">
+              <MappingFragment StoreEntitySet="BIOMETRICO_FORMATO">
+                <ScalarProperty Name="ID_FORMATO" ColumnName="ID_FORMATO" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIOMETRICO_TIPO">
+            <EntityTypeMapping TypeName="Modelos.BIOMETRICO_TIPO">
+              <MappingFragment StoreEntitySet="BIOMETRICO_TIPO">
+                <ScalarProperty Name="ID_TIPO_BIOMETRICO" ColumnName="ID_TIPO_BIOMETRICO" />
+                <ScalarProperty Name="TIPO_BIOMETRICO" ColumnName="TIPO_BIOMETRICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CELDA">
+            <EntityTypeMapping TypeName="Modelos.CELDA">
+              <MappingFragment StoreEntitySet="CELDA">
+                <ScalarProperty Name="ID_CELDA" ColumnName="ID_CELDA" />
+                <ScalarProperty Name="ID_CENTRO" ColumnName="ID_CENTRO" />
+                <ScalarProperty Name="ID_EDIFICIO" ColumnName="ID_EDIFICIO" />
+                <ScalarProperty Name="ID_SECTOR" ColumnName="ID_SECTOR" />
+                <ScalarProperty Name="ID_TIPO_SEGURIDA" ColumnName="ID_TIPO_SEGURIDA" />
+                <ScalarProperty Name="ID_TIPO_CELDA" ColumnName="ID_TIPO_CELDA" />
+                <ScalarProperty Name="NIVEL_EDIFICIO" ColumnName="NIVEL_EDIFICIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CENTRO">
+            <EntityTypeMapping TypeName="Modelos.CENTRO">
+              <MappingFragment StoreEntitySet="CENTRO">
+                <ScalarProperty Name="ID_CENTRO" ColumnName="ID_CENTRO" />
+                <ScalarProperty Name="ID_TIPO_CENTRO" ColumnName="ID_TIPO_CENTRO" />
+                <ScalarProperty Name="ID_ENTIDAD" ColumnName="ID_ENTIDAD" />
+                <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EDIFICIO">
+            <EntityTypeMapping TypeName="Modelos.EDIFICIO">
+              <MappingFragment StoreEntitySet="EDIFICIO">
+                <ScalarProperty Name="ID_EDIFICIO" ColumnName="ID_EDIFICIO" />
+                <ScalarProperty Name="ID_CENTRO" ColumnName="ID_CENTRO" />
+                <ScalarProperty Name="ID_TIPO_EDIFICIO" ColumnName="ID_TIPO_EDIFICIO" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLEADO">
+            <EntityTypeMapping TypeName="Modelos.EMPLEADO">
+              <MappingFragment StoreEntitySet="EMPLEADO">
+                <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+                <ScalarProperty Name="ID_TIPO_EMPLEADO" ColumnName="ID_TIPO_EMPLEADO" />
+                <ScalarProperty Name="ID_AREA_EMP" ColumnName="ID_AREA_EMP" />
+                <ScalarProperty Name="ID_CENTRO" ColumnName="ID_CENTRO" />
+                <ScalarProperty Name="NUMERO_EMPLEADO" ColumnName="NUMERO_EMPLEADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMPUTADO">
+            <EntityTypeMapping TypeName="Modelos.IMPUTADO">
+              <MappingFragment StoreEntitySet="IMPUTADO">
+                <ScalarProperty Name="ID_CENTRO" ColumnName="ID_CENTRO" />
+                <ScalarProperty Name="ID_IMPUTADO" ColumnName="ID_IMPUTADO" />
+                <ScalarProperty Name="PATERNO" ColumnName="PATERNO" />
+                <ScalarProperty Name="MATERNO" ColumnName="MATERNO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMPUTADO_BIOMETRICO">
+            <EntityTypeMapping TypeName="Modelos.IMPUTADO_BIOMETRICO">
+              <MappingFragment StoreEntitySet="IMPUTADO_BIOMETRICO">
+                <ScalarProperty Name="ID_IMPUTADO" ColumnName="ID_IMPUTADO" />
+                <ScalarProperty Name="ID_CENTRO" ColumnName="ID_CENTRO" />
+                <ScalarProperty Name="ID_TIPO_BIOMETRICO" ColumnName="ID_TIPO_BIOMETRICO" />
+                <ScalarProperty Name="ID_FORMATO" ColumnName="ID_FORMATO" />
+                <ScalarProperty Name="BIOMETRICO" ColumnName="BIOMETRICO" />
+                <ScalarProperty Name="CALIDAD" ColumnName="CALIDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INCIDENCIA">
+            <EntityTypeMapping TypeName="Modelos.INCIDENCIA">
+              <MappingFragment StoreEntitySet="INCIDENCIA">
+                <ScalarProperty Name="INCIDENCIA1" ColumnName="INCIDENCIA" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="LOGIN_MODIF" ColumnName="LOGIN_MODIF" />
+                <ScalarProperty Name="FECHA_MODIF" ColumnName="FECHA_MODIF" />
+                <ScalarProperty Name="EVENTO" ColumnName="EVENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INCIDENTE_TIPO">
+            <EntityTypeMapping TypeName="Modelos.INCIDENTE_TIPO">
+              <MappingFragment StoreEntitySet="INCIDENTE_TIPO">
+                <ScalarProperty Name="ID_INCIDENTE_TIPO" ColumnName="ID_INCIDENTE_TIPO" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="ID_APLICACION" ColumnName="ID_APLICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PARAMETRO">
+            <EntityTypeMapping TypeName="Modelos.PARAMETRO">
+              <MappingFragment StoreEntitySet="PARAMETRO">
+                <ScalarProperty Name="ID_CLAVE" ColumnName="ID_CLAVE" />
+                <ScalarProperty Name="ID_CENTRO" ColumnName="ID_CENTRO" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+                <ScalarProperty Name="VALOR_NUM" ColumnName="VALOR_NUM" />
+                <ScalarProperty Name="CONTENIDO" ColumnName="CONTENIDO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PASELISTA_ASIGNADO">
+            <EntityTypeMapping TypeName="Modelos.PASELISTA_ASIGNADO">
+              <MappingFragment StoreEntitySet="PASELISTA_ASIGNADO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_PASELISTA_PROGRAMADO" ColumnName="ID_PASELISTA_PROGRAMADO" />
+                <ScalarProperty Name="ID_EDIFICIO" ColumnName="ID_EDIFICIO" />
+                <ScalarProperty Name="ID_SECTOR" ColumnName="ID_SECTOR" />
+                <ScalarProperty Name="NIVEL_EDIFICIO" ColumnName="NIVEL_EDIFICIO" />
+                <ScalarProperty Name="EMPLEADO_ASIGNADO" ColumnName="EMPLEADO_ASIGNADO" />
+                <ScalarProperty Name="POBLACION" ColumnName="POBLACION" />
+                <ScalarProperty Name="HORA_INICIAL" ColumnName="HORA_INICIAL" />
+                <ScalarProperty Name="HORA_FINAL" ColumnName="HORA_FINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PASELISTA_CATALOGO">
+            <EntityTypeMapping TypeName="Modelos.PASELISTA_CATALOGO">
+              <MappingFragment StoreEntitySet="PASELISTA_CATALOGO">
+                <ScalarProperty Name="ID_PASELISTA" ColumnName="ID_PASELISTA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+                <ScalarProperty Name="ID_STATUS" ColumnName="ID_STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PASELISTA_CATALOGO_ESTATUS">
+            <EntityTypeMapping TypeName="Modelos.PASELISTA_CATALOGO_ESTATUS">
+              <MappingFragment StoreEntitySet="PASELISTA_CATALOGO_ESTATUS">
+                <ScalarProperty Name="ID_ESTATUS" ColumnName="ID_ESTATUS" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PASELISTA_PROGRAMADO">
+            <EntityTypeMapping TypeName="Modelos.PASELISTA_PROGRAMADO">
+              <MappingFragment StoreEntitySet="PASELISTA_PROGRAMADO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_PASELISTA" ColumnName="ID_PASELISTA" />
+                <ScalarProperty Name="ID_CENTRO" ColumnName="ID_CENTRO" />
+                <ScalarProperty Name="ID_ESTATUS" ColumnName="ID_ESTATUS" />
+                <ScalarProperty Name="FECH_MODIF" ColumnName="FECH_MODIF" />
+                <ScalarProperty Name="ID_EMPLEADO_MODIF" ColumnName="ID_EMPLEADO_MODIF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PASELISTA_PROGRAMADO_ESTATUS">
+            <EntityTypeMapping TypeName="Modelos.PASELISTA_PROGRAMADO_ESTATUS">
+              <MappingFragment StoreEntitySet="PASELISTA_PROGRAMADO_ESTATUS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PASELISTA_RESULTADO">
+            <EntityTypeMapping TypeName="Modelos.PASELISTA_RESULTADO">
+              <MappingFragment StoreEntitySet="PASELISTA_RESULTADO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_PASELISTA_ASIGN" ColumnName="ID_PASELISTA_ASIGN" />
+                <ScalarProperty Name="ID_CELDA" ColumnName="ID_CELDA" />
+                <ScalarProperty Name="HORA_INICIAL" ColumnName="HORA_INICIAL" />
+                <ScalarProperty Name="HORA_FINAL" ColumnName="HORA_FINAL" />
+                <ScalarProperty Name="ASISTENCIAS" ColumnName="ASISTENCIAS" />
+                <ScalarProperty Name="INASISTENCIAS" ColumnName="INASISTENCIAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONA">
+            <EntityTypeMapping TypeName="Modelos.PERSONA">
+              <MappingFragment StoreEntitySet="PERSONA">
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+                <ScalarProperty Name="PATERNO" ColumnName="PATERNO" />
+                <ScalarProperty Name="MATERNO" ColumnName="MATERNO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONA_BIOMETRICO">
+            <EntityTypeMapping TypeName="Modelos.PERSONA_BIOMETRICO">
+              <MappingFragment StoreEntitySet="PERSONA_BIOMETRICO">
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+                <ScalarProperty Name="ID_TIPO_BIOMETRICO" ColumnName="ID_TIPO_BIOMETRICO" />
+                <ScalarProperty Name="ID_FORMATO" ColumnName="ID_FORMATO" />
+                <ScalarProperty Name="BIOMETRICO" ColumnName="BIOMETRICO" />
+                <ScalarProperty Name="NORIGINAL" ColumnName="NORIGINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SECTOR">
+            <EntityTypeMapping TypeName="Modelos.SECTOR">
+              <MappingFragment StoreEntitySet="SECTOR">
+                <ScalarProperty Name="ID_SECTOR" ColumnName="ID_SECTOR" />
+                <ScalarProperty Name="ID_CENTRO" ColumnName="ID_CENTRO" />
+                <ScalarProperty Name="ID_EDIFICIO" ColumnName="ID_EDIFICIO" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="PLANO" ColumnName="PLANO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_EMPLEADO">
+            <EntityTypeMapping TypeName="Modelos.TIPO_EMPLEADO">
+              <MappingFragment StoreEntitySet="TIPO_EMPLEADO">
+                <ScalarProperty Name="ID_TIPO_EMPLEADO" ColumnName="ID_TIPO_EMPLEADO" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

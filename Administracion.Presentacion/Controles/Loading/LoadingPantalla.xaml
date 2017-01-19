@@ -1,0 +1,23 @@
+﻿<Window x:Class="Administracion.Presentacion.Controles.LoadingPantalla"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctr="clr-namespace:Administracion.Presentacion.Controles"
+        ResizeMode="NoResize"
+        WindowStyle="None" 
+        Width="200"
+        Height="200"
+        WindowStartupLocation="CenterOwner" 
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        Closing="OnClosing"
+        ShowInTaskbar="False" 
+        AllowsTransparency="True" >
+    <Window.Background>
+        <SolidColorBrush Opacity="0" Color="#FFFFFF"/>
+    </Window.Background>
+    <DockPanel VerticalAlignment="Center">
+        <StackPanel x:Name="stackPanelLoading">
+            <Button x:Name="CancelButton" Grid.Row="1" Margin="3,0,0,0" Width="70" Height="22" Content="Cancel" Visibility="Collapsed" HorizontalAlignment="Center" Click="OnCancelButtonClick" />
+        </StackPanel>
+    </DockPanel>
+</Window>

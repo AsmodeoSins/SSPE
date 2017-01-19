@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79B23613-9EB1-407C-B83A-82528675EFDD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Administracion.Contratos</RootNamespace>
+    <AssemblyName>Administracion.Contratos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enrolamiento\IPrincipalVistaModelo.cs" />
+    <Compile Include="Presentacion\IConfiguracionVista.cs" />
+    <Compile Include="Presentacion\IIncidenciasPorInternoVistaModelo.cs" />
+    <Compile Include="Presentacion\IIncidenciasReporteVistaModelo.cs" />
+    <Compile Include="Presentacion\IBusquedaPersonaVistaModelo.cs" />
+    <Compile Include="Presentacion\ICapturaBiometricoVistaModelo.cs" />
+    <Compile Include="Presentacion\IIncidenciasVistaModelo.cs" />
+    <Compile Include="Presentacion\IPaseListaReporteVistaModelo.cs" />
+    <Compile Include="Presentacion\ITiempoPaseDeListaVistaModelo.cs" />
+    <Compile Include="Repositorio\ICeldaRepositorio.cs" />
+    <Compile Include="Repositorio\ILogFallaServicioRepositorio.cs" />
+    <Compile Include="Repositorio\IPLAsignacionResultadoRepositorio.cs" />
+    <Compile Include="Repositorio\IPLIncidenciaBitacoraRepositorio.cs" />
+    <Compile Include="Repositorio\IPLIncidenciaCatalogoRepositorio.cs" />
+    <Compile Include="Repositorio\IPLProgramadoBitRepositorio.cs" />
+    <Compile Include="Repositorio\IEdificioRepositorio.cs" />
+    <Compile Include="Repositorio\IEmpleadoRepositorio.cs" />
+    <Compile Include="Repositorio\IPaseListaAsignacionRepositorio.cs" />
+    <Compile Include="Repositorio\IPLProgramadoAsignacionRepositorio.cs" />
+    <Compile Include="Repositorio\IPLProgramadoRepositorio.cs" />
+    <Compile Include="Repositorio\ISectorRepositorio.cs" />
+    <Compile Include="Repositorio\IUsuarioRepositorio.cs" />
+    <Compile Include="Servicios\IEmpleadoServicio.cs" />
+    <Compile Include="Servicios\ILogFallaServicio.cs" />
+    <Compile Include="Servicios\IParametroServicio.cs" />
+    <Compile Include="Presentacion\IProgramacionPaseListaVistaModelo.cs" />
+    <Compile Include="Repositorio\IParametroRepositorio.cs" />
+    <Compile Include="Repositorio\IPersonaBiometricoRepositorio.cs" />
+    <Compile Include="Repositorio\IIncidenciaRepositorio.cs" />
+    <Compile Include="Presentacion\IPaseListaVistaModelo.cs" />
+    <Compile Include="Presentacion\IReporteBaseVistaModelo.cs" />
+    <Compile Include="Presentacion\ICatalogoBaseVistaModelo.cs" />
+    <Compile Include="Presentacion\IBiometricoBaseVistaModelo.cs" />
+    <Compile Include="Presentacion\IBaseVistaModelo.cs" />
+    <Compile Include="Repositorio\ICentroRepositorio.cs" />
+    <Compile Include="Repositorio\IImputadoBiometricoRepositorio.cs" />
+    <Compile Include="Repositorio\IImputadoRepositorio.cs" />
+    <Compile Include="Repositorio\IIngresoRepositorio.cs" />
+    <Compile Include="Repositorio\IPLCatalogoEstatusRepositorio.cs" />
+    <Compile Include="Repositorio\IPLCatalogoRepositorio.cs" />
+    <Compile Include="Servicios\ICentroServicio.cs" />
+    <Compile Include="Servicios\IImputadoBiometricoServicio.cs" />
+    <Compile Include="Servicios\IImputadoServicio.cs" />
+    <Compile Include="Repositorio\IPersonaRepositorio.cs" />
+    <Compile Include="Servicios\IIncidenciaServicio.cs" />
+    <Compile Include="Servicios\IIngresoServicio.cs" />
+    <Compile Include="Servicios\IIrisServicio.cs" />
+    <Compile Include="Servicios\ILoggerService.cs" />
+    <Compile Include="Servicios\IPLCatalogoEstatusServicio.cs" />
+    <Compile Include="Servicios\IPLCatalogoServicio.cs" />
+    <Compile Include="Servicios\IPaseListaServicio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\IBaseRepositorio.cs" />
+    <Compile Include="Repositorio\IPaseListaRespositorio.cs" />
+    <Compile Include="Servicios\IPersonaServicio.cs" />
+    <Compile Include="Servicios\IPLIncidenciaBitacoraServicio.cs" />
+    <Compile Include="Servicios\IPLProgramadoAsignacionServicio.cs" />
+    <Compile Include="Servicios\IPLProgramadoServicio.cs" />
+    <Compile Include="Servicios\IReportesServicio.cs" />
+    <Compile Include="Servicios\ISectorServicio.cs" />
+    <Compile Include="Servicios\IUbicacionServicio.cs" />
+    <Compile Include="Servicios\IUsuarioServicio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Administracion.Enum\Administracion.Enum.csproj">
+      <Project>{bc898c85-2ca8-44c9-9b4e-a898d8e0cc30}</Project>
+      <Name>Administracion.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Administracion.Modelos\Administracion.Modelos.csproj">
+      <Project>{079f7884-c75f-4545-a259-f289c390f879}</Project>
+      <Name>Administracion.Modelos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Administracion.OTD\Administracion.OTD.csproj">
+      <Project>{5d9afc3c-a984-44ca-830f-471f3492f9fa}</Project>
+      <Name>Administracion.OTD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+﻿<Application x:Class="Administracion.Enrolamiento.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:util="clr-namespace:Administracion.Enrolamiento.Utilidades"
+             StartupUri="Vistas/PrincipalVista.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Temas/Generales.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <util:Localizador x:Key="Localizador" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

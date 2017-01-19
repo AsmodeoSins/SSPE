@@ -1,0 +1,14 @@
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.OTD\bin\Debug\Administracion.OTD.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.OTD\bin\Debug\Administracion.OTD.pdb
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.OTD\bin\Debug\Administracion.Enum.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.OTD\bin\Debug\Administracion.Enum.pdb
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.OTD\obj\Debug\Administracion.OTD.csprojResolveAssemblyReference.cache
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.OTD\obj\Debug\Administracion.OTD.dll
+C:\Users\leopoldo\Documents\MIND\Autentificacion Biometrica\Proyectos\Administracion\Administracion.OTD\obj\Debug\Administracion.OTD.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\bin\Debug\Administracion.OTD.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\bin\Debug\Administracion.OTD.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\bin\Debug\Administracion.Enum.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\bin\Debug\Administracion.Enum.pdb
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\obj\Debug\Administracion.OTD.csprojResolveAssemblyReference.cache
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\obj\Debug\Administracion.OTD.dll
+C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\obj\Debug\Administracion.OTD.pdb
