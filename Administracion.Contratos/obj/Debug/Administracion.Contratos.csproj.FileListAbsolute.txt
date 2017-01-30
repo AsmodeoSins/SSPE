@@ -20,3 +20,14 @@ C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Adm
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Contratos\obj\Debug\Administracion.Contratos.csprojResolveAssemblyReference.cache
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Contratos\obj\Debug\Administracion.Contratos.dll
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Contratos\obj\Debug\Administracion.Contratos.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\bin\Debug\Administracion.Contratos.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\bin\Debug\Administracion.Contratos.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\bin\Debug\Administracion.Enum.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\bin\Debug\Administracion.Modelos.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\bin\Debug\Administracion.OTD.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\bin\Debug\Administracion.Enum.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\bin\Debug\Administracion.Modelos.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\bin\Debug\Administracion.OTD.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\obj\Debug\Administracion.Contratos.csprojResolveAssemblyReference.cache
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\obj\Debug\Administracion.Contratos.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Contratos\obj\Debug\Administracion.Contratos.pdb

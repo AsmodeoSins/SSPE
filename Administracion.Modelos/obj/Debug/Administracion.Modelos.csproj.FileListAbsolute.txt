@@ -9,3 +9,9 @@ C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Adm
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Modelos\obj\Debug\Administracion.Modelos.csprojResolveAssemblyReference.cache
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Modelos\obj\Debug\Administracion.Modelos.dll
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Modelos\obj\Debug\Administracion.Modelos.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\bin\Debug\Administracion.Modelos.dll.config
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\bin\Debug\Administracion.Modelos.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\bin\Debug\Administracion.Modelos.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\obj\Debug\Administracion.Modelos.csprojResolveAssemblyReference.cache
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\obj\Debug\Administracion.Modelos.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\obj\Debug\Administracion.Modelos.pdb

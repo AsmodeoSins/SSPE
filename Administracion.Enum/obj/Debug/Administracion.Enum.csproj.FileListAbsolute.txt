@@ -7,3 +7,8 @@ C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Adm
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Enum\obj\Debug\Administracion.Enum.csprojResolveAssemblyReference.cache
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Enum\obj\Debug\Administracion.Enum.dll
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Enum\obj\Debug\Administracion.Enum.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Enum\bin\Debug\Administracion.Enum.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Enum\bin\Debug\Administracion.Enum.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Enum\obj\Debug\Administracion.Enum.csprojResolveAssemblyReference.cache
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Enum\obj\Debug\Administracion.Enum.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Enum\obj\Debug\Administracion.Enum.pdb

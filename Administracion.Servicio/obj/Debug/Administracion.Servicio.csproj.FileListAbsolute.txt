@@ -69,3 +69,39 @@ C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Adm
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Servicio\obj\Debug\Administracion.Servicio.csprojResolveAssemblyReference.cache
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Servicio\obj\Debug\Administracion.Servicio.dll
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Servicio\obj\Debug\Administracion.Servicio.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Servicio.dll.config
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Servicio.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Servicio.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Contratos.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Enum.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Modelos.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.OTD.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Repositorio.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Utilidades.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\EntityFramework.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\FluentValidation.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\AutoMapper.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Contratos.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Enum.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Modelos.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.OTD.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Repositorio.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\Administracion.Utilidades.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\EntityFramework.xml
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\FluentValidation.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\AutoMapper.xml
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\da\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\de\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\es\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\fi\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\fr\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\it\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\nl\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\pl\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\pt\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\ru\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\bin\Debug\sv\FluentValidation.resources.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\obj\Debug\Administracion.Servicio.csprojResolveAssemblyReference.cache
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\obj\Debug\Administracion.Servicio.dll
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Servicio\obj\Debug\Administracion.Servicio.pdb
