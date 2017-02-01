@@ -15,7 +15,7 @@
                 <ResourceDictionary Source="Temas/DataGrids.xaml"/>
                 <ResourceDictionary Source="Temas/Carousel.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <util:Localizador x:Key="Localizador" />
+            <util:Localizador x:Key="Localizador"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

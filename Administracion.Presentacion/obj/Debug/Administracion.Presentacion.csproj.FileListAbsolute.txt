@@ -184,3 +184,5 @@ C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Admi
 C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Administracion.Presentacion.application
 C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Administracion.Presentacion.exe
 C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Administracion.Presentacion.pdb
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Vista\Biometrico\VerificacionBiometricoVista.g.cs
+C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Vista\Biometrico\VerificacionBiometricoVista.baml
