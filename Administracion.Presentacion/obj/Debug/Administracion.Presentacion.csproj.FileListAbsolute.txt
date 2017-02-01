@@ -186,3 +186,12 @@ C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Admi
 C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Administracion.Presentacion.pdb
 C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Vista\Biometrico\VerificacionBiometricoVista.g.cs
 C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Presentacion\obj\Debug\Vista\Biometrico\VerificacionBiometricoVista.baml
+\\plista1_mxl\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\Reportes\IncidenciasPorInterno.rdlc
+\\plista1_mxl\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\Reportes\IncidenciasPorUbicacion.rdlc
+\\plista1_mxl\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\Reportes\PaseListaGeneral.rdlc
+\\plista1_mxl\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\Reportes\ReportePL.rdlc
+\\plista1_mxl\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\Administracion.Presentacion.exe.config
+\\plista1_mxl\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\Administracion.Presentacion.exe.manifest
+\\plista1_mxl\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\Administracion.Presentacion.application
+\\plista1_mxl\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\Administracion.Presentacion.exe
+\\plista1_mxl\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\Administracion.Presentacion.pdb

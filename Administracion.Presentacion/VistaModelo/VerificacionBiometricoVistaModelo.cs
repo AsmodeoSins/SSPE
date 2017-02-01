@@ -276,7 +276,7 @@ namespace Administracion.Presentacion.VistaModelo
             _controlBiometrico.TemplateTypes = FbFTemplateTypes.MMStandard;
             _controlBiometrico.ScanningActionType = FbFActions.Snap;
             _controlBiometrico.StreamResponseRequired = true;
-            _controlBiometrico.PersonId = string.Format(SSPConst.EnrolIdPersona, Persona.IdAnio, Persona.Id, Persona.IdIngreso);
+            //_controlBiometrico.PersonId = string.Format(SSPConst.EnrolIdPersona, Persona.IdAnio, Persona.Id, Persona.IdIngreso);
             _controlBiometrico.AutoIdentifyBeforeEnroll = false;
 
             _controlBiometrico.OnBioServerStatus += new BiometricControl.OnBioServerStatuses(controlBiometrico_OnBioServerStatus);
@@ -380,16 +380,6 @@ namespace Administracion.Presentacion.VistaModelo
                     BiometricosTemporales = resultados;
 
                     if (!PersonaIdentificada)//
-                    {
-                        Action accion = () =>
-                        {
-                            //_personaServicio.RemoverBiometrias(Persona);
-                            //_controlBiometrico.DeleteAsync(_controlBiometrico.BioLocation, string.Format(SSPConst.EnrolIdPersona, Persona.IdAnio, Persona.Id, Persona.IdIngreso));
-                        };
-
-                        LoadingPantalla.Ejecutar(Sesion.PantallaPrincipal, SSPConst.RemoviendoMsg, accion);
-                    }
-                    else
                     {
                         _controlBiometrico.BiometricMode = ControlModes.Identification;
                         _controlBiometrico.IdentifyAsync(resultados);
