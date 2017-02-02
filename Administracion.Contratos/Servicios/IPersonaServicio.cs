@@ -5,7 +5,7 @@ namespace Administracion.Contratos
 {
     public interface IPersonaServicio
     {
-        IList<PersonaOtd> BuscarPersonaPorFiltro(PersonaFiltroOtd filtro);
+        IList<PersonaOtd> BuscarPersonaPorFiltro(PersonaFiltroOtd filtro, bool esVisita = false);
 
         bool AsignarBiometria(PersonaOtd persona);
 

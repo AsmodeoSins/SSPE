@@ -27,3 +27,32 @@ C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Adm
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Cliente\obj\Debug\Administracion.Cliente.csprojResolveAssemblyReference.cache
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Cliente\obj\Debug\Administracion.Api.Cliente.dll
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Cliente\obj\Debug\Administracion.Api.Cliente.pdb
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.Api.Cliente.dll.config
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.Api.Cliente.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.Api.Cliente.pdb
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.OTD.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.Utilidades.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.Enum.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\FluentValidation.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.Modelos.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\AutoMapper.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.OTD.pdb
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.Utilidades.pdb
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.Enum.pdb
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\FluentValidation.pdb
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\Administracion.Modelos.pdb
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\AutoMapper.xml
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\da\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\de\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\es\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\fi\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\fr\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\it\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\nl\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\pl\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\pt\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\ru\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\bin\Debug\sv\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Cliente\obj\Debug\Administracion.Cliente.csprojResolveAssemblyReference.cache
+C:\repos\SSPE\Administracion.Cliente\obj\Debug\Administracion.Api.Cliente.dll
+C:\repos\SSPE\Administracion.Cliente\obj\Debug\Administracion.Api.Cliente.pdb

@@ -318,11 +318,11 @@ namespace Administracion.Presentacion.VistaModelo
             }
         }
 
-        private void controlBiometrico_OnIdentified(object sender, string IdPersona, int matchscore)
+        private void controlBiometrico_OnIdentified(object sender, string idPersona, int matchscore)
         {
             DispatcherHelper.CheckBeginInvokeOnUI(() =>
                 {
-                    if (!string.IsNullOrWhiteSpace(IdPersona) && !PersonaIdentificada)
+                    if (!string.IsNullOrWhiteSpace(idPersona) && !PersonaIdentificada)
                     {
                         Action accion = () =>
                             {
@@ -331,7 +331,7 @@ namespace Administracion.Presentacion.VistaModelo
                                     new PersonaFiltroOtd
                                     {
                                         EsImputado = Persona.EsImputado,
-                                        Folio = IdPersona,
+                                        Folio = idPersona,
                                     });
 
                                 if (personas != null && personas.Count > 0)

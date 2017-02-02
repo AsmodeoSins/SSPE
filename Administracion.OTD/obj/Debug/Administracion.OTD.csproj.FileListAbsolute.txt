@@ -12,3 +12,10 @@ C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Adm
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\obj\Debug\Administracion.OTD.csprojResolveAssemblyReference.cache
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\obj\Debug\Administracion.OTD.dll
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.OTD\obj\Debug\Administracion.OTD.pdb
+C:\repos\SSPE\Administracion.OTD\bin\Debug\Administracion.OTD.dll
+C:\repos\SSPE\Administracion.OTD\bin\Debug\Administracion.OTD.pdb
+C:\repos\SSPE\Administracion.OTD\bin\Debug\Administracion.Enum.dll
+C:\repos\SSPE\Administracion.OTD\bin\Debug\Administracion.Enum.pdb
+C:\repos\SSPE\Administracion.OTD\obj\Debug\Administracion.OTD.csprojResolveAssemblyReference.cache
+C:\repos\SSPE\Administracion.OTD\obj\Debug\Administracion.OTD.dll
+C:\repos\SSPE\Administracion.OTD\obj\Debug\Administracion.OTD.pdb

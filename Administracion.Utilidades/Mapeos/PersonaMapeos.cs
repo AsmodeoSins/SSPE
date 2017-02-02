@@ -12,6 +12,11 @@ namespace Administracion.Utilidades.Mapeos
             return Mapper.Map<IList<PersonaOtd>>(empleados);
         }
 
+        public static IList<PersonaOtd> MapearPersonas(IList<PERSONA> personas)
+        {
+            return Mapper.Map<IList<PersonaOtd>>(personas);
+        }
+
         public static IList<PersonaOtd> MapearImputados(IList<IMPUTADO> imputados)
         {
             return Mapper.Map<IList<PersonaOtd>>(imputados);
