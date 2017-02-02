@@ -69,3 +69,39 @@ C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Adm
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Servicio\obj\Debug\Administracion.Servicio.csprojResolveAssemblyReference.cache
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Servicio\obj\Debug\Administracion.Servicio.dll
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Servicio\obj\Debug\Administracion.Servicio.pdb
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Servicio.dll.config
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Servicio.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Servicio.pdb
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Contratos.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Enum.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Modelos.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.OTD.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Repositorio.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Utilidades.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\EntityFramework.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\FluentValidation.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\AutoMapper.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Contratos.pdb
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Enum.pdb
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Modelos.pdb
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.OTD.pdb
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Repositorio.pdb
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\Administracion.Utilidades.pdb
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\EntityFramework.xml
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\FluentValidation.pdb
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\AutoMapper.xml
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\da\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\de\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\es\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\fi\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\fr\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\it\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\nl\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\pl\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\pt\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\ru\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\bin\Debug\sv\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Servicio\obj\Debug\Administracion.Servicio.csprojResolveAssemblyReference.cache
+C:\repos\SSPE\Administracion.Servicio\obj\Debug\Administracion.Servicio.dll
+C:\repos\SSPE\Administracion.Servicio\obj\Debug\Administracion.Servicio.pdb

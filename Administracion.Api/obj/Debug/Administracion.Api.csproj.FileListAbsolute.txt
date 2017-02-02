@@ -4,3 +4,9 @@ C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Adm
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Api\obj\Debug\Administracion.Api.csprojResolveAssemblyReference.cache
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Api\obj\Debug\Administracion.Api.exe
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Api\obj\Debug\Administracion.Api.pdb
+C:\repos\SSPE\Administracion.Presentacion\bin\Debug\Administracion.Api.exe.config
+C:\repos\SSPE\Administracion.Presentacion\bin\Debug\Administracion.Api.exe
+C:\repos\SSPE\Administracion.Presentacion\bin\Debug\Administracion.Api.pdb
+C:\repos\SSPE\Administracion.Api\obj\Debug\Administracion.Api.csprojResolveAssemblyReference.cache
+C:\repos\SSPE\Administracion.Api\obj\Debug\Administracion.Api.exe
+C:\repos\SSPE\Administracion.Api\obj\Debug\Administracion.Api.pdb

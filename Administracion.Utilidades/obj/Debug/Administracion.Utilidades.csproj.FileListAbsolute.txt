@@ -58,3 +58,33 @@ C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Adm
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Utilidades\obj\Debug\Administracion.Utilidades.csprojResolveAssemblyReference.cache
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Utilidades\obj\Debug\Administracion.Utilidades.dll
 C:\Users\Guillermo\Documents\SSPE\Software Entregable\Codigo Fuente\Mexicali\Administracion\Administracion.Utilidades\obj\Debug\Administracion.Utilidades.pdb
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\Administracion.Utilidades.dll.config
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\Administracion.Utilidades.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\Administracion.Utilidades.pdb
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\Administracion.Enum.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\Administracion.Modelos.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\Administracion.OTD.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\AutoMapper.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\FluentValidation.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\System.Threading.Tasks.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\Administracion.Enum.pdb
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\Administracion.Modelos.pdb
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\Administracion.OTD.pdb
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\AutoMapper.xml
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\FluentValidation.pdb
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\System.Threading.Tasks.xml
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\da\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\de\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\es\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\fi\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\fr\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\it\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\nl\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\pl\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\pt\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\ru\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\bin\Debug\sv\FluentValidation.resources.dll
+C:\repos\SSPE\Administracion.Utilidades\obj\Debug\Administracion.Utilidades.csproj.App.config
+C:\repos\SSPE\Administracion.Utilidades\obj\Debug\Administracion.Utilidades.csprojResolveAssemblyReference.cache
+C:\repos\SSPE\Administracion.Utilidades\obj\Debug\Administracion.Utilidades.dll
+C:\repos\SSPE\Administracion.Utilidades\obj\Debug\Administracion.Utilidades.pdb
