@@ -33,10 +33,13 @@ namespace Administracion.Servicio
             _empleadoRepositorio = empleadoRepositorio;
         }
 
-        public IList<PersonaOtd> BuscarPersonaPorFiltro(PersonaFiltroOtd filtro)
+        public IList<PersonaOtd> BuscarPersonaPorFiltro(PersonaFiltroOtd filtro, bool esVisita = false)
         {
             try
             {
+                if (esVisita)
+                    return BuscarPersonas(filtro);
+
                 if (filtro.EsImputado)
                 {
                     return BuscarImputado(filtro);
@@ -308,6 +311,66 @@ namespace Administracion.Servicio
 
             return null;
         }
+
+        private IList<PersonaOtd> BuscarPersonas(PersonaFiltroOtd filtro)
+        {
+            var resultados = _personaRepositorio.ObtenerTodos();
+
+            if (!string.IsNullOrWhiteSpace(filtro.Folio))
+            {
+                var folio = filtro.Folio.Split('/');
+
+                if (folio.Count() > 1 && !string.IsNullOrWhiteSpace(folio[1]))
+                {
+                    filtro.PersonaId = int.Parse(folio[1]);
+                }
+            }
+
+            if (filtro.PersonaId > 0)
+            {
+                resultados = resultados.Where(p => p.ID_PERSONA == filtro.PersonaId);
+            }
+
+            if (!string.IsNullOrWhiteSpace(filtro.Nombre))
+            {
+                resultados = resultados.Where(p => p.NOMBRE.Contains(filtro.Nombre.ToUpper()));
+            }
+
+            if (!string.IsNullOrWhiteSpace(filtro.ApellidoPaterno))
+            {
+                resultados = resultados.Where(p => p.PATERNO.Contains(filtro.ApellidoPaterno.ToUpper()));
+            }
+
+            if (!string.IsNullOrWhiteSpace(filtro.ApellidoMaterno))
+            {
+                resultados = resultados.Where(p => p.MATERNO.Contains(filtro.ApellidoMaterno.ToUpper()));
+            }
+
+            if (resultados != null && resultados.Count() > 0)
+            {
+                var personas = PersonaMapeos.MapearPersonas(resultados.ToList());
+
+                foreach (var persona in personas)
+                {
+                    var biometricos = _personaBiometricoRepositorio.EncontrarPor(p => p.ID_PERSONA == persona.Id);
+
+                    if (biometricos != null && biometricos.Count() > 0)
+                    {
+                        BiometricoMapeos.MapearEmpleadoBiometrias(biometricos.ToList(), persona);
+                    }
+                }
+
+                if (filtro.FiltrarSoloEnrolados)
+                {
+                    return RegresarPersonalConIris(personas);
+                }
+
+                return personas;
+            }
+
+            return null;
+        }
+
 
         private IList<PersonaOtd> RegresarPersonalConIris(IList<PersonaOtd> personas)
         {
