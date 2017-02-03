@@ -45,6 +45,7 @@
     <Compile Include="Presentacion\IIncidenciasVistaModelo.cs" />
     <Compile Include="Presentacion\IPaseListaReporteVistaModelo.cs" />
     <Compile Include="Presentacion\ITiempoPaseDeListaVistaModelo.cs" />
+    <Compile Include="Presentacion\IVerificacionBiometricoVistaModelo.cs" />
     <Compile Include="Repositorio\ICeldaRepositorio.cs" />
     <Compile Include="Repositorio\ILogFallaServicioRepositorio.cs" />
     <Compile Include="Repositorio\IPLAsignacionResultadoRepositorio.cs" />

@@ -31,6 +31,7 @@ namespace Administracion.Presentacion.Ninject
             Bind<IPLIncidenciaBitacoraRepositorio>().To<PLIncidenciaBitacoraRepositorio>();
             Bind<IIngresoRepositorio>().To<IngresoRepositorio>();
             Bind<IUsuarioRepositorio>().To<UsuarioRepositorio>();
+           
         }
     }
 }

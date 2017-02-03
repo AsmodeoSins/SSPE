@@ -42,7 +42,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>\\plista1_mxl\repos\SSPE\Administracion.Presentacion\bin\Debug\</OutputPath>
+    <OutputPath>\\PLISTA1_MXL\Users\Dario Pesqueira\Desktop\SSPE\Administracion.API\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -180,6 +180,7 @@
     <Compile Include="VistaModelo\PaseListaVistaModelo.cs" />
     <Compile Include="VistaModelo\ProgramacionPaseListaVistaModelo.cs" />
     <Compile Include="VistaModelo\TiempoPaseDeListaVistaModelo.cs" />
+    <Compile Include="VistaModelo\VerificacionBiometricoVistaModelo.cs" />
     <Compile Include="Vista\Biometrico\BiometricoBaseVista.xaml.cs">
       <DependentUpon>BiometricoBaseVista.xaml</DependentUpon>
     </Compile>
@@ -192,6 +193,9 @@
     </Compile>
     <Compile Include="Vista\Biometrico\CapturaBiometricoVista.xaml.cs">
       <DependentUpon>CapturaBiometricoVista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Biometrico\VerificacionBiometricoVista.xaml.cs">
+      <DependentUpon>VerificacionBiometricoVista.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vista\Catalogo\CatalogoBaseVista.xaml.cs">
       <DependentUpon>CatalogoBaseVista.xaml</DependentUpon>
@@ -283,6 +287,10 @@
     <Page Include="Vista\Biometrico\CapturaBiometricoVista.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vista\Biometrico\VerificacionBiometricoVista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vista\Catalogo\CatalogoBaseVista.xaml">
       <SubType>Designer</SubType>
