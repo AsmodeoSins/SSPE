@@ -385,5 +385,23 @@ namespace Administracion.Servicio
 
             return personasConIris;
         }
+
+        public IList<PersonaOtd> BusquedaGlobal(PersonaFiltroOtd filtro)
+        {
+            var resultadosGlobal = BuscarImputado(filtro);
+
+            if (resultadosGlobal != null && resultadosGlobal.Count() > 0) {
+                return resultadosGlobal;
+            }
+
+            if (resultadosGlobal == null || resultadosGlobal.Count() < 0) {
+                resultadosGlobal = BuscarPersonas(filtro);
+                return resultadosGlobal;
+            }
+
+            else { return null; }
+        }
+
     }
+
 }

@@ -313,7 +313,7 @@ namespace Administracion.Presentacion.VistaModelo
                     Action accion = () =>
                     {
                         PersonaIdentificada = true;
-                        var personas = _personaServicio.BuscarPersonaPorFiltro(
+                        var personas = _personaServicio.BusquedaGlobal(
                             new PersonaFiltroOtd
                             {
                                 EsImputado = Persona.EsImputado,
@@ -339,7 +339,7 @@ namespace Administracion.Presentacion.VistaModelo
 
         private void controlBiometrico_OnIdentificationComplete(object sender, bool identificado)
         {
-            if (!identificado && !Persona.FueIdentificado && !_enrolado)
+            if (!identificado && !_enrolado)
             {
                 DispatcherHelper.CheckBeginInvokeOnUI(() =>
                 {
