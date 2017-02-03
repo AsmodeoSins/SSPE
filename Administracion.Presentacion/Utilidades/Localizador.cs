@@ -130,7 +130,17 @@ namespace Administracion.Presentacion.Utilidades
             {
                 return ServiceLocator.Current.GetInstance<IConfiguracionVista>();
             }
-        }
+        } 
+
+        public IVerificacionBiometricoVistaModelo VerificacionBiometrico { 
+
+            get
+            {
+                return ServiceLocator.Current.GetInstance<IVerificacionBiometricoVistaModelo>();
+            }
+       
+       }
+
 
         public static void Cleanup()
         {

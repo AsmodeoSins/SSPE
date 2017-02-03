@@ -172,9 +172,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Entidades\AdministracionEntidades.edmx.diagram">
-      <DependentUpon>AdministracionEntidades.edmx</DependentUpon>
-    </None>
     <None Include="Entidades\AdministracionEntidades.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AdministracionEntidades.edmx</DependentUpon>

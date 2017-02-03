@@ -103,7 +103,8 @@
         <Setter Property="Width" Value="120"/>
         <Setter Property="Height" Value="35"/>
         <Setter Property="Background" Value="#56B44F"/>
-    </Style>
+    </Style> 
+    
 
     <Style x:Key="BotonCaptura" TargetType="Button">
         <Setter Property="FontSize" Value="14"/>

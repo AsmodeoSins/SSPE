@@ -12,5 +12,7 @@ namespace Administracion.Contratos
         bool RemoverBiometrias(PersonaOtd persona);
 
         IList<PersonaOtd> TraerCustodiosParaPaseLista();
+
+        IList<PersonaOtd> BusquedaGlobal(PersonaFiltroOtd filtro);
     }
 }
