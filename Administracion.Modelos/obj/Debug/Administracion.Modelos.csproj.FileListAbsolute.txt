@@ -14,4 +14,3 @@ C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\bin\Debug\Administr
 C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\bin\Debug\Administracion.Modelos.pdb
 C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\obj\Debug\Administracion.Modelos.dll
 C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\obj\Debug\Administracion.Modelos.pdb
-C:\Users\Dario Pesqueira\Desktop\SSPE\Administracion.Modelos\obj\Debug\Administracion.Modelos.csprojResolveAssemblyReference.cache
