@@ -68,6 +68,14 @@ namespace Administracion.Presentacion.Utilidades
             }
         }
 
+        public ICapturaBiometricoVisitaVistaModelo CapturaBiometricoVisita
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ICapturaBiometricoVisitaVistaModelo>();
+            }
+        }
+
         public IProgramacionPaseListaVistaModelo ProgramarPaseLista
         {
             get

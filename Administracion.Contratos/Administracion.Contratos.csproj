@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enrolamiento\IPrincipalVistaModelo.cs" />
+    <Compile Include="Presentacion\ICapturaBiometricoVisitaVistaModelo.cs" />
     <Compile Include="Presentacion\IConfiguracionVista.cs" />
     <Compile Include="Presentacion\IIncidenciasPorInternoVistaModelo.cs" />
     <Compile Include="Presentacion\IIncidenciasReporteVistaModelo.cs" />

@@ -173,7 +173,7 @@ namespace Administracion.Servicio
                         var biometricoEntidad = BiometricoMapeos.MapearPersonaEntidad(biometrico);
                         biometricoEntidad.ID_PERSONA = persona.Id;
                         _personaBiometricoRepositorio.Insertar(biometricoEntidad);
-                        _imputadoBiometricoRepositorio.Guardar();
+                        _personaBiometricoRepositorio.Guardar();
                     }
                 }
 
@@ -370,7 +370,6 @@ namespace Administracion.Servicio
 
             return null;
         }
-
 
         private IList<PersonaOtd> RegresarPersonalConIris(IList<PersonaOtd> personas)
         {

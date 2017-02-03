@@ -171,6 +171,7 @@
     <Compile Include="VistaModelo\BaseVistaModelo.cs" />
     <Compile Include="VistaModelo\BiometricoBaseVistaModelo.cs" />
     <Compile Include="VistaModelo\BusquedaPersonaVistaModelo.cs" />
+    <Compile Include="VistaModelo\CapturaBiometricoVisitaVistaModelo.cs" />
     <Compile Include="VistaModelo\ConfiguracionVistaModelo.cs" />
     <Compile Include="VistaModelo\Reportes\IncidenciasPorInternoVistaModelo.cs" />
     <Compile Include="VistaModelo\Reportes\IncidenciasReporteVistaModelo.cs" />
@@ -187,6 +188,9 @@
       <DependentUpon>BusquedaPersonaVista.xaml</DependentUpon>
     </Compile>
     <Compile Include="VistaModelo\CapturaBiometricoVistaModelo.cs" />
+    <Compile Include="Vista\Biometrico\CapturaBiometricoVisitaVista.xaml.cs">
+      <DependentUpon>CapturaBiometricoVisitaVista.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Biometrico\CapturaBiometricoVista.xaml.cs">
       <DependentUpon>CapturaBiometricoVista.xaml</DependentUpon>
     </Compile>
@@ -275,6 +279,10 @@
     <Page Include="Vista\Biometrico\BusquedaPersonaVista.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\Biometrico\CapturaBiometricoVisitaVista.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Vista\Biometrico\CapturaBiometricoVista.xaml">
       <Generator>MSBuild:Compile</Generator>

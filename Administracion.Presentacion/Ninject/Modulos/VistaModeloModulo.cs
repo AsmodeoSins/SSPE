@@ -16,6 +16,7 @@ namespace Administracion.Presentacion.Ninject
             Bind<IIncidenciasVistaModelo>().To<IncidenciasVistaModelo>();
             Bind<IPaseListaVistaModelo>().To<PaseListaVistaModelo>();
             Bind<ICapturaBiometricoVistaModelo>().To<CapturaBiometricoVistaModelo>();
+            Bind<ICapturaBiometricoVisitaVistaModelo>().To<CapturaBiometricoVisitaVistaModelo>();
             Bind<IProgramacionPaseListaVistaModelo>().To<ProgramacionPaseListaVistaModelo>();
             Bind<ITiempoPaseDeListaVistaModelo>().To<TiempoPaseDeListaVistaModelo>();
             Bind<IPaseListaReporteVistaModelo>().To<PaseListaReporteVistaModelo>();

@@ -20,7 +20,7 @@ using System.Windows.Media;
 
 namespace Administracion.Presentacion.VistaModelo
 {
-    public class CapturaBiometricoVistaModelo : ViewModelBase, ICapturaBiometricoVistaModelo
+    public class CapturaBiometricoVisitaVistaModelo : ViewModelBase, ICapturaBiometricoVisitaVistaModelo
     {
         private BiometricControl _controlBiometrico;
         private ImageSource _foto;
@@ -34,7 +34,7 @@ namespace Administracion.Presentacion.VistaModelo
         private bool _activarEnrolarBoton;
         private bool _bioServerCambioEstatus;
 
-        public CapturaBiometricoVistaModelo(IPersonaServicio personaServicio)
+        public CapturaBiometricoVisitaVistaModelo(IPersonaServicio personaServicio)
         {
             _personaServicio = personaServicio;
             RegistrarSuscripciones();
@@ -200,6 +200,9 @@ namespace Administracion.Presentacion.VistaModelo
             if (_controlBiometrico != null)
             {
                 _controlBiometrico.CleanImage();
+
+                if (_controlBiometrico.IsConnectedWithListener)
+                    _controlBiometrico.DisconnectFromListener();
             }
 
             Mensajero.EnviarMensaje<bool>(true);
@@ -318,11 +321,11 @@ namespace Administracion.Presentacion.VistaModelo
             }
         }
 
-        private void controlBiometrico_OnIdentified(object sender, string idPersona, int matchscore)
+        private void controlBiometrico_OnIdentified(object sender, string IdPersona, int matchscore)
         {
             DispatcherHelper.CheckBeginInvokeOnUI(() =>
                 {
-                    if (!string.IsNullOrWhiteSpace(idPersona) && !PersonaIdentificada)
+                    if (!string.IsNullOrWhiteSpace(IdPersona) && !PersonaIdentificada)
                     {
                         Action accion = () =>
                             {
@@ -330,9 +333,9 @@ namespace Administracion.Presentacion.VistaModelo
                                 var personas = _personaServicio.BuscarPersonaPorFiltro(
                                     new PersonaFiltroOtd
                                     {
-                                        EsImputado = Persona.EsImputado,
-                                        Folio = idPersona,
-                                    });
+                                        EsImputado = false,
+                                        Folio = IdPersona
+                                    }, true);
 
                                 if (personas != null && personas.Count > 0)
                                 {

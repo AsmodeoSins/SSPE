@@ -37,6 +37,9 @@
         <TabItem Header="Configuración" Style="{StaticResource TabHorizontal}" Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.CONFIGURACION }}" IsSelected="{ op:AutorizationEnable {x:Static a:Constantes.CONFIGURACION }}">
             <vista:ConfiguracionVista HorizontalAlignment="Left" Margin="0,10,0,0"  Visibility="{ op:AutorizacionVisibility {x:Static a:Constantes.CONFIGURACION }}"/>
         </TabItem>
+        <TabItem Header="Visitas" Style="{StaticResource TabHorizontal}" >
+            <vista:CapturaBiometricoVisitaVista HorizontalAlignment="Left" Margin="0,10,0,0" />
+        </TabItem>
         <TabItem Header="Verificacion" Style="{StaticResource TabHorizontal}">
             <vista:VerificacionBiometricoVista Margin="0,10,0,0" />
         </TabItem>
