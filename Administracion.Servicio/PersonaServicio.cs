@@ -394,7 +394,7 @@ namespace Administracion.Servicio
                 return resultadosGlobal;
             }
 
-            if (resultadosGlobal == null || resultadosGlobal.Count() < 0) {
+            if (resultadosGlobal != null && resultadosGlobal.Count() < 0) {
                 resultadosGlobal = BuscarPersonas(filtro);
                 return resultadosGlobal;
             }
