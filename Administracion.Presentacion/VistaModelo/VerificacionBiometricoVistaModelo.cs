@@ -32,7 +32,6 @@ namespace Administracion.Presentacion.VistaModelo
         private IPersonaServicio _personaServicio;
         private bool _biometriaGuardada;
         private bool _enrolado;
-        private bool _recapturarBiometria;
         //private bool _activarVerificarBoton;
         private bool _bioServerCambioEstatus;
 

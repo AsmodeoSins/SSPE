@@ -46,7 +46,11 @@ namespace Administracion.Servicio.Tests
         {
             PersonaFiltroOtd filtro = new PersonaFiltroOtd();
             filtro.Folio = "0/304081114";
+            int expected = 1;
             IList<PersonaOtd> lstResultados = servicio.BusquedaGlobal(filtro);
+
+            Assert.IsNotNull(lstResultados);
+            Assert.AreEqual(expected, lstResultados.Count);
         }
 
         [TestMethod]
@@ -54,7 +58,11 @@ namespace Administracion.Servicio.Tests
         {
             PersonaFiltroOtd filtro = new PersonaFiltroOtd();
             filtro.Folio = "2015/124";
+            int expected = 1;
             IList<PersonaOtd> lstResultados = servicio.BusquedaGlobal(filtro);
+
+            Assert.IsNotNull(lstResultados);
+            Assert.AreEqual(expected, lstResultados.Count);
         }
     }
 }

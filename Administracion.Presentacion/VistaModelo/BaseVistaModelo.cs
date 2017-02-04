@@ -13,8 +13,6 @@ namespace Administracion.Presentacion.VistaModelo
 {
     public class BaseVistaModelo : ViewModelBase, IBaseVistaModelo
     {
-        private string tabPadreActual;
-
         public BaseVistaModelo()
         {
 
