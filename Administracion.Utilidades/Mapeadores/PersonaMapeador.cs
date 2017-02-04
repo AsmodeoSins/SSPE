@@ -24,7 +24,11 @@ namespace Administracion.Utilidades.Mapeadores
             Mapper.CreateMap<EMPLEADO, PersonaOtd>()
                 .ForMember(dest => dest.Id, entidad => entidad.MapFrom(ft => ft.ID_EMPLEADO))
                 .ForMember(dest => dest.Nombre, entidad => entidad.MapFrom(ft => ft.PERSONA.NOMBRE.Trim()))
-                .ForMember(dest => dest.Apellidos, entidad => entidad.MapFrom(ft => string.Format("{0} {1}", ft.PERSONA.PATERNO.Trim(), ft.PERSONA.MATERNO.Trim())))
+                .ForMember(dest => dest.Apellidos,
+                    entidad => entidad.MapFrom(ft =>
+                    string.Format("{0} {1}",
+                    string.IsNullOrEmpty(ft.PERSONA.PATERNO) ? string.Empty : ft.PERSONA.PATERNO.Trim(),
+                    string.IsNullOrEmpty(ft.PERSONA.MATERNO) ? string.Empty : ft.PERSONA.MATERNO.Trim())))
                 .ForMember(dest => dest.EsImputado, entidad => entidad.MapFrom(ft => false))
                 .ForMember(dest => dest.NombreCentro, entidad => entidad.MapFrom(ft => ft.CENTRO.DESCR));
         }
@@ -41,7 +45,11 @@ namespace Administracion.Utilidades.Mapeadores
             Mapper.CreateMap<PERSONA, PersonaOtd>()
               .ForMember(dest => dest.Id, entidad => entidad.MapFrom(ft => ft.ID_PERSONA))
               .ForMember(dest => dest.Nombre, entidad => entidad.MapFrom(ft => ft.NOMBRE.Trim()))
-              .ForMember(dest => dest.Apellidos, entidad => entidad.MapFrom(ft => string.Format("{0} {1}", ft.PATERNO.Trim(), ft.MATERNO.Trim())))
+              .ForMember(dest => dest.Apellidos,
+                    entidad => entidad.MapFrom(ft =>
+                    string.Format("{0} {1}",
+                    string.IsNullOrEmpty(ft.PATERNO) ? string.Empty : ft.PATERNO.Trim(),
+                    string.IsNullOrEmpty(ft.MATERNO) ? string.Empty : ft.MATERNO.Trim())))
               .ForMember(dest => dest.EsImputado, entidad => entidad.MapFrom(ft => false));
         }
 
@@ -53,7 +61,11 @@ namespace Administracion.Utilidades.Mapeadores
                .ForMember(dest => dest.IdAnio, entidad => entidad.MapFrom(ft => ft.ID_ANIO))
                .ForMember(dest => dest.IdIngreso, entidad => entidad.MapFrom(ft => ft.INGRESOes.LastOrDefault().ID_INGRESO))
                .ForMember(dest => dest.Nombre, entidad => entidad.MapFrom(ft => ft.NOMBRE.Trim()))
-               .ForMember(dest => dest.Apellidos, entidad => entidad.MapFrom(ft => string.Format("{0} {1}", ft.PATERNO.Trim(), ft.MATERNO.Trim())))
+               .ForMember(dest => dest.Apellidos, 
+                    entidad => entidad.MapFrom(ft => 
+                    string.Format("{0} {1}", 
+                    string.IsNullOrEmpty(ft.PATERNO) ? string.Empty: ft.PATERNO.Trim(),
+                    string.IsNullOrEmpty(ft.MATERNO) ? string.Empty : ft.MATERNO.Trim())))
                .ForMember(dest => dest.EsImputado, entidad => entidad.MapFrom(ft => true))
                .ForMember(dest => dest.Biometricos, entidad => entidad.MapFrom(ft => Mapper.Map<ICollection<BiometricoOtd>>(ft.IMPUTADO_BIOMETRICO)))
                .ForMember(dest => dest.Folio, entidad => entidad.MapFrom(ft => string.Format("{0} / {1}", ft.ID_ANIO, ft.ID_IMPUTADO)))

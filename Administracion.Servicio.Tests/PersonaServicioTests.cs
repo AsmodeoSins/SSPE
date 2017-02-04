@@ -8,6 +8,7 @@ using Administracion.Contratos;
 using Administracion.OTD;
 using Ninject;
 using Administracion.Presentacion.Ninject;
+using Administracion.Presentacion.Utilidades;
 
 namespace Administracion.Servicio.Tests
 {
@@ -34,18 +35,26 @@ namespace Administracion.Servicio.Tests
         public PersonaServicioTests()
         {
             InitializeKernel();
+            AutoMapperConfiguracion.Configurar();
 
             servicio = kernel.Get<PersonaServicio>();
         }
         #endregion
 
         [TestMethod]
-        public void BuscarPersonaPorFiltroVisitasTest()
+        public void BusquedaGlobalEnPersonasTest()
         {
             PersonaFiltroOtd filtro = new PersonaFiltroOtd();
-            filtro.EsImputado = false;
-            filtro.Nombre = "COSME";
-            IList<PersonaOtd> lstResultados = servicio.BuscarPersonaPorFiltro(filtro, true);
+            filtro.Folio = "0/304081114";
+            IList<PersonaOtd> lstResultados = servicio.BusquedaGlobal(filtro);
+        }
+
+        [TestMethod]
+        public void BusquedaGlobalEnImputadosTest()
+        {
+            PersonaFiltroOtd filtro = new PersonaFiltroOtd();
+            filtro.Folio = "2015/124";
+            IList<PersonaOtd> lstResultados = servicio.BusquedaGlobal(filtro);
         }
     }
 }

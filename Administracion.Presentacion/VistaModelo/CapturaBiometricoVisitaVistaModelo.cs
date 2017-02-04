@@ -330,12 +330,11 @@ namespace Administracion.Presentacion.VistaModelo
                         Action accion = () =>
                             {
                                 PersonaIdentificada = true;
-                                var personas = _personaServicio.BuscarPersonaPorFiltro(
+                                var personas = _personaServicio.BusquedaGlobal(
                                     new PersonaFiltroOtd
                                     {
-                                        EsImputado = false,
                                         Folio = IdPersona
-                                    }, true);
+                                    });
 
                                 if (personas != null && personas.Count > 0)
                                 {
