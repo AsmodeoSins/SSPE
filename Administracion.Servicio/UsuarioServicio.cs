@@ -94,7 +94,7 @@ namespace Administracion.Servicio
 
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -112,11 +112,11 @@ namespace Administracion.Servicio
                     return respuestaWeb.StatusCode;
                 }
             }
-            catch (WebException ex)
+            catch (WebException)
             {
                 return HttpStatusCode.NotFound;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return HttpStatusCode.NotFound;
             }

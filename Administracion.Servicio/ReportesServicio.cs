@@ -22,7 +22,6 @@ namespace Administracion.Servicio
         private readonly IPLProgramadoBitRepositorio _paseListaBitacoraRepositorio;
         private readonly IPLAsignacionResultRepositorio _asignacionResultRepositorio;
         private readonly ICentroRepositorio _centroRepositorio;
-        private readonly IIngresoServicio _ingresoServicio;
         private readonly IPLIncidenciaBitacoraServicio _plIncidenciaBitacoraServicio;
         private readonly ICentroServicio _centroServicio;
         private readonly IUbicacionServicio _ubicacionServicio;
