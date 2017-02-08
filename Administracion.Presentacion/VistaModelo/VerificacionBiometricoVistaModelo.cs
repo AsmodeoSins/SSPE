@@ -32,8 +32,8 @@ namespace Administracion.Presentacion.VistaModelo
         private IPersonaServicio _personaServicio;
         private bool _biometriaGuardada;
         private bool _enrolado;
-        private bool _recapturarBiometria;
-        //private bool _activarVerificarBoton;
+        //private bool _recapturarBiometria;
+        private bool _activarVerificarBoton=true;
         private bool _bioServerCambioEstatus;
 
         private string _busquedaMsg;
@@ -146,6 +146,18 @@ namespace Administracion.Presentacion.VistaModelo
             }
         }
 
+        public bool ActivarVerificarBoton
+        {
+            get
+            {
+                return _activarVerificarBoton;
+            }
+            set
+            {
+                _activarVerificarBoton = value;
+                RaisePropertyChanged("ActivarEnrolarBoton");
+            }
+        }
 
         public ObservableCollection<PersonaOtd> Personas
         {
@@ -232,6 +244,7 @@ namespace Administracion.Presentacion.VistaModelo
             _enrolado = false;
             BusquedaMensaje = SSPConst.BusquedaMsjInicial;
             MostrarMensaje = true;
+            ActivarVerificarBoton = true;
         }
 
 
@@ -262,7 +275,7 @@ namespace Administracion.Presentacion.VistaModelo
                     _controlBiometrico.ConnectToBioServer();
                     _controlBiometrico.StartScanning();
 
-                  
+                    ActivarVerificarBoton = false;
                 });
             });
         }
@@ -384,6 +397,8 @@ namespace Administracion.Presentacion.VistaModelo
                         _controlBiometrico.BiometricMode = ControlModes.Identification;
                         _controlBiometrico.IdentifyAsync(resultados);
                     }
+
+                    ActivarVerificarBoton = true;
                 }
             });
         }

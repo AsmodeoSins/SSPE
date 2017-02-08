@@ -391,7 +391,7 @@ namespace Administracion.Servicio
             var resultadosGlobal = BuscarImputado(filtro);
 
             if (resultadosGlobal != null && resultadosGlobal.Count() > 0) {
-                return resultadosGlobal;
+                 return resultadosGlobal;
             }
 
             if (resultadosGlobal == null || resultadosGlobal.Count() < 0) {
@@ -399,7 +399,7 @@ namespace Administracion.Servicio
                 return resultadosGlobal;
             }
 
-            else { return null; }
+            else { return resultadosGlobal; }
         }
 
     }
