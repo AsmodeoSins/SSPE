@@ -13,6 +13,7 @@ namespace Administracion.Presentacion.VistaModelo
 
         private bool _busquedaPersonaVisible;
         private bool _capturaBiometricaVisible;
+        private bool _capturaBiometricoVisitaVisible;
         private PersonaFiltroOtd _filtro;
 
         #endregion Miembros Privados
@@ -48,6 +49,19 @@ namespace Administracion.Presentacion.VistaModelo
             {
                 _capturaBiometricaVisible = value;
                 RaisePropertyChanged("CapturaBiometricaVisible");
+            }
+        }
+
+        public bool CapturaBiometricoVisitaVisible
+        {
+            get
+            {
+                return _capturaBiometricoVisitaVisible;
+            }
+            set
+            {
+                _capturaBiometricoVisitaVisible = value;
+                RaisePropertyChanged("CapturaBiometricoVisitaVisible");
             }
         }
 
@@ -121,8 +135,18 @@ namespace Administracion.Presentacion.VistaModelo
 
         private void MostrarOcultarControloes()
         {
-            CapturaBiometricaVisible = CapturaBiometricaVisible ? false : true;
-            BusquedaPersonaVisible = BusquedaPersonaVisible ? false : true;
+            if (Filtro.EsVisita)
+            {
+                CapturaBiometricaVisible = false;
+                CapturaBiometricoVisitaVisible = CapturaBiometricoVisitaVisible ? false : true;
+                BusquedaPersonaVisible = BusquedaPersonaVisible ? false : true;
+            }
+            else
+            {
+                CapturaBiometricoVisitaVisible = false;
+                CapturaBiometricaVisible = CapturaBiometricaVisible ? false : true;
+                BusquedaPersonaVisible = BusquedaPersonaVisible ? false : true;
+            }
         }
 
         private void RegistrarSuscripciones()
