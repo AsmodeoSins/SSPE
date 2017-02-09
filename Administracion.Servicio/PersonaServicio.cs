@@ -33,11 +33,11 @@ namespace Administracion.Servicio
             _empleadoRepositorio = empleadoRepositorio;
         }
 
-        public IList<PersonaOtd> BuscarPersonaPorFiltro(PersonaFiltroOtd filtro, bool esVisita = false)
+        public IList<PersonaOtd> BuscarPersonaPorFiltro(PersonaFiltroOtd filtro)
         {
             try
             {
-                if (esVisita)
+                if (filtro.EsVisita && !filtro.EsImputado)
                     return BuscarPersonas(filtro);
 
                 if (filtro.EsImputado)

@@ -33,7 +33,8 @@ namespace Administracion.Utilidades.Mapeadores
             Mapper.CreateMap<BiometricoOtd, PERSONA_BIOMETRICO>()
                 .ForMember(dest => dest.ID_FORMATO, entidad => entidad.MapFrom(ft => (short)ft.Formato))
                 .ForMember(dest => dest.ID_TIPO_BIOMETRICO, entidad => entidad.MapFrom(ft => (short)ft.Tipo))
-                .ForMember(dest => dest.BIOMETRICO, entidad => entidad.MapFrom(ft => ft.Biometrico));
+                .ForMember(dest => dest.BIOMETRICO, entidad => entidad.MapFrom(ft => ft.Biometrico))
+                .ForMember(dest => dest.BIOMETRICO_TIPO, entidad => entidad.Ignore());
         }
 
         private static void CrearMapeadorParaBiometricoOtdDePersonaBiometrico()

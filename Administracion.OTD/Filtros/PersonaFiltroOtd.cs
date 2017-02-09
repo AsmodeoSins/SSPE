@@ -18,6 +18,8 @@ namespace Administracion.OTD
 
         public bool EsImputado { get; set; }
 
+        public bool EsVisita { get; set; }
+
         public bool FiltrarPorUbicacion { get; set; }
 
         public short IdCentro { get; set; }

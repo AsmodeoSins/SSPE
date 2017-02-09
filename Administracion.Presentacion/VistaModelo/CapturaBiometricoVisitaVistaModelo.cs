@@ -14,6 +14,7 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Threading;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
@@ -269,6 +270,13 @@ namespace Administracion.Presentacion.VistaModelo
             _controlBiometrico.OnIdentificationComplete += new BiometricControl.BooleanAsyncHandler(controlBiometrico_OnIdentificationComplete);
             _controlBiometrico.OnSuccessResult += new BiometricControl.OnResultHandler(controlBiometrico_OnSuccessResult);
             _controlBiometrico.OnDeleteComplete += new BiometricControl.BooleanAsyncHandler(controlBiometrico_OnDeleteComplete);
+
+            _controlBiometrico.OnError += new BiometricControl.OnErrorHandler(controlBiometrico_OnError);
+        }
+
+        private void controlBiometrico_OnError(object sender, FbFBioResult result, string message)
+        {
+            MessageBox.Show(message, "FbF Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void controlBiometrico_OnEnrollmentComplete(object sender, bool success)

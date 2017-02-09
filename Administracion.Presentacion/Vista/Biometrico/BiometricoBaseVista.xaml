@@ -17,7 +17,7 @@
 
     <UserControl.Resources>
         <sys:BooleanToVisibilityConverter x:Key="VisibleConvertidor" />
-      
+
         <Style x:Key="EntryFieldStyle" TargetType="Grid" >
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -43,6 +43,7 @@
             <Label Content="Tipo de busqueda" VerticalAlignment="Center" Margin="0,0,5,0"/>
             <RadioButton x:Name="RadioButtonEsImputado" Content="Imputado" VerticalAlignment="Center" Margin="0" IsChecked="{Binding Filtro.EsImputado}"  />
             <RadioButton Content="Seguridad" VerticalAlignment="Center" Margin="10,0,15,0"/>
+            <RadioButton Content="Visitas" VerticalAlignment="Center" Margin="10,0,15,0" IsChecked="{Binding Filtro.EsVisita}"/>
 
             <Grid Width="560">
                 <Grid.RowDefinitions>
@@ -61,7 +62,7 @@
                 <Label Grid.Row="0" Grid.Column="1"  Content="Nombre:"/>
                 <Label Grid.Row="0" Grid.Column="2" Content="Paterno:"/>
                 <Label Grid.Row="0" Grid.Column="3" Content="Materno:"/>
-                
+
                 <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" Style="{StaticResource Busqueda}" Height="Auto" Margin="0,1,0,0">
                     <StackPanel Width="130" Orientation="Horizontal"  Margin="1,2,0,2" Background="#FFFFFF" Visibility="{Binding ElementName=RadioButtonEsImputado, Path=IsChecked, Converter={StaticResource VisibleConvertidor}}">
                         <TextBox Text="{Binding Anio, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, TargetNullValue={x:Static ms:String.Empty}}"  MaxLength="4" Width="50" BorderBrush="Transparent">
@@ -125,6 +126,10 @@
 
         <Canvas Grid.Row="2" Grid.ColumnSpan="2" Margin="10, 20, 10, 0" Background="#FFFFFF" Visibility="{Binding CapturaBiometricaVisible, Converter={StaticResource VisibleConvertidor}}">
             <vista:CapturaBiometricoVista Style="{StaticResource CustomUserControl}" />
+        </Canvas>
+
+        <Canvas Grid.Row="2" Grid.ColumnSpan="2" Margin="10, 20, 10, 0" Background="#FFFFFF" Visibility="{Binding CapturaBiometricoVisitaVisible, Converter={StaticResource VisibleConvertidor}}">
+            <vista:CapturaBiometricoVisitaVista Style="{StaticResource CustomUserControl}" />
         </Canvas>
 
     </Grid>
