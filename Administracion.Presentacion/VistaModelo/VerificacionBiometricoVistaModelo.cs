@@ -26,7 +26,6 @@ namespace Administracion.Presentacion.VistaModelo
         private BiometricControl _controlBiometrico;
         private ObservableCollection<PersonaOtd> _personas;
         private ImageSource _foto;
-        private PersonaOtd _persona;
         private PersonaOtd _personaEncontrada;
         private bool _personaIdentificada;
         private IPersonaServicio _personaServicio;
@@ -105,19 +104,6 @@ namespace Administracion.Presentacion.VistaModelo
             }
         }
 
-        public PersonaOtd Persona
-        {
-            get
-            {
-                return _persona;
-            }
-            set
-            {
-                _persona = value;
-                RaisePropertyChanged("Persona");
-            }
-        }
-
         public PersonaOtd PersonaEncontrada
         {
             get
@@ -139,7 +125,6 @@ namespace Administracion.Presentacion.VistaModelo
             }
             set
             {
-                Persona.FueIdentificado = value;
                 _personaIdentificada = value;
                 RaisePropertyChanged("PersonaIdentificada");
             }
@@ -196,19 +181,6 @@ namespace Administracion.Presentacion.VistaModelo
 
         #region Metodos Privados
 
-        private void AsignarPersonaSeleccionada(PersonaOtd persona)
-        {
-            if (persona != null)
-            {
-                if (persona.Biometricos == null)
-                {
-                    persona.Biometricos = new List<BiometricoOtd>();
-                }
-
-                Persona = persona;
-            }
-        }
-
         private void Cancelar()
         {
             InicializarObjetos();
@@ -223,7 +195,6 @@ namespace Administracion.Presentacion.VistaModelo
 
         private void InicializarObjetos()
         {
-            Persona = new PersonaOtd { Biometricos = new List<BiometricoOtd>() };
             PersonaEncontrada = new PersonaOtd();
             BiometricosTemporales = new List<FbFBioResult>();
             PersonaIdentificada = false;
@@ -236,7 +207,7 @@ namespace Administracion.Presentacion.VistaModelo
 
         private void RegistrarSuscripciones()
         {
-            Mensajero.RegistrarSuscripcion<PersonaOtd>(this, AsignarPersonaSeleccionada);
+
         }
 
         #endregion Metodos Privados 
@@ -261,7 +232,7 @@ namespace Administracion.Presentacion.VistaModelo
                     _controlBiometrico.ConnectToBioServer();
                     _controlBiometrico.StartScanning();
 
-                  
+
                 });
             });
         }
@@ -275,14 +246,13 @@ namespace Administracion.Presentacion.VistaModelo
             _controlBiometrico.TemplateTypes = FbFTemplateTypes.MMStandard;
             _controlBiometrico.ScanningActionType = FbFActions.Snap;
             _controlBiometrico.StreamResponseRequired = true;
-            //_controlBiometrico.PersonId = string.Format(SSPConst.EnrolIdPersona, Persona.IdAnio, Persona.Id, Persona.IdIngreso);
             _controlBiometrico.AutoIdentifyBeforeEnroll = false;
 
             _controlBiometrico.OnBioServerStatus += new BiometricControl.OnBioServerStatuses(controlBiometrico_OnBioServerStatus);
             _controlBiometrico.OnIdentified += new BiometricControl.OnIdentifiedHandler(controlBiometrico_OnIdentified);
             _controlBiometrico.OnIdentificationComplete += new BiometricControl.BooleanAsyncHandler(controlBiometrico_OnIdentificationComplete);
             _controlBiometrico.OnSuccessResult += new BiometricControl.OnResultHandler(controlBiometrico_OnSuccessResult);
-         
+
         }
 
         private void controlBiometrico_OnBioServerStatus(object sender, BioServerStatuses estatus)
@@ -315,7 +285,6 @@ namespace Administracion.Presentacion.VistaModelo
                         var personas = _personaServicio.BusquedaGlobal(
                             new PersonaFiltroOtd
                             {
-                                EsImputado = Persona.EsImputado,
                                 Folio = IdPersona,
                             });
 
@@ -324,7 +293,8 @@ namespace Administracion.Presentacion.VistaModelo
                             PersonaEncontrada = personas.OrderBy(p => p.IdIngreso).LastOrDefault();
                         }
 
-                        if (personas.Count < 1) {
+                        if (personas.Count < 1)
+                        {
 
                             BusquedaMensaje = SSPConst.BusquedaMsjNoResultados;
                             MostrarMensaje = true;
@@ -344,24 +314,7 @@ namespace Administracion.Presentacion.VistaModelo
                 {
                     Action accion = () =>
                     {
-                        foreach (var biometricos in BiometricosTemporales)
-                        {
-                            var plantillaBiometrica = biometricos.Templates[0];
-
-                            if (plantillaBiometrica != null && (biometricos.BioLocation == FbFBioLocations.LeftIris || biometricos.BioLocation == FbFBioLocations.RightIris))
-                            {
-                                BiometricoOtd biometrico = new BiometricoOtd();
-                                biometrico.Tipo = biometricos.BioLocation == FbFBioLocations.LeftIris ? TipoBiometrico.OjoIzquierdo : TipoBiometrico.OjoDerecho;
-                                biometrico.Biometrico = plantillaBiometrica.Template;
-                                biometrico.Formato = FormatoBiometrico.BMP;
-
-                                Persona.Biometricos.Add(biometrico);
-                            }
-                        }
-
-                        _controlBiometrico.BiometricMode = ControlModes.Enrollment;
-
-                        _enrolado = _controlBiometrico.EnrollAsync(BiometricosTemporales, string.Format(SSPConst.EnrolIdPersona, Persona.IdAnio, Persona.Id, Persona.IdIngreso));
+                        //do something if needed
                     };
 
                     LoadingPantalla.Ejecutar(Sesion.PantallaPrincipal, SSPConst.EnrolandoMsg, accion);
