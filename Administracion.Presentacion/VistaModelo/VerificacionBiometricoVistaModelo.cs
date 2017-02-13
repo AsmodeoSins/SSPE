@@ -229,6 +229,8 @@ namespace Administracion.Presentacion.VistaModelo
             if (_controlBiometrico != null)
             {
                 _controlBiometrico.CleanImage();
+                if (_controlBiometrico.IsConnectedWithListener)
+                    _controlBiometrico.DisconnectFromListener();
             }
 
             Mensajero.EnviarMensaje<bool>(true);
@@ -329,7 +331,6 @@ namespace Administracion.Presentacion.VistaModelo
                         var personas = _personaServicio.BusquedaGlobal(
                             new PersonaFiltroOtd
                             {
-                                EsImputado = Persona.EsImputado,
                                 Folio = IdPersona,
                             });
 

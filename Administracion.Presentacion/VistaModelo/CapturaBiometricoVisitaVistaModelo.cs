@@ -246,6 +246,7 @@ namespace Administracion.Presentacion.VistaModelo
                     _controlBiometrico.ConnectToBioServer();
                     _controlBiometrico.StartScanning();
 
+              
                     ActivarEnrolarBoton = false;
                 });
             });
@@ -418,6 +419,6 @@ namespace Administracion.Presentacion.VistaModelo
             }
         }
 
-        #endregion Fulcrum Configuracion
+#endregion Fulcrum Configuracion
     }
 }
