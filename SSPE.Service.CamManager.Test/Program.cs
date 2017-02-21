@@ -9,6 +9,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.ServiceModel;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -46,28 +47,13 @@ namespace SSPE.Service.CamManager.Test
 
         private static void Cam_OnIrisGotten(byte[] leftIris, byte[] rightIris)
         {
-            StandardServiceSoapClient fbfClient = new StandardServiceSoapClient();
+            string personId = GetIdentity(leftIris, rightIris);
 
-            FbFRecord current = new FbFRecord();
-            current.taxonomy = "78248:0:0:0:0:0:0:0";
-            current.location = FbFBioLocations.UnknownIris;
-            current.templates = new FbFBioTemplate[2];
-            current.templates[0] = new FbFBioTemplate() { template = Convert.ToBase64String(leftIris) };
-            current.templates[1] = new FbFBioTemplate() { template = Convert.ToBase64String(rightIris) };
-
-            FbFResponseStatuses res;
-            FbFException ex;
-
-            FbFBioResult[] results = fbfClient.IdentifyBiometric(new FbFRecord[] { current }, out res, out ex);
-
-            if (results != null && results.Length > 0)
-            {
-                if (string.IsNullOrEmpty(results[0].personid))
-                    _cam.NotIdentified();
-                else
-                    _cam.Identified();
-                Thread.Sleep(1000);
-            }
+            if (string.IsNullOrEmpty(personId))
+                _cam.NotIdentified();
+            else
+                _cam.Identified();
+            Thread.Sleep(1000);
 
             string directory = ConfigurationManager.AppSettings["Directory"];
             string fileName = "{0}-{1}.bmp";
@@ -76,28 +62,32 @@ namespace SSPE.Service.CamManager.Test
             SaveImage(directory, string.Format(fileName, DateTime.Now.ToString(dateFormat), "right iris"), rightIris);
         }
 
-        private static Image Raw8BitByteArrayToImage(byte[] byteArray, int width, int height)
+        private static string GetIdentity(byte[] leftIris, byte[] rightIris)
         {
-            if ((byteArray == null) || (width <= 0) || (height <= 0))
-                return null;
+            StandardServiceSoapClient fbfClient = new StandardServiceSoapClient();
 
-            Bitmap bmp = new Bitmap(width, height, PixelFormat.Format8bppIndexed);
-            ColorPalette palette = bmp.Palette;
+            byte[] leftIrisTemplate = fbfClient.ExtractTemplate(leftIris, (int)FbFBioLocations.LeftIris, (int)FbFTemplateTypes.MMStandard);
+            byte[] rightIrisTemplate = fbfClient.ExtractTemplate(rightIris, (int)FbFBioLocations.RightIris, (int)FbFTemplateTypes.MMStandard);
 
-            for (int index = 0; index < palette.Entries.Length; index++)
-                palette.Entries[index] = Color.FromArgb(index, index, index);
+            if (leftIrisTemplate != null && rightIrisTemplate != null)
+            {
+                FbFRecord current = new FbFRecord();
+                current.location = FbFBioLocations.UnknownIris;
+                current.templates = new FbFBioTemplate[2];
+                current.templates[0] = new FbFBioTemplate() { template = Convert.ToBase64String(leftIrisTemplate) };
+                current.templates[1] = new FbFBioTemplate() { template = Convert.ToBase64String(rightIrisTemplate) };
 
-            bmp.Palette = palette;
+                FbFResponseStatuses res;
+                FbFException ex;
 
-            BitmapData bData = bmp.LockBits(new Rectangle(new Point(), bmp.Size),
-                                            ImageLockMode.WriteOnly, PixelFormat.Format8bppIndexed);
+                FbFBioResult[] results = fbfClient.IdentifyBiometric(new FbFRecord[] { current }, out res, out ex);
 
-            // Copy the bytes to the bitmap object
-            Marshal.Copy(byteArray, 0, bData.Scan0, byteArray.Length);
+                if (results.Length == 2)
+                    if (results[0].personid.Equals(results[1].personid))
+                        return results[0].personid;
+            }
 
-            bmp.UnlockBits(bData);
-
-            return bmp;
+            return null;
         }
 
         private static void SaveImage(string directory, string filename, byte[] data)
@@ -107,9 +97,11 @@ namespace SSPE.Service.CamManager.Test
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);
 
-            Image img = Raw8BitByteArrayToImage(data, 640, 480);
-
-            img.Save(path, ImageFormat.Bmp);
+            using (Stream ms = new MemoryStream(data))
+            {
+                Image img = Image.FromStream(ms);
+                img.Save(path, ImageFormat.Bmp);
+            }
         }
     }
 }

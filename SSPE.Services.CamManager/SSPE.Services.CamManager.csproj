@@ -109,7 +109,7 @@
     <None Include="Service References\FbFWebService\StandardService.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SSPE.Tools\SSPE.Tools\SSPE.Tools.iCam7000Wrapper.csproj">
+    <ProjectReference Include="..\SSPE.Tools\SSPE.Tools.iCam7000Wrapper.csproj">
       <Project>{17c56584-ddcf-46df-8176-448a260065fc}</Project>
       <Name>SSPE.Tools.iCam7000Wrapper</Name>
     </ProjectReference>

@@ -2,6 +2,10 @@
 using SSPE.Tools.iCam7000Wrapper.Enums;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 
@@ -203,6 +207,44 @@ namespace SSPE.Tools.iCam7000Wrapper
                     throw new Exception(Constants.UNKNOWN_ERROR);
             }
         }
+
+        private static Image Raw8BitByteArrayToImage(byte[] byteArray, int width, int height)
+        {
+            if ((byteArray == null) || (width <= 0) || (height <= 0))
+                return null;
+
+            Bitmap bmp = new Bitmap(width, height, PixelFormat.Format8bppIndexed);
+            ColorPalette palette = bmp.Palette;
+
+            for (int index = 0; index < palette.Entries.Length; index++)
+                palette.Entries[index] = Color.FromArgb(index, index, index);
+
+            bmp.Palette = palette;
+
+            BitmapData bData = bmp.LockBits(new Rectangle(new Point(), bmp.Size),
+                                            ImageLockMode.WriteOnly, PixelFormat.Format8bppIndexed);
+
+            // Copy the bytes to the bitmap object
+            Marshal.Copy(byteArray, 0, bData.Scan0, byteArray.Length);
+
+            bmp.UnlockBits(bData);
+
+            return bmp;
+        }
+
+        private static byte[] ImageToByteArray(Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, ImageFormat.Bmp);
+                return ms.ToArray();
+            }
+        }
+
+        private static byte[] RawImageBytesToBmpBytes(byte[] rawImage)
+        {
+            return ImageToByteArray(Raw8BitByteArrayToImage(rawImage, 640, 480));
+        }
         #endregion
 
         #region Event Handlers
@@ -216,7 +258,7 @@ namespace SSPE.Tools.iCam7000Wrapper
 
             SendMessage(Sound.FINISH_IRIS_CAPTURE, DisplayMessage.CONNECTED, LedNotification.SUCCESS);
             bool leftOk = false, rightOk = false;
-            
+
 
             if ((rightImage != null) && (((byte[])rightImage).Length != 0))
             {
@@ -233,6 +275,7 @@ namespace SSPE.Tools.iCam7000Wrapper
                         break;
                 }
             }
+
             if ((leftImage != null) && (((byte[])leftImage).Length != 0))
             {
                 switch ((IrisImageStatus)leftImageStatus)
@@ -250,7 +293,7 @@ namespace SSPE.Tools.iCam7000Wrapper
             }
 
             if (OnIrisGotten != null && rightOk && leftOk)
-                OnIrisGotten((byte[])leftImage, (byte[])rightImage);
+                OnIrisGotten(RawImageBytesToBmpBytes((byte[])leftImage), RawImageBytesToBmpBytes((byte[])rightImage));
 
             StopIrisCapture();
             Thread.Sleep(2000);
