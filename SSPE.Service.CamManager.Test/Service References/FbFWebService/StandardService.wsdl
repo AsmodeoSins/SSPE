@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://fulcrumbiometrics.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://fulcrumbiometrics.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://fulcrumbiometrics.com/">
+      <s:element name="EnrollBiometric">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="records" type="tns:ArrayOfFbFRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFbFRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FbFRecord" nillable="true" type="tns:FbFRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FbFRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="templates" type="tns:ArrayOfFbFBioTemplate" />
+        </s:sequence>
+        <s:attribute name="recordid" type="s:int" use="required" />
+        <s:attribute name="personid" type="s:string" />
+        <s:attribute name="taxonomy" type="s:string" />
+        <s:attribute name="location" type="tns:FbFBioLocations" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFbFBioTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="biotemplate" nillable="true" type="tns:FbFBioTemplate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FbFBioTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="template" type="s:string" />
+        </s:sequence>
+        <s:attribute name="type" type="tns:FbFTemplateTypes" use="required" />
+        <s:attribute name="G" type="tns:FbFBioAttributes" use="required" />
+        <s:attribute name="quality" type="s:int" use="required" />
+      </s:complexType>
+      <s:simpleType name="FbFTemplateTypes">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="None" />
+              <s:enumeration value="MMStandard" />
+              <s:enumeration value="MMLite" />
+              <s:enumeration value="ISO" />
+              <s:enumeration value="ANSI" />
+              <s:enumeration value="NIST" />
+              <s:enumeration value="IdKit" />
+              <s:enumeration value="FujitsuStandard" />
+              <s:enumeration value="TopazStandard" />
+              <s:enumeration value="IrisIdLong" />
+              <s:enumeration value="IrisIdShort" />
+              <s:enumeration value="FujitsuStandardV2" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:simpleType name="FbFBioAttributes">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="G" />
+              <s:enumeration value="Quality" />
+              <s:enumeration value="NFIQ" />
+              <s:enumeration value="MinutiaMap" />
+              <s:enumeration value="VectorMap" />
+              <s:enumeration value="Segementation" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:simpleType name="FbFBioLocations">
+        <s:restriction base="s:string">
+          <s:enumeration value="UnknownFinger" />
+          <s:enumeration value="RightThumb" />
+          <s:enumeration value="RightIndex" />
+          <s:enumeration value="RightMiddle" />
+          <s:enumeration value="RightRing" />
+          <s:enumeration value="RightLittle" />
+          <s:enumeration value="LeftThumb" />
+          <s:enumeration value="LeftIndex" />
+          <s:enumeration value="LeftMiddle" />
+          <s:enumeration value="LeftRing" />
+          <s:enumeration value="LeftLittle" />
+          <s:enumeration value="LeftExtra" />
+          <s:enumeration value="RightExtra" />
+          <s:enumeration value="UnknownTwoFinger" />
+          <s:enumeration value="LeftIndexMiddle" />
+          <s:enumeration value="LeftRingLittle" />
+          <s:enumeration value="Thumbs" />
+          <s:enumeration value="RightIndexMiddle" />
+          <s:enumeration value="RightRingLittle" />
+          <s:enumeration value="TwoFingersExtra" />
+          <s:enumeration value="UnknownFourFinger" />
+          <s:enumeration value="LeftFourFinger" />
+          <s:enumeration value="RightFourFinger" />
+          <s:enumeration value="UnknownPalm" />
+          <s:enumeration value="LeftPalm" />
+          <s:enumeration value="RightPalm" />
+          <s:enumeration value="UnknownFace" />
+          <s:enumeration value="FaceFront" />
+          <s:enumeration value="FaceLeft45" />
+          <s:enumeration value="FaceLeft90" />
+          <s:enumeration value="FaceRight45" />
+          <s:enumeration value="FaceRight90" />
+          <s:enumeration value="UnknownIris" />
+          <s:enumeration value="LeftIris" />
+          <s:enumeration value="RightIris" />
+          <s:enumeration value="BothIris" />
+          <s:enumeration value="UnknownPalmVeinEnroll" />
+          <s:enumeration value="UnknownPalmVeinCapture" />
+          <s:enumeration value="LeftPalmVeinEnroll" />
+          <s:enumeration value="LeftPalmVeinCapture" />
+          <s:enumeration value="RightPalmVeinEnroll" />
+          <s:enumeration value="RightPalmVeinCapture" />
+          <s:enumeration value="UnknownFingerRolled" />
+          <s:enumeration value="LeftIndexRolled" />
+          <s:enumeration value="LeftMiddleRolled" />
+          <s:enumeration value="LeftRingRolled" />
+          <s:enumeration value="LeftLittleRolled" />
+          <s:enumeration value="LeftThumbRolled" />
+          <s:enumeration value="RightIndexRolled" />
+          <s:enumeration value="RightMiddleRolled" />
+          <s:enumeration value="RightRingRolled" />
+          <s:enumeration value="RightLittleRolled" />
+          <s:enumeration value="RightThumbRolled" />
+          <s:enumeration value="LeftExtraRolled" />
+          <s:enumeration value="RightExtraRolled" />
+          <s:enumeration value="HandSignature" />
+          <s:enumeration value="FBIUnknownThumb" />
+          <s:enumeration value="FBILeftThumb" />
+          <s:enumeration value="FBIRightThumb" />
+          <s:enumeration value="FBIUnknownFourFinger" />
+          <s:enumeration value="FBILeftFourFinger" />
+          <s:enumeration value="FBIRightFourFinger" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="EnrollBiometricResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnrollBiometricResult" type="tns:ArrayOfFbFBioResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="exception" type="tns:FbFException" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFbFBioResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FbFBioResult" nillable="true" type="tns:FbFBioResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FbFBioResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="templates" type="tns:ArrayOfFbFBioTemplate1" />
+          <s:element minOccurs="0" maxOccurs="1" name="images" type="tns:ArrayOfFbFBioImage" />
+        </s:sequence>
+        <s:attribute name="recordid" type="s:string" />
+        <s:attribute name="status" type="tns:FbFResultStatuses" use="required" />
+        <s:attribute name="biolocation" type="tns:FbFBioLocations" use="required" />
+        <s:attribute name="matchscore" type="s:int" use="required" />
+        <s:attribute name="matchid" type="s:int" use="required" />
+        <s:attribute name="personid" type="s:string" />
+        <s:attribute name="generalized" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFbFBioTemplate1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="biotemplates" nillable="true" type="tns:FbFBioTemplate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFbFBioImage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="bioimages" nillable="true" type="tns:FbFBioImage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FbFBioImage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="rawbitmap" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="rawwsq" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+        </s:sequence>
+        <s:attribute name="type" type="tns:FbFImageTypes" use="required" />
+        <s:attribute name="persist" type="s:boolean" use="required" />
+        <s:attribute name="nfiq" type="s:string" />
+      </s:complexType>
+      <s:simpleType name="FbFImageTypes">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="RawBitmap" />
+              <s:enumeration value="RawWSQ" />
+              <s:enumeration value="BinarizedJPG" />
+              <s:enumeration value="BinarizedPNG" />
+              <s:enumeration value="BinarizedBMP" />
+              <s:enumeration value="BinarizedWSQ" />
+              <s:enumeration value="RefreshJPG" />
+              <s:enumeration value="RefreshPNG" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:simpleType name="FbFResultStatuses">
+        <s:restriction base="s:string">
+          <s:enumeration value="NotFound" />
+          <s:enumeration value="Identified" />
+          <s:enumeration value="Generalized" />
+          <s:enumeration value="FusedIdentified" />
+          <s:enumeration value="Verified" />
+          <s:enumeration value="Error" />
+          <s:enumeration value="Added" />
+          <s:enumeration value="Removed" />
+          <s:enumeration value="Captured" />
+          <s:enumeration value="CaptureStarted" />
+          <s:enumeration value="CaptureStopped" />
+          <s:enumeration value="DeviceEnumerationFailed" />
+          <s:enumeration value="LicenseError" />
+          <s:enumeration value="ExtractionFailed" />
+          <s:enumeration value="DeviceUnplugged" />
+          <s:enumeration value="DevicePluggedIn" />
+          <s:enumeration value="DeviceNotAvailable" />
+          <s:enumeration value="StartScanningFailed" />
+          <s:enumeration value="AlreadySubscribed" />
+          <s:enumeration value="ConfigRequestFailed" />
+          <s:enumeration value="SubscriptionPaused" />
+          <s:enumeration value="SubscriptionResumed" />
+          <s:enumeration value="PamlVeinMessageNoGuidance" />
+          <s:enumeration value="PamlVeinMessageStopMoving" />
+          <s:enumeration value="PamlVeinMessageCorrectly" />
+          <s:enumeration value="PamlVeinMessageClose" />
+          <s:enumeration value="PamlVeinMessageKeepAway" />
+          <s:enumeration value="PamlVeinMessageSaving" />
+          <s:enumeration value="PamlVeinMessageAuthenticating" />
+          <s:enumeration value="PamlVeinMessageMoveAway" />
+          <s:enumeration value="PamlVeinMessageMoveLeft" />
+          <s:enumeration value="PamlVeinMessageMoveRight" />
+          <s:enumeration value="PamlVeinMessageMoveForward" />
+          <s:enumeration value="PamlVeinMessageMoveBackward" />
+          <s:enumeration value="PamlVeinMessageEvenUp" />
+          <s:enumeration value="PamlVeinMessageSensorOrient" />
+          <s:enumeration value="PamlVeinMessageFingerOpen" />
+          <s:enumeration value="PamlVeinMessageBrightMoment" />
+          <s:enumeration value="PamlVeinMessageBrightNg" />
+          <s:enumeration value="PamlVeinMessageHoldUpHand" />
+          <s:enumeration value="PamlVeinMessageFlattenOut" />
+          <s:enumeration value="Segemented" />
+          <s:enumeration value="DeviceNotSupported" />
+          <s:enumeration value="Missing" />
+          <s:enumeration value="DeviceTiltUpsideDown" />
+          <s:enumeration value="DeviceTiltNormal" />
+          <s:enumeration value="TransactionTimeOut" />
+          <s:enumeration value="DeviceDriverError" />
+          <s:enumeration value="TemplateFormatError" />
+          <s:enumeration value="Updated" />
+          <s:enumeration value="GeneralizedAndIdentified" />
+          <s:enumeration value="GeneralizedAndNotIdentified" />
+          <s:enumeration value="TemplateMismatch" />
+          <s:enumeration value="LowTemplateQuality" />
+          <s:enumeration value="UnsupportedBiolocation" />
+          <s:enumeration value="ReceivingImage" />
+          <s:enumeration value="FailedToOpenComPort" />
+          <s:enumeration value="AcquiringLicense" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="FbFException">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="innerexception" type="tns:FbFException" />
+        </s:sequence>
+        <s:attribute name="errorcode" type="s:long" use="required" />
+        <s:attribute name="errormessage" type="s:string" />
+      </s:complexType>
+      <s:element name="EnrollImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="imagedata" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="personid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="biolocation" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnrollImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EnrollImageResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="exception" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBiometric">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="biolocation" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="personid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBiometricResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteBiometricResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="exception" type="tns:FbFException" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdentifyBiometric">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="records" type="tns:ArrayOfFbFRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdentifyBiometricResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyBiometricResult" type="tns:ArrayOfFbFBioResult" />
+            <s:element minOccurs="1" maxOccurs="1" name="responsestatus" type="tns:FbFResponseStatuses" />
+            <s:element minOccurs="0" maxOccurs="1" name="exception" type="tns:FbFException" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="FbFResponseStatuses">
+        <s:restriction base="s:string">
+          <s:enumeration value="Error" />
+          <s:enumeration value="Success" />
+          <s:enumeration value="Refresh" />
+          <s:enumeration value="Generalized" />
+          <s:enumeration value="Extracted" />
+          <s:enumeration value="Capabilities" />
+          <s:enumeration value="Acknowledgement" />
+          <s:enumeration value="ResultsPending" />
+          <s:enumeration value="Status" />
+          <s:enumeration value="DeviceAdded" />
+          <s:enumeration value="DeviceRemoved" />
+          <s:enumeration value="Configuration" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="IdentifyImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="imagedata" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="biolocation" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdentifyImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyImageResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="exception" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneralizeTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="templates" type="tns:ArrayOfBase64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="biolocation" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBase64Binary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="base64Binary" nillable="true" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GeneralizeTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeneralizeTemplateResult" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="responsestatus" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="exception" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExtractTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="imagedata" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="biolocation" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="templatetype" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExtractTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExtractTemplateResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerCount">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetServerCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerConfiguration">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerConfigurationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerConfigurationResult" type="tns:FbFConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FbFConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="licenseconfiguration" type="tns:FbFLicenseConfig" />
+          <s:element minOccurs="0" maxOccurs="1" name="versionconfiguration" type="tns:FbFVersion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FbFLicenseConfig">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="licenses" nillable="true" type="tns:ArrayOfFbFLicense" />
+          <s:element minOccurs="1" maxOccurs="1" name="acquiredlicenses" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFbFLicense">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="license" nillable="true" type="tns:FbFLicense" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FbFLicense">
+        <s:attribute name="name" type="tns:FbFLicenseTypes" use="required" />
+        <s:attribute name="count" type="s:int" use="required" />
+        <s:attribute name="userfriendlyname" type="s:string" />
+      </s:complexType>
+      <s:simpleType name="FbFLicenseTypes">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="None" />
+              <s:enumeration value="Client" />
+              <s:enumeration value="Server" />
+              <s:enumeration value="Device_Finger" />
+              <s:enumeration value="Device_Camera" />
+              <s:enumeration value="Device_Iris" />
+              <s:enumeration value="Device_Palm" />
+              <s:enumeration value="Biometrics_Standard_Fingers" />
+              <s:enumeration value="Biometrics_Tools_NFIQ" />
+              <s:enumeration value="Client_LiveScan_MultiFinger" />
+              <s:enumeration value="Biometrics_FingerMatching" />
+              <s:enumeration value="Biometrics_FingerExtraction" />
+              <s:enumeration value="Biometrics_FaceMatching" />
+              <s:enumeration value="Biometrics_FaceExtraction" />
+              <s:enumeration value="Biometrics_IrisMatching" />
+              <s:enumeration value="Biometrics_Standard_Faces" />
+              <s:enumeration value="Biometrics_Standard_Irises" />
+              <s:enumeration value="Biometrics_IrisExtraction" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="license" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FbFVersion">
+        <s:attribute name="major" type="s:int" use="required" />
+        <s:attribute name="minor" type="s:int" use="required" />
+        <s:attribute name="build" type="s:int" use="required" />
+        <s:attribute name="revision" type="s:int" use="required" />
+        <s:attribute name="version" type="s:string" />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EnrollBiometricSoapIn">
+    <wsdl:part name="parameters" element="tns:EnrollBiometric" />
+  </wsdl:message>
+  <wsdl:message name="EnrollBiometricSoapOut">
+    <wsdl:part name="parameters" element="tns:EnrollBiometricResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnrollImageSoapIn">
+    <wsdl:part name="parameters" element="tns:EnrollImage" />
+  </wsdl:message>
+  <wsdl:message name="EnrollImageSoapOut">
+    <wsdl:part name="parameters" element="tns:EnrollImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBiometricSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBiometric" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBiometricSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBiometricResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyBiometricSoapIn">
+    <wsdl:part name="parameters" element="tns:IdentifyBiometric" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyBiometricSoapOut">
+    <wsdl:part name="parameters" element="tns:IdentifyBiometricResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyImageSoapIn">
+    <wsdl:part name="parameters" element="tns:IdentifyImage" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyImageSoapOut">
+    <wsdl:part name="parameters" element="tns:IdentifyImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeneralizeTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneralizeTemplate" />
+  </wsdl:message>
+  <wsdl:message name="GeneralizeTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneralizeTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExtractTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:ExtractTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ExtractTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:ExtractTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerCount" />
+  </wsdl:message>
+  <wsdl:message name="GetServerCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="GetServerConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StandardServiceSoap">
+    <wsdl:operation name="EnrollBiometric">
+      <wsdl:input message="tns:EnrollBiometricSoapIn" />
+      <wsdl:output message="tns:EnrollBiometricSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnrollImage">
+      <wsdl:input message="tns:EnrollImageSoapIn" />
+      <wsdl:output message="tns:EnrollImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBiometric">
+      <wsdl:input message="tns:DeleteBiometricSoapIn" />
+      <wsdl:output message="tns:DeleteBiometricSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyBiometric">
+      <wsdl:input message="tns:IdentifyBiometricSoapIn" />
+      <wsdl:output message="tns:IdentifyBiometricSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyImage">
+      <wsdl:input message="tns:IdentifyImageSoapIn" />
+      <wsdl:output message="tns:IdentifyImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneralizeTemplate">
+      <wsdl:input message="tns:GeneralizeTemplateSoapIn" />
+      <wsdl:output message="tns:GeneralizeTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtractTemplate">
+      <wsdl:input message="tns:ExtractTemplateSoapIn" />
+      <wsdl:output message="tns:ExtractTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerCount">
+      <wsdl:input message="tns:GetServerCountSoapIn" />
+      <wsdl:output message="tns:GetServerCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerConfiguration">
+      <wsdl:input message="tns:GetServerConfigurationSoapIn" />
+      <wsdl:output message="tns:GetServerConfigurationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StandardServiceSoap" type="tns:StandardServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EnrollBiometric">
+      <soap:operation soapAction="http://fulcrumbiometrics.com/EnrollBiometric" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrollImage">
+      <soap:operation soapAction="http://fulcrumbiometrics.com/EnrollImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBiometric">
+      <soap:operation soapAction="http://fulcrumbiometrics.com/DeleteBiometric" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyBiometric">
+      <soap:operation soapAction="http://fulcrumbiometrics.com/IdentifyBiometric" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyImage">
+      <soap:operation soapAction="http://fulcrumbiometrics.com/IdentifyImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneralizeTemplate">
+      <soap:operation soapAction="http://fulcrumbiometrics.com/GeneralizeTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtractTemplate">
+      <soap:operation soapAction="http://fulcrumbiometrics.com/ExtractTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerCount">
+      <soap:operation soapAction="http://fulcrumbiometrics.com/GetServerCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerConfiguration">
+      <soap:operation soapAction="http://fulcrumbiometrics.com/GetServerConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StandardServiceSoap12" type="tns:StandardServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EnrollBiometric">
+      <soap12:operation soapAction="http://fulcrumbiometrics.com/EnrollBiometric" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrollImage">
+      <soap12:operation soapAction="http://fulcrumbiometrics.com/EnrollImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBiometric">
+      <soap12:operation soapAction="http://fulcrumbiometrics.com/DeleteBiometric" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyBiometric">
+      <soap12:operation soapAction="http://fulcrumbiometrics.com/IdentifyBiometric" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyImage">
+      <soap12:operation soapAction="http://fulcrumbiometrics.com/IdentifyImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneralizeTemplate">
+      <soap12:operation soapAction="http://fulcrumbiometrics.com/GeneralizeTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtractTemplate">
+      <soap12:operation soapAction="http://fulcrumbiometrics.com/ExtractTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerCount">
+      <soap12:operation soapAction="http://fulcrumbiometrics.com/GetServerCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerConfiguration">
+      <soap12:operation soapAction="http://fulcrumbiometrics.com/GetServerConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StandardService">
+    <wsdl:port name="StandardServiceSoap" binding="tns:StandardServiceSoap">
+      <soap:address location="http://172.20.4.78/FbF/V25/StandardService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StandardServiceSoap12" binding="tns:StandardServiceSoap12">
+      <soap12:address location="http://172.20.4.78/FbF/V25/StandardService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
