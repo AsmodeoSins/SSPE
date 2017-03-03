@@ -151,6 +151,7 @@
     <Compile Include="Controles\Loading\LoadingResultado.cs" />
     <Compile Include="Convertidores\AutorizacionVisibilityExtension.cs" />
     <Compile Include="Convertidores\AutorizationEnableExtension.cs" />
+    <Compile Include="Modelos\HorarioVisita.cs" />
     <Compile Include="Modelos\Carousel.cs" />
     <Compile Include="Ninject\Contratos\INinjectBootstrapper.cs" />
     <Compile Include="Ninject\DisenoNinjectBootstrapper.cs" />
@@ -169,6 +170,7 @@
     <Compile Include="Utilidades\TextBoxMaxValueBehavior.cs" />
     <Compile Include="Utilidades\VisibilityConvertidores.cs" />
     <Compile Include="VistaModelo\BaseVistaModelo.cs" />
+    <Compile Include="VistaModelo\HorariosVisitaVistaModelo.cs" />
     <Compile Include="VistaModelo\BiometricoBaseVistaModelo.cs" />
     <Compile Include="VistaModelo\BusquedaPersonaVistaModelo.cs" />
     <Compile Include="VistaModelo\CapturaBiometricoVisitaVistaModelo.cs" />
@@ -208,6 +210,9 @@
     </Compile>
     <Compile Include="Vista\Catalogo\TiempoPaseListaVista.xaml.cs">
       <DependentUpon>TiempoPaseListaVista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\HorariosVisitaVista.xaml.cs">
+      <DependentUpon>HorariosVisitaVista.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vista\Configuracion\ConfiguracionVista.xaml.cs">
       <DependentUpon>ConfiguracionVista.xaml</DependentUpon>
@@ -302,6 +307,10 @@
     <Page Include="Vista\Catalogo\TiempoPaseListaVista.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vista\Configuracion\HorariosVisitaVista.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Vista\Configuracion\ConfiguracionVista.xaml">
       <SubType>Designer</SubType>

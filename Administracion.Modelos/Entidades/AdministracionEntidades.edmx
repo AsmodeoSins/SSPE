@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AdministracionModelo.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="AdministracionModelo.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="BIOMETRICO_FORMATO">
           <Key>
             <PropertyRef Name="ID_FORMATO" />
@@ -80,6 +80,16 @@
           <Property Name="OBSERV" Type="varchar2" MaxLength="1000" />
           <Property Name="CEDULA" Type="varchar2" MaxLength="20" />
           <Property Name="ID_DEPARTAMENTO" Type="number" Precision="2" Scale="0" />
+        </EntityType>
+        <EntityType Name="HORARIO_VISITA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="ID_TIPO_VISITA" Type="number" Precision="2" Scale="0" />
+          <Property Name="ID_DIA" Type="number" Precision="1" Scale="0" />
+          <Property Name="HORA_INICIO" Type="char" MaxLength="5" />
+          <Property Name="HORA_FIN" Type="char" MaxLength="5" />
         </EntityType>
         <EntityType Name="IMPUTADO">
           <Key>
@@ -501,6 +511,14 @@
           <Property Name="DESCR" Type="char" MaxLength="20" />
           <Property Name="ESTATUS" Type="char" MaxLength="1" />
         </EntityType>
+        <EntityType Name="TIPO_VISITA">
+          <Key>
+            <PropertyRef Name="ID_TIPO_VISITA" />
+          </Key>
+          <Property Name="ID_TIPO_VISITA" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="DESCR" Type="char" MaxLength="10" />
+          <Property Name="ESTATUS" Type="char" MaxLength="1" />
+        </EntityType>
         <EntityType Name="USUARIO">
           <Key>
             <PropertyRef Name="ID_USUARIO" />
@@ -532,6 +550,13 @@
           <Property Name="FECHA" Type="date" />
           <Property Name="ID_CENTRO" Type="number" Precision="2" Scale="0" Nullable="false" />
         </EntityType>
+        <EntityType Name="VISITA_DIA">
+          <Key>
+            <PropertyRef Name="ID_DIA" />
+          </Key>
+          <Property Name="ID_DIA" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="DESCR" Type="char" MaxLength="10" />
+        </EntityType>
         <Association Name="SYS_C0010830">
           <End Role="TIPO_CELDA" Type="Self.TIPO_CELDA" Multiplicity="0..1" />
           <End Role="CELDA" Type="Self.CELDA" Multiplicity="*" />
@@ -544,9 +569,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-warning 6035: The relationship 'SYS_C0010831' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
-        <Association Name="SYS_C0010831" />-->
+        <Association Name="SYS_C0010831">
+          <End Role="SECTOR" Type="Self.SECTOR" Multiplicity="1" />
+          <End Role="CELDA" Type="Self.CELDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTOR">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_EDIFICIO" />
+              <PropertyRef Name="ID_SECTOR" />
+            </Principal>
+            <Dependent Role="CELDA">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_EDIFICIO" />
+              <PropertyRef Name="ID_SECTOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="SYS_C0010832">
           <End Role="TIPO_CENTRO" Type="Self.TIPO_CENTRO" Multiplicity="0..1" />
           <End Role="CENTRO" Type="Self.CENTRO" Multiplicity="*" />
@@ -631,9 +669,22 @@ warning 6035: The relationship 'SYS_C0010831' has columns that are not part of t
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-warning 6035: The relationship 'SYS_C0010839' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
-        <Association Name="SYS_C0010839" />-->
+        <Association Name="SYS_C0010839">
+          <End Role="IMPUTADO" Type="Self.IMPUTADO" Multiplicity="1" />
+          <End Role="IMPUTADO_BIOMETRICO" Type="Self.IMPUTADO_BIOMETRICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMPUTADO">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_ANIO" />
+              <PropertyRef Name="ID_IMPUTADO" />
+            </Principal>
+            <Dependent Role="IMPUTADO_BIOMETRICO">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_ANIO" />
+              <PropertyRef Name="ID_IMPUTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="SYS_C0010840">
           <End Role="BIOMETRICO_TIPO" Type="Self.BIOMETRICO_TIPO" Multiplicity="1" />
           <End Role="IMPUTADO_BIOMETRICO" Type="Self.IMPUTADO_BIOMETRICO" Multiplicity="*" />
@@ -670,9 +721,22 @@ warning 6035: The relationship 'SYS_C0010839' has columns that are not part of t
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-warning 6035: The relationship 'SYS_C0010843' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
-        <Association Name="SYS_C0010843" />-->
+        <Association Name="SYS_C0010843">
+          <End Role="IMPUTADO" Type="Self.IMPUTADO" Multiplicity="1" />
+          <End Role="INGRESO" Type="Self.INGRESO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMPUTADO">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_ANIO" />
+              <PropertyRef Name="ID_IMPUTADO" />
+            </Principal>
+            <Dependent Role="INGRESO">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_ANIO" />
+              <PropertyRef Name="ID_IMPUTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="SYS_C0010844">
           <End Role="TIPO_INGRESO" Type="Self.TIPO_INGRESO" Multiplicity="0..1" />
           <End Role="INGRESO" Type="Self.INGRESO" Multiplicity="*" />
@@ -697,9 +761,24 @@ warning 6035: The relationship 'SYS_C0010843' has columns that are not part of t
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-warning 6035: The relationship 'SYS_C0010846' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
-        <Association Name="SYS_C0010846" />-->
+        <Association Name="SYS_C0010846">
+          <End Role="INGRESO" Type="Self.INGRESO" Multiplicity="1" />
+          <End Role="INGRESO_BIOMETRICO" Type="Self.INGRESO_BIOMETRICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INGRESO">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_ANIO" />
+              <PropertyRef Name="ID_IMPUTADO" />
+              <PropertyRef Name="ID_INGRESO" />
+            </Principal>
+            <Dependent Role="INGRESO_BIOMETRICO">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_ANIO" />
+              <PropertyRef Name="ID_IMPUTADO" />
+              <PropertyRef Name="ID_INGRESO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="SYS_C0010847">
           <End Role="BIOMETRICO_TIPO" Type="Self.BIOMETRICO_TIPO" Multiplicity="1" />
           <End Role="INGRESO_BIOMETRICO" Type="Self.INGRESO_BIOMETRICO" Multiplicity="*" />
@@ -808,9 +887,20 @@ warning 6035: The relationship 'SYS_C0010846' has columns that are not part of t
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-warning 6035: The relationship 'SYS_C0010856' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
-        <Association Name="SYS_C0010856" />-->
+        <Association Name="SYS_C0010856">
+          <End Role="EDIFICIO" Type="Self.EDIFICIO" Multiplicity="1" />
+          <End Role="SECTOR" Type="Self.SECTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EDIFICIO">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Principal>
+            <Dependent Role="SECTOR">
+              <PropertyRef Name="ID_CENTRO" />
+              <PropertyRef Name="ID_EDIFICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="SYS_C0010857">
           <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
           <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
@@ -859,6 +949,34 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="SYS_C0010957">
+          <End Role="TIPO_VISITA" Type="Self.TIPO_VISITA" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HORARIO_VISITA" Type="Self.HORARIO_VISITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_VISITA">
+              <PropertyRef Name="ID_TIPO_VISITA" />
+            </Principal>
+            <Dependent Role="HORARIO_VISITA">
+              <PropertyRef Name="ID_TIPO_VISITA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0010958">
+          <End Role="VISITA_DIA" Type="Self.VISITA_DIA" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HORARIO_VISITA" Type="Self.HORARIO_VISITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VISITA_DIA">
+              <PropertyRef Name="ID_DIA" />
+            </Principal>
+            <Dependent Role="HORARIO_VISITA">
+              <PropertyRef Name="ID_DIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="AdministracionModeloStoreContainer">
           <EntitySet Name="BIOMETRICO_FORMATO" EntityType="Self.BIOMETRICO_FORMATO" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="BIOMETRICO_TIPO" EntityType="Self.BIOMETRICO_TIPO" Schema="SSP" store:Type="Tables" />
@@ -866,6 +984,7 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
           <EntitySet Name="CENTRO" EntityType="Self.CENTRO" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="EDIFICIO" EntityType="Self.EDIFICIO" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="SSP" store:Type="Tables" />
+          <EntitySet Name="HORARIO_VISITA" EntityType="Self.HORARIO_VISITA" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="IMPUTADO" EntityType="Self.IMPUTADO" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="IMPUTADO_BIOMETRICO" EntityType="Self.IMPUTADO_BIOMETRICO" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="INGRESO" EntityType="Self.INGRESO" Schema="SSP" store:Type="Tables" />
@@ -895,11 +1014,17 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
           <EntitySet Name="TIPO_EMPLEADO" EntityType="Self.TIPO_EMPLEADO" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="TIPO_INGRESO" EntityType="Self.TIPO_INGRESO" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="TIPO_PERSONA" EntityType="Self.TIPO_PERSONA" Schema="SSP" store:Type="Tables" />
+          <EntitySet Name="TIPO_VISITA" EntityType="Self.TIPO_VISITA" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="USUARIO_MENSAJE" EntityType="Self.USUARIO_MENSAJE" Schema="SSP" store:Type="Tables" />
           <EntitySet Name="USUARIO_ROL" EntityType="Self.USUARIO_ROL" Schema="SSP" store:Type="Tables" />
+          <EntitySet Name="VISITA_DIA" EntityType="Self.VISITA_DIA" Schema="SSP" store:Type="Tables" />
           <AssociationSet Name="SYS_C0010830" Association="Self.SYS_C0010830">
             <End Role="TIPO_CELDA" EntitySet="TIPO_CELDA" />
+            <End Role="CELDA" EntitySet="CELDA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0010831" Association="Self.SYS_C0010831">
+            <End Role="SECTOR" EntitySet="SECTOR" />
             <End Role="CELDA" EntitySet="CELDA" />
           </AssociationSet>
           <AssociationSet Name="SYS_C0010832" Association="Self.SYS_C0010832">
@@ -930,6 +1055,10 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
             <End Role="CENTRO" EntitySet="CENTRO" />
             <End Role="IMPUTADO" EntitySet="IMPUTADO" />
           </AssociationSet>
+          <AssociationSet Name="SYS_C0010839" Association="Self.SYS_C0010839">
+            <End Role="IMPUTADO" EntitySet="IMPUTADO" />
+            <End Role="IMPUTADO_BIOMETRICO" EntitySet="IMPUTADO_BIOMETRICO" />
+          </AssociationSet>
           <AssociationSet Name="SYS_C0010840" Association="Self.SYS_C0010840">
             <End Role="BIOMETRICO_TIPO" EntitySet="BIOMETRICO_TIPO" />
             <End Role="IMPUTADO_BIOMETRICO" EntitySet="IMPUTADO_BIOMETRICO" />
@@ -942,6 +1071,10 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
             <End Role="CENTRO" EntitySet="CENTRO" />
             <End Role="INGRESO" EntitySet="INGRESO" />
           </AssociationSet>
+          <AssociationSet Name="SYS_C0010843" Association="Self.SYS_C0010843">
+            <End Role="IMPUTADO" EntitySet="IMPUTADO" />
+            <End Role="INGRESO" EntitySet="INGRESO" />
+          </AssociationSet>
           <AssociationSet Name="SYS_C0010844" Association="Self.SYS_C0010844">
             <End Role="TIPO_INGRESO" EntitySet="TIPO_INGRESO" />
             <End Role="INGRESO" EntitySet="INGRESO" />
@@ -949,6 +1082,10 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
           <AssociationSet Name="SYS_C0010845" Association="Self.SYS_C0010845">
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="INGRESO" EntitySet="INGRESO" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0010846" Association="Self.SYS_C0010846">
+            <End Role="INGRESO" EntitySet="INGRESO" />
+            <End Role="INGRESO_BIOMETRICO" EntitySet="INGRESO_BIOMETRICO" />
           </AssociationSet>
           <AssociationSet Name="SYS_C0010847" Association="Self.SYS_C0010847">
             <End Role="BIOMETRICO_TIPO" EntitySet="BIOMETRICO_TIPO" />
@@ -986,6 +1123,10 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="PROCESO_USUARIO" EntitySet="PROCESO_USUARIO" />
           </AssociationSet>
+          <AssociationSet Name="SYS_C0010856" Association="Self.SYS_C0010856">
+            <End Role="EDIFICIO" EntitySet="EDIFICIO" />
+            <End Role="SECTOR" EntitySet="SECTOR" />
+          </AssociationSet>
           <AssociationSet Name="SYS_C0010857" Association="Self.SYS_C0010857">
             <End Role="EMPLEADO" EntitySet="EMPLEADO" />
             <End Role="USUARIO" EntitySet="USUARIO" />
@@ -1001,6 +1142,14 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
           <AssociationSet Name="SYS_C0010860" Association="Self.SYS_C0010860">
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="USUARIO_ROL" EntitySet="USUARIO_ROL" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0010957" Association="Self.SYS_C0010957">
+            <End Role="TIPO_VISITA" EntitySet="TIPO_VISITA" />
+            <End Role="HORARIO_VISITA" EntitySet="HORARIO_VISITA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0010958" Association="Self.SYS_C0010958">
+            <End Role="VISITA_DIA" EntitySet="VISITA_DIA" />
+            <End Role="HORARIO_VISITA" EntitySet="HORARIO_VISITA" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -1254,6 +1403,17 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
             <End Role="PERSONA_BIOMETRICO" EntitySet="PERSONA_BIOMETRICO" />
           </AssociationSet>
           <EntitySet Name="LOGFALLASERVICIOs" EntityType="AdministracionModelo.LOGFALLASERVICIO" />
+          <EntitySet Name="HORARIO_VISITA" EntityType="AdministracionModelo.HORARIO_VISITA" />
+          <EntitySet Name="TIPO_VISITA" EntityType="AdministracionModelo.TIPO_VISITA" />
+          <EntitySet Name="VISITA_DIA" EntityType="AdministracionModelo.VISITA_DIA" />
+          <AssociationSet Name="SYS_C0010957" Association="AdministracionModelo.SYS_C0010957">
+            <End Role="TIPO_VISITA" EntitySet="TIPO_VISITA" />
+            <End Role="HORARIO_VISITA" EntitySet="HORARIO_VISITA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0010958" Association="AdministracionModelo.SYS_C0010958">
+            <End Role="VISITA_DIA" EntitySet="VISITA_DIA" />
+            <End Role="HORARIO_VISITA" EntitySet="HORARIO_VISITA" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="BIOMETRICO_FORMATO">
           <Key>
@@ -2552,6 +2712,63 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
           <Property Name="APPLICATIONNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="FECHADECREACION" Type="DateTime" />
         </EntityType>
+        <EntityType Name="HORARIO_VISITA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="ID_TIPO_VISITA" Type="Int16" />
+          <Property Name="ID_DIA" Type="Int16" />
+          <Property Name="HORA_INICIO" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="HORA_FIN" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="TIPO_VISITA" Relationship="AdministracionModelo.SYS_C0010957" FromRole="HORARIO_VISITA" ToRole="TIPO_VISITA" />
+          <NavigationProperty Name="VISITA_DIA" Relationship="AdministracionModelo.SYS_C0010958" FromRole="HORARIO_VISITA" ToRole="VISITA_DIA" />
+        </EntityType>
+        <EntityType Name="TIPO_VISITA">
+          <Key>
+            <PropertyRef Name="ID_TIPO_VISITA" />
+          </Key>
+          <Property Name="ID_TIPO_VISITA" Type="Int16" Nullable="false" />
+          <Property Name="DESCR" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="HORARIO_VISITA" Relationship="AdministracionModelo.SYS_C0010957" FromRole="TIPO_VISITA" ToRole="HORARIO_VISITA" />
+        </EntityType>
+        <EntityType Name="VISITA_DIA">
+          <Key>
+            <PropertyRef Name="ID_DIA" />
+          </Key>
+          <Property Name="ID_DIA" Type="Int16" Nullable="false" />
+          <Property Name="DESCR" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="HORARIO_VISITA" Relationship="AdministracionModelo.SYS_C0010958" FromRole="VISITA_DIA" ToRole="HORARIO_VISITA" />
+        </EntityType>
+        <Association Name="SYS_C0010957">
+          <End Type="AdministracionModelo.TIPO_VISITA" Role="TIPO_VISITA" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AdministracionModelo.HORARIO_VISITA" Role="HORARIO_VISITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_VISITA">
+              <PropertyRef Name="ID_TIPO_VISITA" />
+            </Principal>
+            <Dependent Role="HORARIO_VISITA">
+              <PropertyRef Name="ID_TIPO_VISITA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0010958">
+          <End Type="AdministracionModelo.VISITA_DIA" Role="VISITA_DIA" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AdministracionModelo.HORARIO_VISITA" Role="HORARIO_VISITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VISITA_DIA">
+              <PropertyRef Name="ID_DIA" />
+            </Principal>
+            <Dependent Role="HORARIO_VISITA">
+              <PropertyRef Name="ID_DIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3093,6 +3310,34 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="HORARIO_VISITA">
+            <EntityTypeMapping TypeName="AdministracionModelo.HORARIO_VISITA">
+              <MappingFragment StoreEntitySet="HORARIO_VISITA">
+                <ScalarProperty Name="HORA_FIN" ColumnName="HORA_FIN" />
+                <ScalarProperty Name="HORA_INICIO" ColumnName="HORA_INICIO" />
+                <ScalarProperty Name="ID_DIA" ColumnName="ID_DIA" />
+                <ScalarProperty Name="ID_TIPO_VISITA" ColumnName="ID_TIPO_VISITA" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_VISITA">
+            <EntityTypeMapping TypeName="AdministracionModelo.TIPO_VISITA">
+              <MappingFragment StoreEntitySet="TIPO_VISITA">
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="ID_TIPO_VISITA" ColumnName="ID_TIPO_VISITA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VISITA_DIA">
+            <EntityTypeMapping TypeName="AdministracionModelo.VISITA_DIA">
+              <MappingFragment StoreEntitySet="VISITA_DIA">
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="ID_DIA" ColumnName="ID_DIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3206,6 +3451,11 @@ warning 6035: The relationship 'SYS_C0010856' has columns that are not part of t
         <AssociationConnector Association="AdministracionModelo.SYS_C0010845" />
         <AssociationConnector Association="AdministracionModelo.SYS_C0010851" />
         <EntityTypeShape EntityType="AdministracionModelo.LOGFALLASERVICIO" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="AdministracionModelo.HORARIO_VISITA" Width="1.5" PointX="12.625" PointY="0.75" />
+        <EntityTypeShape EntityType="AdministracionModelo.TIPO_VISITA" Width="1.5" PointX="14.75" PointY="0.625" />
+        <EntityTypeShape EntityType="AdministracionModelo.VISITA_DIA" Width="1.5" PointX="14.75" PointY="2.875" />
+        <AssociationConnector Association="AdministracionModelo.SYS_C0010957" />
+        <AssociationConnector Association="AdministracionModelo.SYS_C0010958" />
       </Diagram>
     </Diagrams>
   </Designer>

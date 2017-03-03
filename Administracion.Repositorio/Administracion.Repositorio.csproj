@@ -46,6 +46,8 @@
     <Compile Include="Accesso\BaseRepositorio.cs" />
     <Compile Include="Accesso\CentroRepositorio.cs" />
     <Compile Include="Accesso\CeldaRepositorio.cs" />
+    <Compile Include="Accesso\VisitaDiaRepositorio.cs" />
+    <Compile Include="Accesso\TipoVisitaRepositorio.cs" />
     <Compile Include="Accesso\LogFallaServicioRepositorio.cs" />
     <Compile Include="Accesso\PLAsignacionResultadoRepositorio.cs" />
     <Compile Include="Accesso\PLIncidenciaBitacoraRepositorio.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Accesso\PLProgramadoAsignacionRepositorio.cs" />
     <Compile Include="Accesso\PLProgramadoRepositorio.cs" />
     <Compile Include="Accesso\SectorRepositorio.cs" />
+    <Compile Include="Accesso\HorariosRepositorio.cs" />
     <Compile Include="Accesso\UsuarioRepositorio.cs" />
     <Compile Include="Contexto\AdministracionContexto.Context.cs">
       <AutoGen>True</AutoGen>

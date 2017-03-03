@@ -63,6 +63,9 @@
     <Compile Include="Entidades\EMPLEADO.cs">
       <DependentUpon>AdministracionEntidades.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\HORARIO_VISITA.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\IMPUTADO.cs">
       <DependentUpon>AdministracionEntidades.tt</DependentUpon>
     </Compile>
@@ -150,6 +153,9 @@
     <Compile Include="Entidades\TIPO_PERSONA.cs">
       <DependentUpon>AdministracionEntidades.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\TIPO_VISITA.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\USUARIO.cs">
       <DependentUpon>AdministracionEntidades.tt</DependentUpon>
     </Compile>
@@ -157,6 +163,9 @@
       <DependentUpon>AdministracionEntidades.tt</DependentUpon>
     </Compile>
     <Compile Include="Entidades\USUARIO_ROL.cs">
+      <DependentUpon>AdministracionEntidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\VISITA_DIA.cs">
       <DependentUpon>AdministracionEntidades.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

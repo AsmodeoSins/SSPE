@@ -142,6 +142,14 @@ namespace Administracion.Presentacion.Utilidades
        }
 
 
+        public IHorariosVisitaVistaModelo HorariosVisita
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<IHorariosVisitaVistaModelo>();
+            }
+        }
+
         public static void Cleanup()
         {
         }

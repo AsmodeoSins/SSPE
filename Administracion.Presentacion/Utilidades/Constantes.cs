@@ -51,6 +51,7 @@ namespace UIAuthorization
 
         #region CONFIGURACION
         public static readonly string CONFIGURACION = "CONFIGURACION";
+        public static readonly string HORARIOS = "HORARIOS";
         #endregion
     }
 }

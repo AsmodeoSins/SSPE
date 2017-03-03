@@ -53,6 +53,7 @@
     <Compile Include="FallaServicioOtd.cs" />
     <Compile Include="Filtros\PersonaFiltroOtd.cs" />
     <Compile Include="Filtros\ReportePLFiltroOtd.cs" />
+    <Compile Include="VisitaDiaOtd.cs" />
     <Compile Include="ImputadoBiometricoOtd.cs" />
     <Compile Include="ImputadoOtd.cs" />
     <Compile Include="LogFallaServicioOtd.cs" />
@@ -98,6 +99,8 @@
     <Compile Include="TipoDeEmpleadoOtd.cs" />
     <Compile Include="TipoDeIngresoOtd.cs" />
     <Compile Include="TipoDePersonaOtd.cs" />
+    <Compile Include="HorarioVisitaOtd.cs" />
+    <Compile Include="TipoVisitaOtd.cs" />
     <Compile Include="TipoPersonaOtd.cs" />
     <Compile Include="UsuarioMensajeOtd.cs" />
     <Compile Include="UsuarioOtd.cs" />

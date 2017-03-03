@@ -28,7 +28,7 @@ namespace Administracion.Presentacion.Autorizacion
             if (String.IsNullOrEmpty(operacion))
                 return false;
 
-            if (operacion == Constantes.CONFIGURACION && Sesion.ObjetoDeSesion.Usuario == null)
+            if ((operacion == Constantes.CONFIGURACION && Sesion.ObjetoDeSesion.Usuario == null) || operacion == Constantes.HORARIOS)
             {
                 return true;
             }

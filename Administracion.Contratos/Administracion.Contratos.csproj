@@ -36,7 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enrolamiento\IPrincipalVistaModelo.cs" />
-    <Compile Include="Presentacion\ICapturaBiometricoVisitaVistaModelo.cs" />
+    <Compile Include="Presentacion\IHorariosVisitaVistaModelo.cs" />
     <Compile Include="Presentacion\IConfiguracionVista.cs" />
     <Compile Include="Presentacion\IIncidenciasPorInternoVistaModelo.cs" />
     <Compile Include="Presentacion\IIncidenciasReporteVistaModelo.cs" />
@@ -47,6 +47,8 @@
     <Compile Include="Presentacion\ITiempoPaseDeListaVistaModelo.cs" />
     <Compile Include="Presentacion\IVerificacionBiometricoVistaModelo.cs" />
     <Compile Include="Repositorio\ICeldaRepositorio.cs" />
+    <Compile Include="Repositorio\IVisitaDiaRepositorio.cs" />
+    <Compile Include="Repositorio\ITipoVisitaRepositorio.cs" />
     <Compile Include="Repositorio\ILogFallaServicioRepositorio.cs" />
     <Compile Include="Repositorio\IPLAsignacionResultadoRepositorio.cs" />
     <Compile Include="Repositorio\IPLIncidenciaBitacoraRepositorio.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Repositorio\IPLProgramadoAsignacionRepositorio.cs" />
     <Compile Include="Repositorio\IPLProgramadoRepositorio.cs" />
     <Compile Include="Repositorio\ISectorRepositorio.cs" />
+    <Compile Include="Repositorio\IHorariosRepositorio.cs" />
     <Compile Include="Repositorio\IUsuarioRepositorio.cs" />
     <Compile Include="Servicios\IEmpleadoServicio.cs" />
     <Compile Include="Servicios\ILogFallaServicio.cs" />
@@ -98,6 +101,7 @@
     <Compile Include="Servicios\IReportesServicio.cs" />
     <Compile Include="Servicios\ISectorServicio.cs" />
     <Compile Include="Servicios\IUbicacionServicio.cs" />
+    <Compile Include="Servicios\IHorariosServicio.cs" />
     <Compile Include="Servicios\IUsuarioServicio.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -29,6 +29,7 @@ namespace Administracion.Presentacion.Utilidades
             PLIncidenciaBitacoraMapeador.Configuracion();
             LogFallaServicioMapeador.Configuracion();
             UsuarioMapeador.Configuracion();
+            HorarioMapeador.Configuracion();
         }
     }
 }

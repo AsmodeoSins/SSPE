@@ -62,6 +62,7 @@
     <Compile Include="SectorServicio.cs" />
     <Compile Include="ServicioBase.cs" />
     <Compile Include="UbicacionServicio.cs" />
+    <Compile Include="HorariosServicio.cs" />
     <Compile Include="UsuarioServicio.cs" />
   </ItemGroup>
   <ItemGroup>

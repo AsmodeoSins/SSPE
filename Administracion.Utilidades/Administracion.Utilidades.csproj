@@ -88,11 +88,14 @@
     <Compile Include="Mapeadores\TipoDeIngresoMapeador.cs" />
     <Compile Include="Mapeadores\TipoDePersonaMapeador.cs" />
     <Compile Include="Mapeadores\UbicacionMapeador.cs" />
+    <Compile Include="Mapeadores\HorarioMapeador.cs" />
     <Compile Include="Mapeadores\UsuarioMapeador.cs" />
     <Compile Include="Mapeos\CeldaMapeos.cs" />
     <Compile Include="Mapeos\CentroMapeos.cs" />
     <Compile Include="Mapeos\EdificioMapeos.cs" />
     <Compile Include="Mapeos\EmpleadoMapeos.cs" />
+    <Compile Include="Mapeos\VisitasDiaMapeos.cs" />
+    <Compile Include="Mapeos\TipoVisitasMapeos.cs" />
     <Compile Include="Mapeos\ImputadoBiometricoMapeos.cs" />
     <Compile Include="Mapeos\ImputadoMapeos.cs" />
     <Compile Include="Mapeos\LogFallaServicioMapeos.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Mapeos\TipoDeIngresoMapeos.cs" />
     <Compile Include="Mapeos\TipoDePersonaMapeos.cs" />
     <Compile Include="Mapeos\UbicacionMapeos.cs" />
+    <Compile Include="Mapeos\HorariosMapeos.cs" />
     <Compile Include="Mapeos\UsuarioMapeos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validadores\CentroValidador.cs" />

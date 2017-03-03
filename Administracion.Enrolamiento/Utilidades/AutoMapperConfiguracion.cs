@@ -12,6 +12,7 @@ namespace Administracion.Enrolamiento.Utilidades
             TipoDeCentroMapeador.Configuracion();
             TipoDeEmpleadoMapeador.Configuracion();
             UsuarioMapeador.Configuracion();
+            HorarioMapeador.Configuracion();
         }
     }
 }

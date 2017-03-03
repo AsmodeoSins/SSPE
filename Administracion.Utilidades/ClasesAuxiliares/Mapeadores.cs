@@ -27,6 +27,7 @@ namespace Administracion.Utilidades.ClasesAuxiliares
             UbicacionMapeador.Configuracion();
             ReporteMapeador.Configuraction();
             UsuarioMapeador.Configuracion();
+            HorarioMapeador.Configuracion();
         }
     }
 }
