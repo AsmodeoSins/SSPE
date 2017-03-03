@@ -23,6 +23,7 @@ namespace Administracion.Presentacion.Ninject
             Bind<IIncidenciasReporteVistaModelo>().To<IncidenciasReporteVistaModelo>();
             Bind<IIncidenciasPorInternoVistaModelo>().To<IncidenciasPorInternoVistaModelo>();
             Bind<IConfiguracionVista>().To<ConfiguracionVistaModelo>();
+            Bind<IVerificacionBiometricoVistaModelo>().To<VerificacionBiometricoVistaModelo>();
             Bind<IHorariosVisitaVistaModelo>().To<HorariosVisitaVistaModelo>();
         }
     }
