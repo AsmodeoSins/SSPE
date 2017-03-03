@@ -1,0 +1,186 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:sys="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+    xmlns:ms="clr-namespace:System;assembly=mscorlib"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+    xmlns:vista="clr-namespace:Administracion.Presentacion.Vista" 
+    xmlns:util="clr-namespace:Administracion.Presentacion.Utilidades" 
+    xmlns:vm="clr-namespace:Administracion.Presentacion.VistaModelo" 
+    x:Class="Administracion.Presentacion.Vista.HorariosVisitaVista"
+    mc:Ignorable="d"
+    d:DesignWidth="1024"
+    DataContext="{Binding HorariosVisita, Source={StaticResource Localizador}}">
+    <UserControl.Resources>
+        <Style x:Key="GridBase" TargetType="Grid" >
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Background" Value="#FFFFFF"/>
+        </Style>
+        <Style x:Key="GridChild" TargetType="Grid" BasedOn="{StaticResource GridBase}" >
+            <Setter Property="Margin" Value="0" />
+        </Style>
+        <Style x:Key="BorderBase" TargetType="Border">
+            <Setter Property="BorderThickness" Value="0,0,1,1"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="100"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Style="{StaticResource GridBase}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="450"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Horarios de visita" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
+        <ComboBox Grid.Row="1" ItemsSource="{Binding Path=Visitas}" DisplayMemberPath="Descripcion" SelectedValue="{Binding Path=Visita}"/>
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1,1,0,0" Margin="20">
+            <Grid Style="{StaticResource GridChild}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource BorderBase}">
+                    <Label Content="Lunes" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource BorderBase}">
+                    <Label Content="Martes" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource BorderBase}">
+                    <Label Content="Miercoles" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="3" Style="{StaticResource BorderBase}">
+                    <Label Content="Jueves" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="4" Style="{StaticResource BorderBase}">
+                    <Label Content="Viernes" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="5" Style="{StaticResource BorderBase}">
+                    <Label Content="Sabado" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="6" Style="{StaticResource BorderBase}">
+                    <Label Content="Domingo" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
+                </Border>
+                <!--<ItemsControl Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="7" ItemsSource="{Binding }">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="7" Rows="2"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource BorderBase}">
+                                <StackPanel Margin="10">
+                                    <Label Content="Inicio Visita"/>
+                                    <ComboBox></ComboBox>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>-->
+                <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Inicio Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=LunesInicio}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Inicio Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=MartesInicio}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Inicio Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=MiercolesInicio}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="3" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Inicio Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=JuevesInicio}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="4" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Inicio Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=ViernesInicio}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="5" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Inicio Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=SabadoInicio}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="6" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Inicio Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=DomingoInicio}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="0" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Fin Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=LunesFin}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Fin Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=MartesFin}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="2" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Fin Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=MiercolesFin}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="3" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Fin Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=JuevesFin}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="4" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Fin Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=ViernesFin}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="5" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Fin Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=SabadoFin}"></ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="6" Style="{StaticResource BorderBase}">
+                    <StackPanel Margin="10">
+                        <Label Content="Fin Visita"/>
+                        <ComboBox ItemsSource="{Binding Path=Horas}" SelectedValue="{Binding Path=DomingoFin}"></ComboBox>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
