@@ -39,6 +39,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="450"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Horarios de visita" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
         <ComboBox Grid.Row="1" ItemsSource="{Binding Path=Visitas}" DisplayMemberPath="Descripcion" SelectedValue="{Binding Path=Visita}"/>
@@ -79,23 +80,7 @@
                 <Border Grid.Row="0" Grid.Column="6" Style="{StaticResource BorderBase}">
                     <Label Content="Domingo" Style="{StaticResource Titulo}" Margin="10,0,0,10"/>
                 </Border>
-                <!--<ItemsControl Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="7" ItemsSource="{Binding }">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <UniformGrid Columns="7" Rows="2"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource BorderBase}">
-                                <StackPanel Margin="10">
-                                    <Label Content="Inicio Visita"/>
-                                    <ComboBox></ComboBox>
-                                </StackPanel>
-                            </Border>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>-->
+                
                 <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource BorderBase}">
                     <StackPanel Margin="10">
                         <Label Content="Inicio Visita"/>
@@ -181,6 +166,11 @@
                     </StackPanel>
                 </Border>
             </Grid>
+        </Border>
+        <Border Grid.Row="3" Padding="10">
+            <Button HorizontalAlignment="Right" HorizontalContentAlignment="Center" Padding="5,0,5,0" VerticalContentAlignment="Center" Command="{Binding GrabarHorarioCommand, Mode=OneWay}">
+                Grabar
+            </Button>
         </Border>
     </Grid>
 </UserControl>

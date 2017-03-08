@@ -413,7 +413,7 @@ namespace Administracion.Presentacion.VistaModelo
                 new HorarioVisitaOtd()
                 {
                     IdTipoVisita = (short)Visita.IdTipoVisita,
-                    IdDia = 6,
+                    IdDia = 7,
                     HoraInicio = SabadoInicio,
                     HoraFin = SabadoFin
                 }
